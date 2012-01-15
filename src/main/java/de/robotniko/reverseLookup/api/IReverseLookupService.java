@@ -16,4 +16,6 @@ public interface IReverseLookupService {
 	public abstract void asynchronousLookup(final List<ReverseLookupRequest> request, final IReverseLookupFinishedListener l) throws ReverseLookupException;
 	public abstract void asynchronousLookup(final ReverseLookupRequest request, final IReverseLookupFinishedListener l) throws ReverseLookupException;
 
+	public abstract void stopAsyncLookup();
+	public abstract void terminateAsyncLookup();
 }

@@ -58,6 +58,14 @@ public class ReverseLookupService implements IReverseLookupService {
 		asyncThread.addRequest(request, l);
 	}
 
+	public void stopAsyncLookup() {
+		asyncThread.suspendLookup();
+	}
+
+	public void terminateAsyncLookup() {
+		asyncThread.terminate();
+	}
+
 	public List<ReverseLookupResponse> blockingLookup(
 			ReverseLookupRequest request) throws ReverseLookupException {
 		final String intNumber = request.getInternationalPhoneNumber();

@@ -64,13 +64,13 @@ public class ReverseLookupAsyncThread extends Thread {
 
 				synchronized(this) {
 					while (!terminate && (threadSuspended || requestQueue.size() == 0)) {
-						// TODO notify: finished lookup
 						for (IReverseLookupFinishedListener l: finishedListenerList) {
 							l.finished();
 						}
 						numDone = 0;
 						numLookups = 0;
 						finishedListenerList.clear();
+						LOG.info("finished lookup thread, waiting for new jobs");
 						wait();
 					}
 				}
@@ -97,6 +97,7 @@ public class ReverseLookupAsyncThread extends Thread {
 	}
 
 	public synchronized void terminate(){
+		LOG.info("terminating lookup thread");
 		terminate = true;
 		resumeLookup();
 	}
