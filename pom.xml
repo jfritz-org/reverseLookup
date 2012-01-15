@@ -4,7 +4,7 @@
 
   <groupId>de.robotniko</groupId>
   <artifactId>reverseLookup</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>reverseLookup</name>
@@ -65,7 +65,7 @@
     <dependency>
       <groupId>de.robotniko</groupId>
       <artifactId>proxy</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
+      <version>1.0.1</version>
       <scope>test</scope>
     </dependency>
         <dependency>
