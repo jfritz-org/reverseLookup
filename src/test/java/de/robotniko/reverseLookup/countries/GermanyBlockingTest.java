@@ -17,7 +17,7 @@ import de.robotniko.reverseLookup.api.ReverseLookupRequest;
 import de.robotniko.reverseLookup.api.ReverseLookupResponse;
 import de.robotniko.reverseLookup.exceptions.ReverseLookupException;
 
-public class GermanyTest {
+public class GermanyBlockingTest {
 
 	private static ReverseLookupService service = new ReverseLookupService();
 
@@ -29,7 +29,7 @@ public class GermanyTest {
 
 	@After
 	public void after() throws InterruptedException {
-		int sleeptime = 2;
+		int sleeptime = 3;
 		System.out.println("\nSleeping for " + sleeptime + " seconds");
 		Thread.sleep(sleeptime * 1000);
 	}

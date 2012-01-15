@@ -13,6 +13,7 @@ public interface IReverseLookupService {
 	public abstract void setProxy(final Proxy proxy);
 
 	public abstract List<ReverseLookupResponse> blockingLookup(final ReverseLookupRequest request) throws ReverseLookupException;
-	public abstract void asynchronousLookup(final ReverseLookupRequest request, final IReverseLookupResponseListener l) throws ReverseLookupException;
+	public abstract void asynchronousLookup(final List<ReverseLookupRequest> request, final IReverseLookupFinishedListener l) throws ReverseLookupException;
+	public abstract void asynchronousLookup(final ReverseLookupRequest request, final IReverseLookupFinishedListener l) throws ReverseLookupException;
 
 }

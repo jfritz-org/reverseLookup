@@ -9,7 +9,7 @@ import java.util.List;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import de.robotniko.reverseLookup.api.IReverseLookupResponseListener;
+import de.robotniko.reverseLookup.api.IReverseLookupFinishedListener;
 import de.robotniko.reverseLookup.api.IReverseLookupService;
 import de.robotniko.reverseLookup.api.ReverseLookupRequest;
 import de.robotniko.reverseLookup.api.ReverseLookupResponse;
@@ -21,6 +21,12 @@ public class ReverseLookupService implements IReverseLookupService {
 
 	private ReverseLookupManagement mgmt = new ReverseLookupManagement();
 	private Proxy proxy;
+	private ReverseLookupAsyncThread asyncThread;
+
+	public ReverseLookupService() {
+		asyncThread = new ReverseLookupAsyncThread(false);
+		asyncThread.start();
+	}
 
 	public void loadConfigFile(final String path) throws ReverseLookupException {
 		try {
@@ -42,9 +48,14 @@ public class ReverseLookupService implements IReverseLookupService {
 		}
 	}
 
+	public void asynchronousLookup(List<ReverseLookupRequest> requestList,
+			IReverseLookupFinishedListener l) throws ReverseLookupException {
+		asyncThread.addRequest(requestList, l);
+	}
+
 	public void asynchronousLookup(ReverseLookupRequest request,
-			IReverseLookupResponseListener l) throws ReverseLookupException {
-		// TODO Auto-generated method stub
+			IReverseLookupFinishedListener l) throws ReverseLookupException {
+		asyncThread.addRequest(request, l);
 	}
 
 	public List<ReverseLookupResponse> blockingLookup(

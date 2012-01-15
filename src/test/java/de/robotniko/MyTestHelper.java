@@ -13,7 +13,7 @@ public class MyTestHelper {
 		ca.setTarget("System.out");
 		ca.setLayout(new PatternLayout("%d{dd.MM.yyyy HH:mm:ss}|%p|%C{1}|%m%n"));
 		ca.activateOptions();
-		ca.setThreshold(Level.DEBUG);
+		ca.setThreshold(Level.WARN);
 		LogManager.getRootLogger().addAppender(ca);
 	}
 
