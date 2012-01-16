@@ -1,6 +1,6 @@
 package de.robotniko.reverseLookup.api;
 
-public class ReverseLookupResponse {
+public class ReverseLookupResponse implements Comparable<ReverseLookupResponse> {
 
 	private String foundBy;
 
@@ -59,5 +59,34 @@ public class ReverseLookupResponse {
 	}
 	public void setCity(String city) {
 		this.city = city;
+	}
+	public int compareTo(ReverseLookupResponse o) {
+		return (calculateFilledProperties(o) - calculateFilledProperties(this));
+	}
+
+	public static int calculateFilledProperties(final ReverseLookupResponse r) {
+		int numFilledFields = 0;
+		if (r.company != null && !r.company.equals("")) {
+			numFilledFields += 2;
+		}
+		if (r.firstName != null && !r.firstName.equals("")) {
+			numFilledFields++;
+		}
+		if (r.lastName != null && !r.lastName.equals("")) {
+			numFilledFields++;
+		}
+		if (r.street != null && !r.street.equals("")) {
+			numFilledFields++;
+		}
+		if (r.houseNumber != null && !r.houseNumber.equals("")) {
+			numFilledFields++;
+		}
+		if (r.zipCode != null && !r.zipCode.equals("")) {
+			numFilledFields++;
+		}
+		if (r.city != null && !r.city.equals("")) {
+			numFilledFields++;
+		}
+		return numFilledFields;
 	}
 }

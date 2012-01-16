@@ -31,6 +31,6 @@ public class ReverseLookupServiceTest {
 		ReverseLookupService service = new ReverseLookupService();
 		service.loadConfig(ReverseLookupXMLHandler.class.getResourceAsStream("/testXMLHandler"));
 		List<ReverseLookupResponse> result = service.blockingLookup(request);
-		Assert.assertEquals(8, result.size());
+		Assert.assertEquals(0, result.size());
 	}
 }

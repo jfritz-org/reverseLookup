@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.Proxy;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import de.robotniko.reverseLookup.api.ReverseLookupResponse;
@@ -35,6 +36,7 @@ public class ReverseLookupCountryProcessing {
 			}
 			try {
 				URLConnection urlConnection = siteConnection.connect(lookupSite, number);
+				System.out.println(urlConnection.getURL().toString());
 				this.charSet = siteConnection.getCharSet();
 
 				ReverseLookupSiteReader reader = new ReverseLookupSiteReader(urlConnection, charSet);
@@ -47,6 +49,18 @@ public class ReverseLookupCountryProcessing {
 				// do nothing here, maybe logging
 			}
 		}
+		Collections.sort(result);
+		result = removeMeaninglessEntries(result);
 		return result;
+	}
+
+	private List<ReverseLookupResponse> removeMeaninglessEntries(final List<ReverseLookupResponse> input) {
+		List<ReverseLookupResponse> output = new ArrayList<ReverseLookupResponse>();
+		for (ReverseLookupResponse r: input) {
+			if (ReverseLookupResponse.calculateFilledProperties(r) > 3) {
+				output.add(r);
+			}
+		}
+		return output;
 	}
 }

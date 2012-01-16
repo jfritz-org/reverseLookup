@@ -52,44 +52,44 @@ public class ReverseLookupCountryProcessingTest {
 		List<ReverseLookupResponse> result = cProcessing.process("07211330");
 		Assert.assertEquals(4, result.size());
 
-		ReverseLookupResponse result0 = result.get(0);
-		Assert.assertEquals("", result0.getCompany());
-		Assert.assertEquals("", result0.getFirstName());
-		Assert.assertEquals("Schulen", result0.getLastName());
-		Assert.assertEquals("Karl-Friedrich-Str.", result0.getStreet());
-		Assert.assertEquals("10", result0.getHouseNumber());
-		Assert.assertEquals("76133", result0.getZipCode());
-		Assert.assertEquals("Karlsruhe", result0.getCity());
-		Assert.assertEquals("www.dasoertliche.de", result0.getFoundBy());
-
-		ReverseLookupResponse result1 = result.get(1);
-		Assert.assertEquals("", result1.getCompany());
-		Assert.assertEquals("", result1.getFirstName());
-		Assert.assertEquals("Stadtverwaltung", result1.getLastName());
-		Assert.assertEquals("Karl-Friedrich-Str.", result1.getStreet());
-		Assert.assertEquals("10", result1.getHouseNumber());
-		Assert.assertEquals("76133", result1.getZipCode());
+		ReverseLookupResponse result1 = result.get(0);
+		Assert.assertNull(result1.getCompany());
+		Assert.assertEquals("Galerie", result1.getFirstName());
+		Assert.assertEquals("Städtische", result1.getLastName());
+		Assert.assertEquals("Lorenzstr.", result1.getStreet());
+		Assert.assertEquals("27", result1.getHouseNumber());
+		Assert.assertEquals("76135", result1.getZipCode());
 		Assert.assertEquals("Karlsruhe", result1.getCity());
 		Assert.assertEquals("www.dasoertliche.de", result1.getFoundBy());
 
-		ReverseLookupResponse result2 = result.get(2);
-		Assert.assertEquals("", result2.getCompany());
+		ReverseLookupResponse result2 = result.get(1);
+		Assert.assertNull(result2.getCompany());
 		Assert.assertEquals("", result2.getFirstName());
-		Assert.assertEquals("Stadtverwaltung", result2.getLastName());
+		Assert.assertEquals("Schulen", result2.getLastName());
 		Assert.assertEquals("Karl-Friedrich-Str.", result2.getStreet());
 		Assert.assertEquals("10", result2.getHouseNumber());
 		Assert.assertEquals("76133", result2.getZipCode());
 		Assert.assertEquals("Karlsruhe", result2.getCity());
 		Assert.assertEquals("www.dasoertliche.de", result2.getFoundBy());
 
-		ReverseLookupResponse result3 = result.get(3);
-		Assert.assertEquals("", result3.getCompany());
-		Assert.assertEquals("Galerie", result3.getFirstName());
-		Assert.assertEquals("Städtische", result3.getLastName());
-		Assert.assertEquals("Lorenzstr.", result3.getStreet());
-		Assert.assertEquals("27", result3.getHouseNumber());
-		Assert.assertEquals("76135", result3.getZipCode());
+		ReverseLookupResponse result3 = result.get(2);
+		Assert.assertNull(result3.getCompany());
+		Assert.assertEquals("", result3.getFirstName());
+		Assert.assertEquals("Stadtverwaltung", result3.getLastName());
+		Assert.assertEquals("Karl-Friedrich-Str.", result3.getStreet());
+		Assert.assertEquals("10", result3.getHouseNumber());
+		Assert.assertEquals("76133", result3.getZipCode());
 		Assert.assertEquals("Karlsruhe", result3.getCity());
 		Assert.assertEquals("www.dasoertliche.de", result3.getFoundBy());
+
+		ReverseLookupResponse result4 = result.get(3);
+		Assert.assertNull(result4.getCompany());
+		Assert.assertEquals("", result4.getFirstName());
+		Assert.assertEquals("Stadtverwaltung", result4.getLastName());
+		Assert.assertEquals("Karl-Friedrich-Str.", result4.getStreet());
+		Assert.assertEquals("10", result4.getHouseNumber());
+		Assert.assertEquals("76133", result4.getZipCode());
+		Assert.assertEquals("Karlsruhe", result4.getCity());
+		Assert.assertEquals("www.dasoertliche.de", result4.getFoundBy());
 	}
 }

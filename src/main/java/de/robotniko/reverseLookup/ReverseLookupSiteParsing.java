@@ -9,7 +9,6 @@ import de.robotniko.reverseLookup.structs.ParseItem;
 import de.robotniko.reverseLookup.structs.ReverseLookupSite;
 
 public class ReverseLookupSiteParsing {
-
 	private ReverseLookupSite lookupSite;
 	private List<String> lines;
 

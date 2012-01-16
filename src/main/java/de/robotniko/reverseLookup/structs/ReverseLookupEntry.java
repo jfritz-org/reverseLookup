@@ -9,6 +9,7 @@ public class ReverseLookupEntry {
 	private String houseNumberPattern;
 	private String cityPattern;
 	private String zipPattern;
+	private String companyPattern;
 
 	private String firstOccurance;
 	private boolean swapFirstAndLastName = false;
@@ -67,6 +68,14 @@ public class ReverseLookupEntry {
 
 	public void setZipPattern(String zipPattern) {
 		this.zipPattern = zipPattern;
+	}
+
+	public String getCompanyPattern() {
+		return this.companyPattern;
+	}
+
+	public void setCompanyPattern(String companyPattern) {
+		this.companyPattern = companyPattern;
 	}
 
 	public String getFirstOccurance() {

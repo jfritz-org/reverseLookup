@@ -1,19 +1,14 @@
 package de.robotniko.reverseLookup.countries;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.xml.sax.SAXException;
 
 import de.robotniko.MyTestHelper;
-import de.robotniko.reverseLookup.ReverseLookupService;
 import de.robotniko.reverseLookup.api.IReverseLookupFinishedListener;
 import de.robotniko.reverseLookup.api.IReverseLookupResponseListener;
 import de.robotniko.reverseLookup.api.IReverseLookupService;
@@ -40,18 +35,18 @@ public class GermanyAsyncTest {
 	}
 
 	@Test
-	public void testBlockingLookupStaatstheater() throws InterruptedException, ReverseLookupException {
+	public void testAsync() throws InterruptedException, ReverseLookupException {
 		final List<ReverseLookupRequest> requestList = new ArrayList<ReverseLookupRequest>();
 
-		ResponseAssertListener l1 = new ResponseAssertListener(1, "", "Am Theater", "STAATSTHEATER", "Am Theater", "", "38100", "Braunschweig");
+		ResponseAssertListener l1 = new ResponseAssertListener(1, null, "Am Theater", "STAATSTHEATER", "Am Theater", "", "38100", "Braunschweig");
 		ReverseLookupRequest request1 = new ReverseLookupRequest("+495311234567", l1);
 		requestList.add(request1);
 
-		ResponseAssertListener l2 = new ResponseAssertListener(1, "", "Annette", "Zehner", "An der Alten Kirche", "3", "35745", "Herborn");
+		ResponseAssertListener l2 = new ResponseAssertListener(1, null, "Annette", "Zehner", "An der Alten Kirche", "3", "35745", "Herborn");
 		ReverseLookupRequest request2 = new ReverseLookupRequest("+49277242239", l2);
 		requestList.add(request2);
 
-		ResponseAssertListener l3 = new ResponseAssertListener(1, "", "Rainer", "Ullrich", "Zugspitzstr.", "20", "85609", "Aschheim");
+		ResponseAssertListener l3 = new ResponseAssertListener(1, null, "Rainer", "Ullrich", "Zugspitzstr.", "20", "85609", "Aschheim");
 		ReverseLookupRequest request3 = new ReverseLookupRequest("+498990199190", l3);
 		requestList.add(request3);
 
@@ -69,7 +64,7 @@ public class GermanyAsyncTest {
 
 		Thread.sleep(3000);
 
-		ResponseAssertListener l4 = new ResponseAssertListener(2, "", "O. Dr.med.", "Then", "Bahnhofplatz", "7", "82054", "Sauerlach");
+		ResponseAssertListener l4 = new ResponseAssertListener(2, null, "O. Dr.med.", "Then", "Bahnhofplatz", "7", "82054", "Sauerlach");
 		ReverseLookupRequest request4 = new ReverseLookupRequest("+498104889820", l4);
 		requestList.add(request4);
 

@@ -22,6 +22,7 @@ public class ReverseLookupEntryParsing {
 	private Pattern streetPattern;
 	private Pattern houseNumberPattern;
 	private Pattern zipPattern;
+	private Pattern companyPattern;
 
 	private List<ParseItem> parseItems = new ArrayList<ParseItem>();
 
@@ -43,6 +44,7 @@ public class ReverseLookupEntryParsing {
 		Matcher streetMatcher;
 		Matcher houseNumberMatcher;
 		Matcher zipMatcher;
+		Matcher companyMatcher;
 
 		if (namePattern != null) {
 			nameMatcher = namePattern.matcher(currentLine);
@@ -92,6 +94,13 @@ public class ReverseLookupEntryParsing {
 				parseItems.add(parseLine(ParseItemType.ZIPCODE, zipMatcher, lineNumber));
 			}
 		}
+
+		if (companyPattern != null) {
+			companyMatcher = companyPattern.matcher(currentLine);
+			if (companyMatcher.find()) {
+				parseItems.add(parseLine(ParseItemType.COMPANY, companyMatcher, lineNumber));
+			}
+		}
 	}
 
 	private void initPatterns(final ReverseLookupEntry entry) {
@@ -115,6 +124,9 @@ public class ReverseLookupEntryParsing {
 		}
 		if (entry.getZipPattern() != null) {
 			this.zipPattern = Pattern.compile(entry.getZipPattern());
+		}
+		if (entry.getCompanyPattern() != null) {
+			this.companyPattern = Pattern.compile(entry.getCompanyPattern());
 		}
 	}
 
@@ -165,10 +177,6 @@ public class ReverseLookupEntryParsing {
 
 		ParseItem firstnameItem = new ParseItem(ParseItemType.FIRSTNAME);
 		ParseItem lastnameItem = new ParseItem(ParseItemType.LASTNAME);
-		ParseItem companyItem = new ParseItem(ParseItemType.COMPANY);
-		companyItem.setLine(line);
-		companyItem.setStartIndex(nameMatcher.start(1));
-		companyItem.setValue("");
 
 		if (!entry.shouldSwapFirstAndLastName()) {
 			lastnameItem.setLine(line);
@@ -189,7 +197,6 @@ public class ReverseLookupEntryParsing {
 		List<ParseItem> result = new ArrayList<ParseItem>();
 		result.add(firstnameItem);
 		result.add(lastnameItem);
-		result.add(companyItem);
 
 		return result;
 	}

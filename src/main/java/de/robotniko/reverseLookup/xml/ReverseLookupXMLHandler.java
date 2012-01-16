@@ -24,6 +24,7 @@ public class ReverseLookupXMLHandler extends DefaultHandler {
 	private boolean parsingHouseNumber = false;
 	private boolean parsingCity = false;
 	private boolean parsingZipCode = false;
+	private boolean parsingCompany = false;
 
 	private String readCharacters = "";
 	private ReverseLookupManagement mgmt;
@@ -83,6 +84,8 @@ public class ReverseLookupXMLHandler extends DefaultHandler {
 			parsingCity = true;
 		} else if ("zipcode".equalsIgnoreCase(tagName)) {
 			parsingZipCode = true;
+		} else if ("company".equalsIgnoreCase(tagName)) {
+			parsingCompany = true;
 		}
 
 		readCharacters = "";
@@ -119,6 +122,9 @@ public class ReverseLookupXMLHandler extends DefaultHandler {
 		} else if (parsingZipCode && entry != null) {
 			entry.setZipPattern(readCharacters);
 			parsingZipCode = false;
+		} else if (parsingCompany && entry != null) {
+			entry.setCompanyPattern(readCharacters);
+			parsingCompany = false;
 		}
 	}
 

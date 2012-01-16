@@ -47,7 +47,7 @@ public class GermanyBlockingTest {
 
 		Assert.assertEquals(1, results.size());
 		ReverseLookupResponse result = results.get(0);
-		Assert.assertEquals("", result.getCompany());
+		Assert.assertNull(result.getCompany());
 		Assert.assertEquals("Am Theater", result.getFirstName());
 		Assert.assertEquals("STAATSTHEATER", result.getLastName());
 		Assert.assertEquals("Am Theater", result.getStreet());
@@ -69,7 +69,7 @@ public class GermanyBlockingTest {
 
 		Assert.assertEquals(1, results.size());
 		ReverseLookupResponse result = results.get(0);
-		Assert.assertEquals("", result.getCompany());
+		Assert.assertNull(result.getCompany());
 		Assert.assertEquals("Annette", result.getFirstName());
 		Assert.assertEquals("Zehner", result.getLastName());
 		Assert.assertEquals("An der Alten Kirche", result.getStreet());
@@ -91,7 +91,7 @@ public class GermanyBlockingTest {
 
 		Assert.assertEquals(1, results.size());
 		ReverseLookupResponse result = results.get(0);
-		Assert.assertEquals("", result.getCompany());
+		Assert.assertNull(result.getCompany());
 		Assert.assertEquals("Rainer", result.getFirstName());
 		Assert.assertEquals("Ullrich", result.getLastName());
 		Assert.assertEquals("Zugspitzstr.", result.getStreet());
@@ -113,7 +113,7 @@ public class GermanyBlockingTest {
 
 		Assert.assertEquals(2, results.size());
 		ReverseLookupResponse result = results.get(0);
-		Assert.assertEquals("", result.getCompany());
+		Assert.assertNull(result.getCompany());
 		Assert.assertEquals("O. Dr.med.", result.getFirstName());
 		Assert.assertEquals("Then", result.getLastName());
 		Assert.assertEquals("Bahnhofplatz", result.getStreet());
@@ -135,7 +135,7 @@ public class GermanyBlockingTest {
 
 		Assert.assertEquals(1, results.size());
 		ReverseLookupResponse result = results.get(0);
-		Assert.assertEquals("", result.getCompany());
+		Assert.assertNull(result.getCompany());
 		Assert.assertEquals("", result.getFirstName());
 		Assert.assertEquals("Apollo-Optik", result.getLastName());
 		Assert.assertEquals("Äußere Bayreuther Str.", result.getStreet());
@@ -157,7 +157,7 @@ public class GermanyBlockingTest {
 
 		Assert.assertEquals(1, results.size());
 		ReverseLookupResponse result = results.get(0);
-		Assert.assertEquals("", result.getCompany());
+		Assert.assertNull(result.getCompany());
 		Assert.assertEquals("Car", result.getFirstName());
 		Assert.assertEquals("City", result.getLastName());
 		Assert.assertEquals("Kleiststr.", result.getStreet());
@@ -179,7 +179,7 @@ public class GermanyBlockingTest {
 
 		Assert.assertEquals(1, results.size());
 		ReverseLookupResponse result = results.get(0);
-		Assert.assertEquals("", result.getCompany());
+		Assert.assertNull(result.getCompany());
 		Assert.assertEquals("Michael u. Martina", result.getFirstName());
 		Assert.assertEquals("Schmidt", result.getLastName());
 		Assert.assertEquals("Treisberger Weg", result.getStreet());
@@ -201,7 +201,7 @@ public class GermanyBlockingTest {
 
 		Assert.assertEquals(2, results.size());
 		ReverseLookupResponse result = results.get(0);
-		Assert.assertEquals("", result.getCompany());
+		Assert.assertNull(result.getCompany());
 		Assert.assertEquals("Heidelberg", result.getFirstName());
 		Assert.assertEquals("Universitätsklinikum", result.getLastName());
 		Assert.assertEquals("Im Neuenheimer Feld", result.getStreet());
@@ -223,7 +223,7 @@ public class GermanyBlockingTest {
 
 		Assert.assertEquals(2, results.size());
 		ReverseLookupResponse result = results.get(0);
-		Assert.assertEquals("", result.getCompany());
+		Assert.assertNull(result.getCompany());
 		Assert.assertEquals("LAGO", result.getFirstName());
 		Assert.assertEquals("Bowling-Center", result.getLastName());
 		Assert.assertEquals("Gablonzer Str.", result.getStreet());
@@ -245,7 +245,7 @@ public class GermanyBlockingTest {
 
 		Assert.assertEquals(1, results.size());
 		ReverseLookupResponse result = results.get(0);
-		Assert.assertEquals("", result.getCompany());
+		Assert.assertNull(result.getCompany());
 		Assert.assertEquals("Birgit u. Dirk", result.getFirstName());
 		Assert.assertEquals("Lütkefent", result.getLastName());
 		Assert.assertEquals("Moarstr.", result.getStreet());
@@ -267,7 +267,7 @@ public class GermanyBlockingTest {
 
 		Assert.assertEquals(1, results.size());
 		ReverseLookupResponse result = results.get(0);
-		Assert.assertEquals("", result.getCompany());
+		Assert.assertNull(result.getCompany());
 		Assert.assertEquals("Alfred Steuerberater", result.getFirstName());
 		Assert.assertEquals("Pritzl", result.getLastName());
 		Assert.assertEquals("Südliche Münchner Str.", result.getStreet());
