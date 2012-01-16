@@ -57,7 +57,7 @@ public class ReverseLookupRequest implements Comparable<ReverseLookupRequest> {
 	}
 
 	public int compareTo(ReverseLookupRequest o) {
-		int prioComp = Integer.compare(this.priority, o.getPriority());
+		int prioComp = Integer.valueOf(this.priority).compareTo(o.getPriority());
 		if (prioComp == 0) {
 			return internationalPhoneNumber.compareTo(o.getInternationalPhoneNumber());
 		} else {
