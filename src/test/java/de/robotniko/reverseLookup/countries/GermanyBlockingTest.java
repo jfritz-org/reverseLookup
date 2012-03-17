@@ -35,6 +35,28 @@ public class GermanyBlockingTest {
 	}
 
 	@Test
+	public void testJoo() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
+		ReverseLookupRequest request = new ReverseLookupRequest("+49721502943");
+
+		List<ReverseLookupResponse> results = service.blockingLookup(request);
+
+		System.out.println("Number of results: " + results.size());
+		for (int i=0; i<results.size(); i++) {
+			outputResponse(results.get(i));
+		}
+		// TODO DasÖrtliche liefert eine falsche Antwort
+		Assert.assertEquals(1, results.size());
+		ReverseLookupResponse result = results.get(0);
+		Assert.assertNull(result.getCompany());
+		Assert.assertEquals("J.", result.getFirstName());
+		Assert.assertEquals("Joo", result.getLastName());
+		Assert.assertEquals("", result.getStreet());
+		Assert.assertEquals("", result.getHouseNumber());
+		Assert.assertEquals("", result.getZipCode());
+		Assert.assertEquals("", result.getCity());
+	}
+
+	@Test
 	public void test1() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		ReverseLookupRequest request = new ReverseLookupRequest("+49292113115");
 

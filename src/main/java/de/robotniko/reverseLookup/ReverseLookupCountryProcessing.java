@@ -57,7 +57,7 @@ public class ReverseLookupCountryProcessing {
 	private List<ReverseLookupResponse> removeMeaninglessEntries(final List<ReverseLookupResponse> input) {
 		List<ReverseLookupResponse> output = new ArrayList<ReverseLookupResponse>();
 		for (ReverseLookupResponse r: input) {
-			if (ReverseLookupResponse.calculateFilledProperties(r) > 3) {
+			if (ReverseLookupResponse.calculateFilledProperties(r) > 0) {
 				output.add(r);
 			}
 		}
