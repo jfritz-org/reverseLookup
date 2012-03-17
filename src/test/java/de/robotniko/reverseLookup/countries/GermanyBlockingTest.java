@@ -35,6 +35,50 @@ public class GermanyBlockingTest {
 	}
 
 	@Test
+	public void test1() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
+		ReverseLookupRequest request = new ReverseLookupRequest("+49292113115");
+
+		List<ReverseLookupResponse> results = service.blockingLookup(request);
+
+		System.out.println("Number of results: " + results.size());
+		for (int i=0; i<results.size(); i++) {
+			outputResponse(results.get(i));
+		}
+		// TODO DasÖrtliche liefert eine falsche Antwort
+		Assert.assertEquals(1, results.size());
+		ReverseLookupResponse result = results.get(0);
+		Assert.assertNull(result.getCompany());
+		Assert.assertEquals("Am Theater", result.getFirstName());
+		Assert.assertEquals("STAATSTHEATER", result.getLastName());
+		Assert.assertEquals("Am Theater", result.getStreet());
+		Assert.assertEquals("", result.getHouseNumber());
+		Assert.assertEquals("38100", result.getZipCode());
+		Assert.assertEquals("Braunschweig", result.getCity());
+	}
+
+	@Test
+	public void test2() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
+		ReverseLookupRequest request = new ReverseLookupRequest("+497143830091");
+
+		List<ReverseLookupResponse> results = service.blockingLookup(request);
+
+		System.out.println("Number of results: " + results.size());
+		for (int i=0; i<results.size(); i++) {
+			outputResponse(results.get(i));
+		}
+		// TODO DasÖrtliche liefert eine falsche Antwort
+		Assert.assertEquals(1, results.size());
+		ReverseLookupResponse result = results.get(0);
+		Assert.assertNull(result.getCompany());
+		Assert.assertEquals("Am Theater", result.getFirstName());
+		Assert.assertEquals("STAATSTHEATER", result.getLastName());
+		Assert.assertEquals("Am Theater", result.getStreet());
+		Assert.assertEquals("", result.getHouseNumber());
+		Assert.assertEquals("38100", result.getZipCode());
+		Assert.assertEquals("Braunschweig", result.getCity());
+	}
+
+	@Test
 	public void testBlockingLookupStaatstheater() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		ReverseLookupRequest request = new ReverseLookupRequest("+495311234567");
 
@@ -205,7 +249,7 @@ public class GermanyBlockingTest {
 		Assert.assertEquals("Heidelberg", result.getFirstName());
 		Assert.assertEquals("Universitätsklinikum", result.getLastName());
 		Assert.assertEquals("Im Neuenheimer Feld", result.getStreet());
-		Assert.assertEquals("325", result.getHouseNumber());
+		Assert.assertEquals("672", result.getHouseNumber());
 		Assert.assertEquals("69120", result.getZipCode());
 		Assert.assertEquals("Heidelberg", result.getCity());
 	}
