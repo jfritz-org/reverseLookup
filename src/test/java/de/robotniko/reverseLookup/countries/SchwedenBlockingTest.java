@@ -46,7 +46,7 @@ public class SchwedenBlockingTest {
 		}
 
 
-		Assert.assertEquals(4, results.size());
+		Assert.assertEquals(6, results.size());
 		ReverseLookupResponse result = results.get(0);
 		Assert.assertNull(result.getCompany());
 		Assert.assertEquals("Birgitta", result.getFirstName());
@@ -68,7 +68,7 @@ public class SchwedenBlockingTest {
 			outputResponse(results.get(i));
 		}
 
-		Assert.assertEquals(2, results.size());
+		Assert.assertEquals(3, results.size());
 		ReverseLookupResponse result = results.get(0);
 		Assert.assertNull(result.getCompany());
 		Assert.assertEquals("Johan", result.getFirstName());

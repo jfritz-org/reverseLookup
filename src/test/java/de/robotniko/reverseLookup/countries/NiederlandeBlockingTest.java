@@ -48,8 +48,8 @@ public class NiederlandeBlockingTest {
 		Assert.assertEquals(1, results.size());
 		ReverseLookupResponse result = results.get(0);
 		Assert.assertNull(result.getCompany());
-		Assert.assertEquals("", result.getFirstName());
-		Assert.assertEquals("Camping International", result.getLastName());
+		Assert.assertEquals("International", result.getFirstName());
+		Assert.assertEquals("Camping", result.getLastName());
 		Assert.assertEquals("Sint Bavodijk 2/D", result.getStreet());
 		Assert.assertNull(result.getHouseNumber());
 		Assert.assertEquals("4504AA", result.getZipCode());

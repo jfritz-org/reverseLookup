@@ -46,7 +46,7 @@ public class USABlockingTest {
 		}
 
 
-		Assert.assertEquals(4, results.size());
+		Assert.assertEquals(16, results.size());
 		ReverseLookupResponse result = results.get(0);
 		Assert.assertNull(result.getCompany());
 		Assert.assertEquals("Adam S", result.getFirstName());
@@ -68,7 +68,7 @@ public class USABlockingTest {
 			outputResponse(results.get(i));
 		}
 
-		Assert.assertEquals(2, results.size());
+		Assert.assertEquals(14, results.size());
 		ReverseLookupResponse result = results.get(0);
 		Assert.assertNull(result.getCompany());
 		Assert.assertEquals("Jennifer L", result.getFirstName());
