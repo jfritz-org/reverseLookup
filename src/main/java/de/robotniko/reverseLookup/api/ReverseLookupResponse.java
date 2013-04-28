@@ -1,16 +1,12 @@
 package de.robotniko.reverseLookup.api;
 
+import de.robotniko.reverseLookup.structs.Person;
+
 public class ReverseLookupResponse implements Comparable<ReverseLookupResponse> {
 
 	private String foundBy;
 
-	private String firstName;
-	private String lastName;
-	private String company;
-	private String street;
-	private String houseNumber;
-	private String zipCode;
-	private String city;
+	protected Person person = new Person();
 
 	public String getFoundBy() {
 		return foundBy;
@@ -19,72 +15,73 @@ public class ReverseLookupResponse implements Comparable<ReverseLookupResponse> 
 		this.foundBy = foundBy;
 	}
 	public String getFirstName() {
-		return firstName;
+		return person.getFirstName();
 	}
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		this.person.setFirstName(firstName);
 	}
 	public String getLastName() {
-		return lastName;
+		return person.getLastName();
 	}
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		this.person.setLastName(lastName);
 	}
 	public String getCompany() {
-		return company;
+		return person.getCompany();
 	}
 	public void setCompany(String company) {
-		this.company = company;
+		this.person.setCompany(company);
 	}
 	public String getStreet() {
-		return street;
+		return person.getStreet();
 	}
 	public void setStreet(String street) {
-		this.street = street;
+		this.person.setStreet(street);
 	}
 	public String getHouseNumber() {
-		return houseNumber;
+		return person.getHouseNumber();
 	}
 	public void setHouseNumber(String houseNumber) {
-		this.houseNumber = houseNumber;
+		this.person.setHouseNumber(houseNumber);
 	}
 	public String getZipCode() {
-		return zipCode;
+		return person.getZipCode();
 	}
 	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
+		this.person.setZipCode(zipCode);
 	}
 	public String getCity() {
-		return city;
+		return person.getCity();
 	}
 	public void setCity(String city) {
-		this.city = city;
+		this.person.setCity(city);
 	}
+
 	public int compareTo(ReverseLookupResponse o) {
 		return (calculateFilledProperties(o) - calculateFilledProperties(this));
 	}
 
 	public static int calculateFilledProperties(final ReverseLookupResponse r) {
 		int numFilledFields = 0;
-		if (r.company != null && !r.company.equals("")) {
+		if (r.person.getCompany() != null && !r.person.getCompany().equals("")) {
 			numFilledFields += 2;
 		}
-		if (r.firstName != null && !r.firstName.equals("")) {
+		if (r.person.getFirstName() != null && !r.person.getFirstName().equals("")) {
 			numFilledFields++;
 		}
-		if (r.lastName != null && !r.lastName.equals("")) {
+		if (r.person.getLastName()!= null && !r.person.getLastName().equals("")) {
 			numFilledFields++;
 		}
-		if (r.street != null && !r.street.equals("")) {
+		if (r.person.getStreet() != null && !r.person.getStreet().equals("")) {
 			numFilledFields++;
 		}
-		if (r.houseNumber != null && !r.houseNumber.equals("")) {
+		if (r.person.getHouseNumber() != null && !r.person.getHouseNumber().equals("")) {
 			numFilledFields++;
 		}
-		if (r.zipCode != null && !r.zipCode.equals("")) {
+		if (r.person.getZipCode() != null && !r.getZipCode().equals("")) {
 			numFilledFields++;
 		}
-		if (r.city != null && !r.city.equals("")) {
+		if (r.person.getCity() != null && !r.getCity().equals("")) {
 			numFilledFields++;
 		}
 		return numFilledFields;

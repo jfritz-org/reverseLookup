@@ -2,9 +2,6 @@
 
 <!-- reverselookup.xml
 
-$Revision: 675 $
-$Date: 2012-07-28 16:21:25 +0200 (Sat, 28 Jul 2012) $
-
 	 The syntax of this file is fairly self-explanatory
      However, a few things need to be said. First and foremost
      everything in here needs to be xml compliant, that means all
@@ -836,7 +833,7 @@ $Date: 2012-07-28 16:21:25 +0200 (Sat, 28 Jul 2012) $
 	<country code="+43">
 		<website name="herold.at (Privat)" url="http://www.herold.at/servlet/at.herold.sp.servlet.SPWPSearchServlet?searchmask=2&amp;phone=$NUMBER" prefix="0">
 			<entry>
-				<name>&lt;h2 class=&quot;fullw&quot;&gt;&lt;a href=&quot;[^&quot;]*&quot;&gt;([^&lt;]*)&lt;/a&gt;&lt;/h2&gt;&lt;div class=&quot;addr fullw&quot;&gt;&lt;p&gt;[\d]+ [^&lt;]*&lt;br /&gt;</name>
+			    <name>&lt;h2 class=&quot;fullw&quot;&gt;&lt;a\s+[^&gt;]*&gt;([^&lt;]*)&lt;</name>
 				<street>&lt;h2 class=&quot;fullw&quot;&gt;&lt;a href=&quot;[^&quot;]*&quot;&gt;[^&lt;]*&lt;/a&gt;&lt;/h2&gt;&lt;div class=&quot;addr fullw&quot;&gt;&lt;p&gt;[\d]+ [^,]*, ([^&lt;]*)&lt;br /&gt;</street>
 				<city>&lt;h2 class=&quot;fullw&quot;&gt;&lt;a href=&quot;[^&quot;]*&quot;&gt;[^&lt;]*&lt;/a&gt;&lt;/h2&gt;&lt;div class=&quot;addr fullw&quot;&gt;&lt;p&gt;[\d]+ ([^,]*), [^&lt;]*&lt;br /&gt;</city>
 				<zipcode>&lt;h2 class=&quot;fullw&quot;&gt;&lt;a href=&quot;[^&quot;]*&quot;&gt;[^&lt;]*&lt;/a&gt;&lt;/h2&gt;&lt;div class=&quot;addr fullw&quot;&gt;&lt;p&gt;([\d]+) [^,]*, [^&lt;]*&lt;br /&gt;</zipcode>
@@ -844,21 +841,18 @@ $Date: 2012-07-28 16:21:25 +0200 (Sat, 28 Jul 2012) $
 		</website>
 		<website name="herold.at (Firma)" url="http://www.herold.at/servlet/at.herold.sp.servlet.SPYPSearchServlet?searchmask=2&amp;phone=$NUMBER" prefix="0">
 			<entry>
-				<name>&lt;h[1-9]&gt;&lt;a href=&quot;[^&quot;]*&quot;\s*class=&quot;bold&quot;&gt;([^&lt;]*)&lt;/a&gt;&lt;/h[1-9]&gt;</name>
-				<street>&lt;div class=&quot;addrF&quot;&gt;&lt;p class=&quot;bold&quot;&gt;\s*[^,]*,\s*([^&lt;]*)&lt;br/&gt;&lt;/p&gt;</street>
-				<city>&lt;div class=&quot;addrF&quot;&gt;&lt;p class=&quot;bold&quot;&gt;\s*[^\s]*([^,]*),\s[^&lt;]*&lt;br/&gt;&lt;/p&gt;</city>
-				<zipcode>&lt;div class=&quot;addrF&quot;&gt;&lt;p class=&quot;bold&quot;&gt;\s*([^\s]*)\s[^,]*,\s*[^&lt;]*&lt;br/&gt;&lt;/p&gt;</zipcode>
+			    <company>&lt;h2 class=&quot;fullw&quot;&gt;&lt;a\s+[^&gt;]*&gt;([^&lt;]*)&lt;</company>
+				<street>&lt;div class=&quot;addr fullw&quot;&gt;(?:&lt;p[^&gt;]*&gt;)(?:&lt;a href[^&gt;]*&gt;[^&lt;]*&lt;/a&gt;)(?:&lt;/p&gt;)&lt;p&gt;[\d]+ [^,]*, ([^&lt;]*)&lt;br /&gt;&lt;/p&gt;</street>
+				<city>&lt;div class=&quot;addr fullw&quot;&gt;(?:&lt;p[^&gt;]*&gt;)(?:&lt;a href[^&gt;]*&gt;[^&lt;]*&lt;/a&gt;)(?:&lt;/p&gt;)&lt;p&gt;[\d]+ ([^,]*), [^&lt;]*&lt;br /&gt;&lt;/p&gt;</city>
+				<zipcode>&lt;div class=&quot;addr fullw&quot;&gt;(?:&lt;p[^&gt;]*&gt;)(?:&lt;a href[^&gt;]*&gt;[^&lt;]*&lt;/a&gt;)(?:&lt;/p&gt;)&lt;p&gt;([\d]+) [^,]*, [^&lt;]*&lt;br /&gt;&lt;/p&gt;</zipcode>
 			</entry>
 		</website>
-		<website name="tb-online.at" url="http://www.tb-online.at/index.php?pc=in&amp;telnummer=$NUMBER&amp;aktion=suchein" prefix="0">
+		<website name="tb-online.at" url="http://www.dasschnelle.at/result/index?what=$NUMBER" prefix="0" charset="utf-8">
 			<entry>
-				<!-- 
-				zipcode hidden as image...
-				-->
-				<name>&lt;p\s*class=&quot;name&quot;&gt;\s*([^&lt;]*)&lt;/p&gt;</name>
-				<street>&lt;p&gt;([^&lt;]*)&lt;/p&gt;\s*&lt;p&gt;&lt;img class=&quot;img&quot; src=&quot;grafikpng.php?[^&gt;]*&gt;&amp;nbsp;[^&lt;]*&lt;/p&gt;</street>
-				<city>&lt;p&gt;[^&lt;]*&lt;/p&gt;\s*&lt;p&gt;&lt;img class=&quot;img&quot; src=&quot;grafikpng.php?[^&gt;]*&gt;&amp;nbsp;([^&lt;]*)&lt;/p&gt;</city>
-				<zipcode>()</zipcode>
+				<name>name\s*:\s*&quot;([^&quot;]*)&quot;</name>
+				<street>strasse\s*:\s*&quot;([^&quot;]*)&quot;</street>
+				<city>ort\s*:\s*&quot;([^&quot;]*)&quot;</city>
+				<zipcode>plz\s*:\s*&quot;([^&quot;]*)&quot;</zipcode>
 			</entry>
 		</website>				
 	</country>
@@ -1598,6 +1592,3 @@ $Date: 2012-07-28 16:21:25 +0200 (Sat, 28 Jul 2012) $
 		</website>
 	</country>
 </reverselookup>
-	
-
-	

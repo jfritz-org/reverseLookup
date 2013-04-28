@@ -143,9 +143,13 @@ public class ReverseLookupEntryParsing {
 		ParseItem parseItem = new ParseItem(type);
 		parseItem.setLine(lineNumber);
 		parseItem.setStartIndex(matcher.start(1));
-		parseItem.setValue(value);
+		parseItem.setValue(removeUnnecessaryWhitespaces(value));
 
 		return parseItem;
+	}
+	
+	private String removeUnnecessaryWhitespaces(String input) {
+		return input.trim().replaceAll(" +", " ");
 	}
 
 	private String cleanupString(String str) {

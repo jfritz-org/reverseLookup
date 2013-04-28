@@ -20,11 +20,12 @@ public class ReverseLookupSiteConnection {
 	private static final String USER_AGENT = "Mozilla/5.0 (Windows; U; Windows NT 6.0; de; rv:1.9.1) Gecko/20090624 Firefox/3.5 (.NET CLR 3.5.30729)";
 
 	private Proxy proxy = Proxy.NO_PROXY;
-	private String charSet = "ISO-8859-1";
+	private String charset = "ISO-8859-1";
 
 	private URLConnection urlConnection;
 	private ReverseLookupSite lookupSite;
-
+	private String requestUrl;
+	
 	public void setProxy(final Proxy p) {
 		proxy = p;
 	}
@@ -33,14 +34,18 @@ public class ReverseLookupSiteConnection {
 		LOG.debug("ReverseLookup using " + lookupSite.getName());
 		this.lookupSite = lookupSite;
 		String refactoredNumber = refactorNumber(number);
-		String urlString = replacePlaceHoldersInURL(
+		requestUrl = replacePlaceHoldersInURL(
 				lookupSite.getUrl().toString(),
 				lookupSite.getPrefix(),
 				lookupSite.getAreaCodeLength(),
 				refactoredNumber);
 
-		establishConnection(urlString);
+		establishConnection(requestUrl);
 		return this.urlConnection;
+	}
+	
+	public String getRequestUrl() {
+		return requestUrl;
 	}
 
 	private String refactorNumber(final String number) {
@@ -84,7 +89,7 @@ public class ReverseLookupSiteConnection {
 
 	private void parseHeaders() {
 		LOG.debug("Parsing headers");
-		charSet = "ISO-8859-1";
+		charset = lookupSite.getCharset();
 
 		Map<String, List<String>> headerFields = urlConnection.getHeaderFields();
 		Set<String> keys = headerFields.keySet();
@@ -103,8 +108,8 @@ public class ReverseLookupSiteConnection {
 				for (String v: split) {
 					if (v.trim().toLowerCase().startsWith("charset=")) {
 						String[] charsetSplit = v.split("="); //$NON-NLS-1$
-						charSet = charsetSplit[1].trim();
-						LOG.debug("Found defined charSet: " + charSet);
+						charset = charsetSplit[1].trim();
+						LOG.debug("Found defined charSet: " + charset);
 					}
 				}
 			}
@@ -112,6 +117,6 @@ public class ReverseLookupSiteConnection {
 	}
 
 	public String getCharSet() {
-		return this.charSet;
+		return this.charset;
 	}
 }

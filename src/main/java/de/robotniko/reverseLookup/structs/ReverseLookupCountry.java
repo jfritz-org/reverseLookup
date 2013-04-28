@@ -32,4 +32,13 @@ public class ReverseLookupCountry {
 		}
 		return null;
 	}
+	
+	public ReverseLookupSite getLookupSiteByName(final String name) {
+		for (int i=0; i<sites.size(); i++) {
+			if (sites.get(i).getName().equals(name)) {
+				return sites.get(i);
+			}
+		}
+		return null;
+	}
 }

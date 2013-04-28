@@ -1,7 +1,6 @@
 package de.robotniko.reverseLookup;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.Proxy;
 import java.util.List;
@@ -66,21 +65,25 @@ public class ReverseLookupService implements IReverseLookupService {
 		asyncThread.terminate();
 	}
 
-	public List<ReverseLookupResponse> blockingLookup(
-			ReverseLookupRequest request) throws ReverseLookupException {
+	
+	public List<ReverseLookupResponse> blockingLookup(ReverseLookupRequest request) throws ReverseLookupException {
 		final String intNumber = request.getInternationalPhoneNumber();
 		final ReverseLookupCountry country = mgmt.getCountryByPhoneNumber(intNumber);
 		final int countryCodeLength = country.getCode().length();
 		final String numberWithoutCountryCode = intNumber.substring(countryCodeLength);
 
-		List<ReverseLookupResponse> result = null;
 		ReverseLookupCountryProcessing countryProcessing = new ReverseLookupCountryProcessing(country, this.proxy);
-		try {
-			result = countryProcessing.process(numberWithoutCountryCode);
-		} catch (IOException ioe) {
-			throw new ReverseLookupException(ioe);
-		}
-		return result;
+		return countryProcessing.process(numberWithoutCountryCode);
+	}
+
+	public List<ReverseLookupResponse> blockingLookupForSite(final String siteName, ReverseLookupRequest request) throws ReverseLookupException {
+		final String intNumber = request.getInternationalPhoneNumber();
+		final ReverseLookupCountry country = mgmt.getCountryByPhoneNumber(intNumber);
+		final int countryCodeLength = country.getCode().length();
+		final String numberWithoutCountryCode = intNumber.substring(countryCodeLength);
+
+		ReverseLookupCountryProcessing countryProcessing = new ReverseLookupCountryProcessing(country, this.proxy);
+		return countryProcessing.processUsingSite(siteName, numberWithoutCountryCode);
 	}
 
 	public void setProxy(Proxy proxy) {

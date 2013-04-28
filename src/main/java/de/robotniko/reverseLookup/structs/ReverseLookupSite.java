@@ -8,6 +8,7 @@ public class ReverseLookupSite {
 	private String name;
 	private String url;
 	private String prefix;
+	private String charset = "ISO-8859-1";
 	private int areaCodeLength;
 	private int numLines;
 
@@ -57,6 +58,14 @@ public class ReverseLookupSite {
 		if (!this.entries.contains(entry)) {
 			this.entries.add(entry);
 		}
+	}
+	
+	public void setCharset(final String charset) {
+		this.charset = charset;
+	}
+	
+	public String getCharset() {
+		return charset;
 	}
 
 	public int getNumEntries() {

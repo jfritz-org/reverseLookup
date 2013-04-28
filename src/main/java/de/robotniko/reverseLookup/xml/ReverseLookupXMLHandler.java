@@ -44,6 +44,9 @@ public class ReverseLookupXMLHandler extends DefaultHandler {
 			if (attributes.getValue("name") != null) {
 				website.setName(attributes.getValue("name"));
 			}
+			if (attributes.getValue("charset") != null) {
+				website.setCharset(attributes.getValue("charset"));
+			}
 			if (attributes.getValue("url") != null) {
 				website.setUrl(attributes.getValue("url"));
 			}
