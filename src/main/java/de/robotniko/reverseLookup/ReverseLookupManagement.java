@@ -13,7 +13,7 @@ public class ReverseLookupManagement {
 	private final static Logger LOG = Logger.getLogger(ReverseLookupManagement.class);
 
 	private Map<String, ReverseLookupCountry> map = new HashMap<String, ReverseLookupCountry>();
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "rawtypes" })
 	private Map[] mapArray = new Map[6];
 
 	public ReverseLookupManagement() {
