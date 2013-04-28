@@ -4,11 +4,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import de.robotniko.reverseLookup.api.ReverseLookupResponse;
 import de.robotniko.reverseLookup.structs.ParseItem;
 import de.robotniko.reverseLookup.structs.ReverseLookupSite;
 
 public class ReverseLookupSiteParsing {
+	private final static Logger LOG = Logger.getLogger(ReverseLookupSiteParsing.class);
+
 	private ReverseLookupSite lookupSite;
 	private List<String> lines;
 
@@ -20,6 +24,8 @@ public class ReverseLookupSiteParsing {
 	}
 
 	public void parse() {
+		LOG.debug("Start parsing");
+		
 		responseList.clear();
 		int numLinesAtOnce = lookupSite.getNumLines();
 		if (numLinesAtOnce == 0) {
@@ -32,6 +38,7 @@ public class ReverseLookupSiteParsing {
 		}
 
 		String currentLineToMatch;
+		LOG.debug("Received " + lines.size() + " lines");
 		for (int line=0; line<lines.size(); line++) {
 			if (numLinesAtOnce == 1) {
 				currentLineToMatch = lines.get(line);
@@ -52,6 +59,7 @@ public class ReverseLookupSiteParsing {
 				}
 			}
 		}
+
 		for (int i=0; i<entryList.size(); i++) {
 			List<ParseItem> resultingItems = entryList.get(i).getResultList();
 			Collections.sort(resultingItems);
@@ -62,7 +70,10 @@ public class ReverseLookupSiteParsing {
 			}
 
 			if (!isResponseEmpty(response)) {
+				LOG.debug("Response not empty, adding to response list");
 				responseList.add(response);
+			} else {
+				LOG.debug("Response is empty, not adding to response list");
 			}
 
 			for (ReverseLookupResponse r: responseList) {

@@ -1,16 +1,20 @@
 package de.robotniko.reverseLookup;
 
+import java.io.IOException;
 import java.net.Proxy;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import de.robotniko.reverseLookup.api.ReverseLookupResponse;
 import de.robotniko.reverseLookup.structs.ReverseLookupCountry;
 import de.robotniko.reverseLookup.structs.ReverseLookupSite;
 
 public class ReverseLookupCountryProcessing {
+	private static final Logger LOG = Logger.getLogger(ReverseLookupCountryProcessing.class);
 
 	private ReverseLookupCountry country;
 
@@ -68,6 +72,7 @@ public class ReverseLookupCountryProcessing {
 			return parser.getResponseList();
 		} catch (Exception e) {
 			// do nothing here, maybe logging
+				LOG.error("Error", e);
 		}
 		return null;
 	}

@@ -82,6 +82,8 @@ public class ReverseLookupAsyncThread extends Thread {
 				final ReverseLookupRequest nextRequest = getNextRequest();
 				try {
 					List<ReverseLookupResponse> response = ReverseLookupFacade.getReverseLookupService().blockingLookup(nextRequest);
+					LOG.debug("Got " + response.size() + " responses");
+					
 					numDone++;
 					if (nextRequest.getListener() != null) {
 						nextRequest.getListener().lookupResponse(response, (int)(((float)numDone / (float)numLookups) * 100.0f));

@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.log4j.Logger;
+
 import de.robotniko.helper.HTMLUtil;
 import de.robotniko.helper.StringHelper;
 import de.robotniko.reverseLookup.structs.ParseItem;
@@ -12,6 +14,7 @@ import de.robotniko.reverseLookup.structs.ParseItemType;
 import de.robotniko.reverseLookup.structs.ReverseLookupEntry;
 
 public class ReverseLookupEntryParsing {
+	private final static Logger LOG = Logger.getLogger(ReverseLookupEntryParsing.class);
 
 	private ReverseLookupEntry entry;
 

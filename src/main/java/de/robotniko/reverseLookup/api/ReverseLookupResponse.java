@@ -8,6 +8,59 @@ public class ReverseLookupResponse implements Comparable<ReverseLookupResponse> 
 
 	protected Person person = new Person();
 
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		
+		if (foundBy != null) {
+			sb.append("Found by: ");
+			sb.append(foundBy);
+			sb.append(" ; ");
+		}
+		
+		if (firstName != null) {
+			sb.append("first name: ");
+			sb.append(firstName);
+			sb.append(" ; ");
+		}
+		
+		if (lastName != null) {
+			sb.append("last name: ");
+			sb.append(lastName);
+			sb.append(" ; ");
+		}
+		
+		if (company != null) {
+			sb.append("company: ");
+			sb.append(company);
+			sb.append(" ; ");
+		}
+		
+		if (street != null) {		
+			sb.append("street: ");
+			sb.append(street);
+			sb.append(" ; ");
+		}
+		
+		if (houseNumber != null) {
+			sb.append("house number: ");
+			sb.append(houseNumber);
+			sb.append(" ; ");
+		}
+		
+		if (zipCode != null) {
+			sb.append("zipCode: ");
+			sb.append(zipCode);
+			sb.append(" ; ");
+		}
+		
+		if (city != null) {
+			sb.append("city: ");
+			sb.append(city);
+			sb.append(" ; ");
+		}
+		
+		return sb.toString();
+	}
 	public String getFoundBy() {
 		return foundBy;
 	}
