@@ -1,4 +1,4 @@
-package de.robotniko.reverseLookup.countries.france;
+package de.robotniko.reverseLookup.countries.italy;
 
 import java.io.IOException;
 
@@ -15,9 +15,9 @@ import de.robotniko.reverseLookup.ReverseLookupService;
 import de.robotniko.reverseLookup.exceptions.ReverseLookupException;
 import de.robotniko.reverseLookup.structs.Person;
 
-public class FranceBlockingTest {
+public class ItalyPaginegialle {
 
-	private static final String SEARCH_SITE_NAME = "www.infobel.com";
+	private static final String SEARCH_SITE_NAME = "paginegialle.it";
 	private static ReverseLookupService service = new ReverseLookupService();
 
 	@BeforeClass
@@ -35,43 +35,44 @@ public class FranceBlockingTest {
 
 	@Test
 	public void test1() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = new Person();
-		expected.setFirstName("");
-		expected.setLastName("MAIRIE");
-		expected.setStreet(" Rue Etang");
-		expected.setHouseNumber(null);
-		expected.setZipCode("57230");
-		expected.setCity("Philippsbourg");
-		expected.setCompany(null);
+		Person expected = null; // not a company
 		
-		Helper.testNumberOnSite(service, "+33387065155", SEARCH_SITE_NAME, expected);
+		Helper.testNumberOnSite(service, "+3928260860", SEARCH_SITE_NAME, expected);
 	}
 
 	@Test
 	public void test2() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Au Cerf");
-		expected.setLastName("Restaurant");
-		expected.setStreet("2 Rue Fort Louis");
-		expected.setHouseNumber(null);
-		expected.setZipCode("67480");
-		expected.setCity("ROESCHWOOG");
-		expected.setCompany(null);
+		expected.setStreet("Largo La Loggia Gaetano");
+		expected.setHouseNumber("33");
+		expected.setZipCode("00149");
+		expected.setCity("Roma (RM)");
+		expected.setCompany("rossi dr. mario studio");
 		
-		Helper.testNumberOnSite(service, "+33388862622", SEARCH_SITE_NAME, expected);
+		Helper.testNumberOnSite(service, "+39655262755", SEARCH_SITE_NAME, expected);
 	}
 
 	@Test
 	public void test3() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Frédéric");
-		expected.setLastName("Heldt");
-		expected.setStreet("2 Rue Eglise");
-		expected.setHouseNumber(null);
-		expected.setZipCode("67480");
-		expected.setCity("Auenheim");
-		expected.setCompany(null);
+		expected.setStreet("c. XXV Aprile");
+		expected.setHouseNumber("123");
+		expected.setZipCode("22036");
+		expected.setCity("Erba (CO)");
+		expected.setCompany("fotoottica fantinato");
 		
-		Helper.testNumberOnSite(service, "+33388863772", SEARCH_SITE_NAME, expected);
+		Helper.testNumberOnSite(service, "+3931642176", SEARCH_SITE_NAME, expected);
+	}
+
+	@Test
+	public void test4() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
+		Person expected = new Person();
+		expected.setStreet("Via Carnia");
+		expected.setHouseNumber("33/A");
+		expected.setZipCode("46013");
+		expected.setCity("Milano (MI)");
+		expected.setCompany("hotel margot");
+		
+		Helper.testNumberOnSite(service, "+39226830102", SEARCH_SITE_NAME, expected);
 	}
 }

@@ -383,12 +383,12 @@
 		</website>
 	</country>
 	<country code="+262">
-		<website name="infobel.com" url="http://infobel.com/en/france/Inverse.aspx?qPhone=0262$NUMBER&amp;qSelLang3=&amp;SubmitREV=Search&amp;inphCoordType=EPSG" prefix="">
-			<entry>
-				<name>div\sclass=.result-head.&gt;&lt;h3&gt;1\.\s*([^&lt;]*)&lt;</name>
-				<street>div\sclass=.result-box-col.&gt;&lt;div&gt;&lt;strong&gt;([^,]*),</street>
-				<city>div\sclass=.result-box-col.&gt;&lt;div&gt;&lt;strong&gt;[^,]*,[^\d]*\d{5}\s*([^&lt;]*)&lt;</city>
-				<zipcode>div\sclass=.result-box-col.&gt;&lt;div&gt;&lt;strong&gt;[^,]*,[^\d]*(\d{5})</zipcode>
+		<website name="infobel.com" url="http://infobel.com/en/france/Inverse.aspx?qPhone=0262$NUMBER&amp;qSelLang3=&amp;SubmitREV=Search&amp;inphCoordType=EPSG" prefix=""  numLines="2">
+			<entry firstOccurance="name">
+			    <name>&lt;h2&gt;&lt;a\s+[^&lt;]*&lt;span class=&quot;fn org&quot;>([^&lt;]*)&lt;/span&gt;</name>
+				<street>&lt;span\s+class=&quot;street-address&quot;&gt;([^&lt;]*)&lt;/span&gt;</street>
+				<zipcode>&lt;span\s+class=&quot;postal-code&quot;>([^&lt;]*)&lt;/span&gt;</zipcode>
+				<city>&lt;span\s+class=&quot;locality&quot;>([^&lt;]*)&lt;/span&gt;</city>
 			</entry>
 		</website>
 	</country>
@@ -461,12 +461,12 @@
 		</website>
 	</country>
 	<country code="+269">
-		<website name="infobel.com" url="http://infobel.com/en/france/Inverse.aspx?qPhone=0269$NUMBER&amp;qSelLang3=&amp;SubmitREV=Search&amp;inphCoordType=EPSG" prefix="">
-			<entry>
-				<name>div\sclass=.result-head.&gt;&lt;h3&gt;1\.\s*([^&lt;]*)&lt;</name>
-				<street>div\sclass=.result-box-col.&gt;&lt;div&gt;&lt;strong&gt;([^,]*),</street>
-				<city>div\sclass=.result-box-col.&gt;&lt;div&gt;&lt;strong&gt;[^,]*,[^\d]*\d{5}\s*([^&lt;]*)&lt;</city>
-				<zipcode>div\sclass=.result-box-col.&gt;&lt;div&gt;&lt;strong&gt;[^,]*,[^\d]*(\d{5})</zipcode>
+		<website name="infobel.com" url="http://infobel.com/en/france/Inverse.aspx?qPhone=0269$NUMBER&amp;qSelLang3=&amp;SubmitREV=Search&amp;inphCoordType=EPSG" prefix="" numLines="2">
+			<entry firstOccurance="name">
+			    <name>&lt;h2&gt;&lt;a\s+[^&lt;]*&lt;span class=&quot;fn org&quot;>([^&lt;]*)&lt;/span&gt;</name>
+				<street>&lt;span\s+class=&quot;street-address&quot;&gt;([^&lt;]*)&lt;/span&gt;</street>
+				<zipcode>&lt;span\s+class=&quot;postal-code&quot;>([^&lt;]*)&lt;/span&gt;</zipcode>
+				<city>&lt;span\s+class=&quot;locality&quot;>([^&lt;]*)&lt;/span&gt;</city>
 			</entry>
 		</website>
 		<website name="comorestelecom.km" url="http://www.comorestelecom.km/annu_inverse.php?passage=1&amp;phone=$NUMBER&amp;Submit=Rechercher" prefix="">
@@ -556,9 +556,9 @@
 		</website>
 	</country>
 	<country code="+32">
-		<website name="www.infobel.com" url="http://www.infobel.com/fr/belgium/inverse.aspx?qPhone=$NUMBER" prefix="">
+		<website name="infobel.com" url="http://www.infobel.com/fr/belgium/inverse.aspx?qPhone=$NUMBER" prefix="" numLines="2">
 			<entry firstOccurance="name">
-				<name>&lt;span\s+class=&quot;fn org&quot;&gt;([^&lt;]*)&lt;/span&gt;</name>
+			    <name>&lt;h2&gt;&lt;a\s+[^&lt;]*&lt;span class=&quot;fn org&quot;>([^&lt;]*)&lt;/span&gt;</name>
 				<street>&lt;span\s+class=&quot;street-address&quot;&gt;([^&lt;]*)&lt;/span&gt;</street>
 				<zipcode>&lt;span\s+class=&quot;postal-code&quot;>([^&lt;]*)&lt;/span&gt;</zipcode>
 				<city>&lt;span\s+class=&quot;locality&quot;>([^&lt;]*)&lt;/span&gt;</city>
@@ -566,7 +566,7 @@
 		</website>
 	</country>
 	<country code="+33">
-		<website name="www.infobel.com" url="http://www.infobel.com/en/france/Inverse.aspx?inphCoordType=EPSG&amp;qPhone=$NUMBER" prefix="" numLines="2">
+		<website name="infobel.com" url="http://www.infobel.com/en/france/Inverse.aspx?inphCoordType=EPSG&amp;qPhone=$NUMBER" prefix="" numLines="2">
 			<entry firstOccurance="name">
 			    <name>&lt;h2&gt;&lt;a\s+[^&lt;]*&lt;span class=&quot;fn org&quot;>([^&lt;]*)&lt;/span&gt;</name>
 				<street>&lt;span\s+class=&quot;street-address&quot;&gt;([^&lt;]*)&lt;/span&gt;</street>
@@ -596,9 +596,9 @@
 		</website>
 	</country>
 	<country code="+352">
-		<website name="infobel.com" url="http://www.infobel.com/en/luxembourg/Inverse.aspx?inphCoordType=EPSG&amp;qPhone=$NUMBER" prefix="">
-			<entry>
-				<name>&lt;span\s+class=&quot;fn org&quot;&gt;([^&lt;]*)&lt;/span&gt;</name>
+		<website name="infobel.com" url="http://www.infobel.com/en/luxembourg/Inverse.aspx?inphCoordType=EPSG&amp;qPhone=$NUMBER" prefix="" numLines="2">
+			<entry firstOccurance="name">
+			    <name>&lt;h2&gt;&lt;a\s+[^&lt;]*&lt;span class=&quot;fn org&quot;>([^&lt;]*)&lt;/span&gt;</name>
 				<street>&lt;span\s+class=&quot;street-address&quot;&gt;([^&lt;]*)&lt;/span&gt;</street>
 				<zipcode>&lt;span\s+class=&quot;postal-code&quot;>([^&lt;]*)&lt;/span&gt;</zipcode>
 				<city>&lt;span\s+class=&quot;locality&quot;>([^&lt;]*)&lt;/span&gt;</city>
@@ -756,6 +756,7 @@
 		</website>
 	</country>
 	<country code="+39">
+	    <!-- 
 		<website name="pronto.it" url="http://www.pronto.it/?q=$NUMBER" prefix="0">
 			<entry>
 				<name swapFirstAndLastName="true">&lt;span class="cognome "&gt;([^&gt;]*)&lt;/span&gt;</name>
@@ -764,21 +765,31 @@
 				<zipcode>&lt;span class="via" title="[^"]*">[^-]*- (\d*) [^-&lt;]*&lt;/span&gt;</zipcode>
 			</entry>
 		</website>
+		-->
 		<website name="paginebianche.it" url="http://www.paginebianche.it/ricerca-da-numero?qs=$NUMBER" prefix="0">
 			<entry>
 			    <company>&lt;span\s+class=&quot;insegna&quot;&gt;([^&lt;]*)&lt;/span&gt;</company>
 				<name>class=&quot;org fn&quot;&gt;&lt;h2 class=&quot;rgs&quot;&gt;&lt;a href=&quot;[^&quot;]+&quot; title=&quot;[^&quot;]+&quot; rel=&quot;nofollow&quot;&gt;([^&lt;]*)&lt;</name>
 				<street>class=&quot;street-address&quot;>([^&lt;]*)&lt;</street>
 				<city>class=&quot;locality&quot;>([^&lt;]*)&lt;</city>
-				<zipcode>-  ([\d]+) &lt;span class=&quot;locality&quot;</zipcode>
+				<zipcode>-\s*([\d]+) &lt;span class=&quot;locality&quot;</zipcode>
 			</entry>
 		</website>
-		<website name="infobel.com" url="http://www.infobel.com/it/Italy/Inverse.aspx?qPhone=$NUMBER" prefix="0">
+		<website name="paginegialle.it" url="http://www.paginegialle.it/pgol/7-$NUMBER" prefix="0">
 			<entry>
-				<name>&lt;div class=\"result-item\"&gt;&lt;h[1-9]&gt;[^&lt;]*&lt;a [^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</name>
-				<street>&lt;div class=&quot;result-box-col&quot;&gt;&lt;div&gt;&lt;strong&gt;([^,]*),.[0-9]+\s*[^&lt;]*&lt;/strong&gt;&lt;/div&gt;</street>
-				<city>&lt;div class=&quot;result-box-col&quot;&gt;&lt;div&gt;&lt;strong&gt;[^,]*,.[0-9]+\s*([^&lt;]*)&lt;/strong&gt;&lt;/div&gt;</city>
-				<zipcode>&lt;div class=&quot;result-box-col&quot;&gt;&lt;div&gt;&lt;strong&gt;[^,]*,.([0-9]+)\s*[^&lt;]*&lt;/strong&gt;&lt;/div&gt;</zipcode>
+			    <company>&lt;a title=&quot;[^&quot;]*&quot; class=&quot;_lms _noc&quot;[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</company>
+				<street>&lt;span class=&quot;street-address&quot;&gt;[^,]*,\s*([^&lt;]*)&lt;/span&gt;</street>
+				<housenumber>&lt;span class=&quot;street-address&quot;&gt;([^,]*),\s*[^&lt;]*&lt;/span&gt;</housenumber>
+				<city>&lt;span class=&quot;locality&quot;&gt;\d*\s+([^&lt;]*)&lt;/span&gt;</city>
+				<zipcode>&lt;span class=&quot;locality&quot;&gt;(\d*)\s+[^&lt;]*&lt;/span&gt;</zipcode>
+			</entry>
+		</website>
+		<website name="infobel.com" url="http://www.infobel.com/it/Italy/Inverse.aspx?qPhone=$NUMBER" prefix="0" numLines="2">
+			<entry firstOccurance="name">
+			    <name>&lt;h2&gt;&lt;a\s+[^&lt;]*&lt;span class=&quot;fn org&quot;>([^&lt;]*)&lt;/span&gt;</name>
+				<street>&lt;span\s+class=&quot;street-address&quot;&gt;([^&lt;]*)&lt;/span&gt;</street>
+				<zipcode>&lt;span\s+class=&quot;postal-code&quot;>([^&lt;]*)&lt;/span&gt;</zipcode>
+				<city>&lt;span\s+class=&quot;locality&quot;>([^&lt;]*)&lt;/span&gt;</city>
 			</entry>
 		</website>
 	</country>
@@ -1154,12 +1165,12 @@
 		</website>
 	</country>
 	<country code="+590">
-		<website name="infobel.com" url="http://infobel.com/en/france/Inverse.aspx?qPhone=0590$NUMBER&amp;qSelLang3=&amp;SubmitREV=Search&amp;inphCoordType=EPSG" prefix="">
-			<entry>
-				<name>div\sclass=.result-head.&gt;&lt;h3&gt;1\.\s*([^&lt;]*)&lt;</name>
-				<street>div\sclass=.result-box-col.&gt;&lt;div&gt;&lt;strong&gt;([^,]*),</street>
-				<city>div\sclass=.result-box-col.&gt;&lt;div&gt;&lt;strong&gt;[^,]*,[^\d]*\d{5}\s*([^&lt;]*)&lt;</city>
-				<zipcode>div\sclass=.result-box-col.&gt;&lt;div&gt;&lt;strong&gt;[^,]*,[^\d]*(\d{5})</zipcode>
+		<website name="infobel.com" url="http://infobel.com/en/france/Inverse.aspx?qPhone=0590$NUMBER&amp;qSelLang3=&amp;SubmitREV=Search&amp;inphCoordType=EPSG" prefix="" numLines="2">
+			<entry firstOccurance="name">
+			    <name>&lt;h2&gt;&lt;a\s+[^&lt;]*&lt;span class=&quot;fn org&quot;>([^&lt;]*)&lt;/span&gt;</name>
+				<street>&lt;span\s+class=&quot;street-address&quot;&gt;([^&lt;]*)&lt;/span&gt;</street>
+				<zipcode>&lt;span\s+class=&quot;postal-code&quot;>([^&lt;]*)&lt;/span&gt;</zipcode>
+				<city>&lt;span\s+class=&quot;locality&quot;>([^&lt;]*)&lt;/span&gt;</city>
 			</entry>
 		</website>
 	</country>
@@ -1184,12 +1195,12 @@
 		</website>
 	</country>
 	<country code="+594">
-		<website name="infobel.com" url="http://infobel.com/en/france/Inverse.aspx?qPhone=0594$NUMBER&amp;qSelLang3=&amp;SubmitREV=Search&amp;inphCoordType=EPSG" prefix="">
-			<entry>
-				<name>div\sclass=.result-head.&gt;&lt;h3&gt;1\.\s*([^&lt;]*)&lt;</name>
-				<street>div\sclass=.result-box-col.&gt;&lt;div&gt;&lt;strong&gt;([^,]*),</street>
-				<city>div\sclass=.result-box-col.&gt;&lt;div&gt;&lt;strong&gt;[^,]*,[^\d]*\d{5}\s*([^&lt;]*)&lt;</city>
-				<zipcode>div\sclass=.result-box-col.&gt;&lt;div&gt;&lt;strong&gt;[^,]*,[^\d]*(\d{5})</zipcode>
+		<website name="infobel.com" url="http://infobel.com/en/france/Inverse.aspx?qPhone=0594$NUMBER&amp;qSelLang3=&amp;SubmitREV=Search&amp;inphCoordType=EPSG" prefix="" numLines="2">
+			<entry firstOccurance="name">
+			    <name>&lt;h2&gt;&lt;a\s+[^&lt;]*&lt;span class=&quot;fn org&quot;>([^&lt;]*)&lt;/span&gt;</name>
+				<street>&lt;span\s+class=&quot;street-address&quot;&gt;([^&lt;]*)&lt;/span&gt;</street>
+				<zipcode>&lt;span\s+class=&quot;postal-code&quot;>([^&lt;]*)&lt;/span&gt;</zipcode>
+				<city>&lt;span\s+class=&quot;locality&quot;>([^&lt;]*)&lt;/span&gt;</city>
 			</entry>
 		</website>
 	</country>
@@ -1204,12 +1215,12 @@
 		</website>
 	</country>
 	<country code="+596">
-		<website name="infobel.com" url="http://infobel.com/en/france/Inverse.aspx?qPhone=0596$NUMBER&amp;qSelLang3=&amp;SubmitREV=Search&amp;inphCoordType=EPSG" prefix="">
-			<entry>
-				<name>div\sclass=.result-head.&gt;&lt;h3&gt;1\.\s*([^&lt;]*)&lt;</name>
-				<street>div\sclass=.result-box-col.&gt;&lt;div&gt;&lt;strong&gt;([^,]*),</street>
-				<city>div\sclass=.result-box-col.&gt;&lt;div&gt;&lt;strong&gt;[^,]*,[^\d]*\d{5}\s*([^&lt;]*)&lt;</city>
-				<zipcode>div\sclass=.result-box-col.&gt;&lt;div&gt;&lt;strong&gt;[^,]*,[^\d]*(\d{5})</zipcode>
+		<website name="infobel.com" url="http://infobel.com/en/france/Inverse.aspx?qPhone=0596$NUMBER&amp;qSelLang3=&amp;SubmitREV=Search&amp;inphCoordType=EPSG" prefix="" numLines="2">
+			<entry firstOccurance="name">
+			    <name>&lt;h2&gt;&lt;a\s+[^&lt;]*&lt;span class=&quot;fn org&quot;>([^&lt;]*)&lt;/span&gt;</name>
+				<street>&lt;span\s+class=&quot;street-address&quot;&gt;([^&lt;]*)&lt;/span&gt;</street>
+				<zipcode>&lt;span\s+class=&quot;postal-code&quot;>([^&lt;]*)&lt;/span&gt;</zipcode>
+				<city>&lt;span\s+class=&quot;locality&quot;>([^&lt;]*)&lt;/span&gt;</city>
 			</entry>
 		</website>
 	</country>
