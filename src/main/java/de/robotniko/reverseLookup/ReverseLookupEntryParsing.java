@@ -54,7 +54,7 @@ public class ReverseLookupEntryParsing {
 
 		if (namePattern != null) {
 			nameMatcher = namePattern.matcher(currentLine);
-			if (nameMatcher.find()) {
+			if (nameMatcher.find() && nameMatcher.groupCount() > 0) {
 				List<ParseItem> resp = parseNameFields(nameMatcher, lineNumber);
 				for (ParseItem item: resp) {
 					addItemIfNotAlreadyTracked(item, lineNumber);
@@ -64,7 +64,7 @@ public class ReverseLookupEntryParsing {
 
 		if (cityPattern != null) {
 			cityMatcher = cityPattern.matcher(currentLine);
-			if (cityMatcher.find()) {
+			if (cityMatcher.find() && cityMatcher.groupCount() > 0) {
 				ParseItem item = parseLine(ParseItemType.CITY, cityMatcher, lineNumber);
 				addItemIfNotAlreadyTracked(item, lineNumber);
 			}
@@ -72,7 +72,7 @@ public class ReverseLookupEntryParsing {
 
 		if (firstNamePattern != null) {
 			firstNameMatcher = firstNamePattern.matcher(currentLine);
-			if (firstNameMatcher.find()) {
+			if (firstNameMatcher.find() && firstNameMatcher.groupCount() > 0) {
 				ParseItem item = parseLine(ParseItemType.FIRSTNAME, firstNameMatcher, lineNumber);
 				addItemIfNotAlreadyTracked(item, lineNumber);
 			}
@@ -80,7 +80,7 @@ public class ReverseLookupEntryParsing {
 
 		if (lastNamePattern != null) {
 			lastNameMatcher = lastNamePattern.matcher(currentLine);
-			if (lastNameMatcher.find()) {
+			if (lastNameMatcher.find() && lastNameMatcher.groupCount() > 0) {
 				ParseItem item = parseLine(ParseItemType.LASTNAME, lastNameMatcher, lineNumber);
 				addItemIfNotAlreadyTracked(item, lineNumber);
 			}
@@ -88,7 +88,7 @@ public class ReverseLookupEntryParsing {
 
 		if (streetPattern != null) {
 			streetMatcher = streetPattern.matcher(currentLine);
-			if (streetMatcher.find()) {
+			if (streetMatcher.find() && streetMatcher.groupCount() > 0) {
 				ParseItem item = parseLine(ParseItemType.STREET, streetMatcher, lineNumber);
 				addItemIfNotAlreadyTracked(item, lineNumber);
 			}
@@ -96,7 +96,7 @@ public class ReverseLookupEntryParsing {
 
 		if (houseNumberPattern != null) {
 			houseNumberMatcher = houseNumberPattern.matcher(currentLine);
-			if (houseNumberMatcher.find()) {
+			if (houseNumberMatcher.find() && houseNumberMatcher.groupCount() > 0) {
 				ParseItem item = parseLine(ParseItemType.HOUSE_NUMBER, houseNumberMatcher, lineNumber);
 				addItemIfNotAlreadyTracked(item, lineNumber);
 			}
@@ -104,7 +104,7 @@ public class ReverseLookupEntryParsing {
 
 		if (zipPattern != null) {
 			zipMatcher = zipPattern.matcher(currentLine);
-			if (zipMatcher.find()) {
+			if (zipMatcher.find() && zipMatcher.groupCount() > 0) {
 				ParseItem item = parseLine(ParseItemType.ZIPCODE, zipMatcher, lineNumber);
 				addItemIfNotAlreadyTracked(item, lineNumber);
 			}
@@ -112,7 +112,7 @@ public class ReverseLookupEntryParsing {
 
 		if (companyPattern != null) {
 			companyMatcher = companyPattern.matcher(currentLine);
-			if (companyMatcher.find()) {
+			if (companyMatcher.find() && companyMatcher.groupCount() > 0) {
 				ParseItem item = parseLine(ParseItemType.COMPANY, companyMatcher, lineNumber);
 				addItemIfNotAlreadyTracked(item, lineNumber);
 			}
@@ -170,6 +170,7 @@ public class ReverseLookupEntryParsing {
 
 		String value = cleanupString(str);
 
+		int count = matcher.groupCount();
 		ParseItem parseItem = new ParseItem(type);
 		parseItem.setLine(lineNumber);
 		parseItem.setStartIndex(matcher.start(1));
