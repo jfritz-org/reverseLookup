@@ -1,12 +1,10 @@
 package de.robotniko.reverseLookup.countries.netherlands;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.xml.sax.SAXException;
@@ -14,8 +12,6 @@ import org.xml.sax.SAXException;
 import de.robotniko.MyTestHelper;
 import de.robotniko.reverseLookup.Helper;
 import de.robotniko.reverseLookup.ReverseLookupService;
-import de.robotniko.reverseLookup.api.ReverseLookupRequest;
-import de.robotniko.reverseLookup.api.ReverseLookupResponse;
 import de.robotniko.reverseLookup.exceptions.ReverseLookupException;
 import de.robotniko.reverseLookup.structs.Person;
 
