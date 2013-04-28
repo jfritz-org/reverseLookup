@@ -25,6 +25,7 @@ public class ReverseLookupEntryParsing {
 	private Pattern companyPattern;
 
 	private List<ParseItem> parseItems = new ArrayList<ParseItem>();
+	private int numLinesAtOnce;
 
 	public ReverseLookupEntryParsing(final ReverseLookupEntry entry) {
 		this.entry = entry;
@@ -36,7 +37,9 @@ public class ReverseLookupEntryParsing {
 		return this.parseItems;
 	}
 
-	public void parseLine(final int lineNumber, final String currentLine) {
+	public void parseLine(final int lineNumber, final String currentLine, final int numLinesAtOnce) {
+		this.numLinesAtOnce = numLinesAtOnce;
+				
 		Matcher nameMatcher;
 		Matcher cityMatcher;
 		Matcher firstNameMatcher;
@@ -49,57 +52,81 @@ public class ReverseLookupEntryParsing {
 		if (namePattern != null) {
 			nameMatcher = namePattern.matcher(currentLine);
 			if (nameMatcher.find()) {
-				parseItems.addAll(parseNameFields(nameMatcher, lineNumber));
+				List<ParseItem> resp = parseNameFields(nameMatcher, lineNumber);
+				for (ParseItem item: resp) {
+					addItemIfNotAlreadyTracked(item, lineNumber);
+				}
 			}
 		}
 
 		if (cityPattern != null) {
 			cityMatcher = cityPattern.matcher(currentLine);
 			if (cityMatcher.find()) {
-				parseItems.add(parseLine(ParseItemType.CITY, cityMatcher, lineNumber));
+				ParseItem item = parseLine(ParseItemType.CITY, cityMatcher, lineNumber);
+				addItemIfNotAlreadyTracked(item, lineNumber);
 			}
 		}
 
 		if (firstNamePattern != null) {
 			firstNameMatcher = firstNamePattern.matcher(currentLine);
 			if (firstNameMatcher.find()) {
-				parseItems.add(parseLine(ParseItemType.FIRSTNAME, firstNameMatcher, lineNumber));
+				ParseItem item = parseLine(ParseItemType.FIRSTNAME, firstNameMatcher, lineNumber);
+				addItemIfNotAlreadyTracked(item, lineNumber);
 			}
 		}
 
 		if (lastNamePattern != null) {
 			lastNameMatcher = lastNamePattern.matcher(currentLine);
 			if (lastNameMatcher.find()) {
-				parseItems.add(parseLine(ParseItemType.LASTNAME, lastNameMatcher, lineNumber));
+				ParseItem item = parseLine(ParseItemType.LASTNAME, lastNameMatcher, lineNumber);
+				addItemIfNotAlreadyTracked(item, lineNumber);
 			}
 		}
 
 		if (streetPattern != null) {
 			streetMatcher = streetPattern.matcher(currentLine);
 			if (streetMatcher.find()) {
-				parseItems.add(parseLine(ParseItemType.STREET, streetMatcher, lineNumber));
+				ParseItem item = parseLine(ParseItemType.STREET, streetMatcher, lineNumber);
+				addItemIfNotAlreadyTracked(item, lineNumber);
 			}
 		}
 
 		if (houseNumberPattern != null) {
 			houseNumberMatcher = houseNumberPattern.matcher(currentLine);
 			if (houseNumberMatcher.find()) {
-				parseItems.add(parseLine(ParseItemType.HOUSE_NUMBER, houseNumberMatcher, lineNumber));
+				ParseItem item = parseLine(ParseItemType.HOUSE_NUMBER, houseNumberMatcher, lineNumber);
+				addItemIfNotAlreadyTracked(item, lineNumber);
 			}
 		}
 
 		if (zipPattern != null) {
 			zipMatcher = zipPattern.matcher(currentLine);
 			if (zipMatcher.find()) {
-				parseItems.add(parseLine(ParseItemType.ZIPCODE, zipMatcher, lineNumber));
+				ParseItem item = parseLine(ParseItemType.ZIPCODE, zipMatcher, lineNumber);
+				addItemIfNotAlreadyTracked(item, lineNumber);
 			}
 		}
 
 		if (companyPattern != null) {
 			companyMatcher = companyPattern.matcher(currentLine);
 			if (companyMatcher.find()) {
-				parseItems.add(parseLine(ParseItemType.COMPANY, companyMatcher, lineNumber));
+				ParseItem item = parseLine(ParseItemType.COMPANY, companyMatcher, lineNumber);
+				addItemIfNotAlreadyTracked(item, lineNumber);
 			}
+		}
+	}
+	
+	private void addItemIfNotAlreadyTracked(ParseItem item, int lineNumber) {
+		boolean found = false;
+		for (int i=0; i<parseItems.size(); i++) {
+		  ParseItem trackedItem = parseItems.get(i);
+		  if (item.getType() == trackedItem.getType()
+				  && item.getLine()-numLinesAtOnce+1 >= trackedItem.getLine()) {
+			  found = true;
+		  }
+		}
+		if (!found) {
+			parseItems.add(item);
 		}
 	}
 
@@ -149,7 +176,7 @@ public class ReverseLookupEntryParsing {
 	}
 	
 	private String removeUnnecessaryWhitespaces(String input) {
-		return input.trim().replaceAll(" +", " ");
+		return input.trim().replaceAll("\\s+", " ");
 	}
 
 	private String cleanupString(String str) {

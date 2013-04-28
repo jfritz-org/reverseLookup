@@ -1,4 +1,4 @@
-package de.robotniko.reverseLookup.countries.belgium;
+package de.robotniko.reverseLookup.countries.france;
 
 import java.io.IOException;
 import java.util.List;
@@ -19,7 +19,7 @@ import de.robotniko.reverseLookup.api.ReverseLookupResponse;
 import de.robotniko.reverseLookup.exceptions.ReverseLookupException;
 import de.robotniko.reverseLookup.structs.Person;
 
-public class BelgienBlockingTest {
+public class FranceBlockingTest {
 
 	private static final String SEARCH_SITE_NAME = "www.infobel.com";
 	private static ReverseLookupService service = new ReverseLookupService();
@@ -40,56 +40,42 @@ public class BelgienBlockingTest {
 	@Test
 	public void test1() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Com. d' Ixelles");
-		expected.setLastName("Adm.");
-		expected.setStreet("Chaussée d'Ixelles 168");
+		expected.setFirstName("");
+		expected.setLastName("MAIRIE");
+		expected.setStreet(" Rue Etang");
 		expected.setHouseNumber(null);
-		expected.setZipCode("1050");
-		expected.setCity("Ixelles");
+		expected.setZipCode("57230");
+		expected.setCity("Philippsbourg");
 		expected.setCompany(null);
 		
-		Helper.testNumberOnSite(service, "+3225156111", SEARCH_SITE_NAME, expected);
+		Helper.testNumberOnSite(service, "+33387065155", SEARCH_SITE_NAME, expected);
 	}
 
 	@Test
 	public void test2() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("D'INFORMATIQUE POUR LA REGION BRUXELLOISE - CIRB");
-		expected.setLastName("CENTRE");
-		expected.setStreet("Avenue des Arts 20/10");
+		expected.setFirstName("Au Cerf");
+		expected.setLastName("Restaurant");
+		expected.setStreet("2 Rue Fort Louis");
 		expected.setHouseNumber(null);
-		expected.setZipCode("1000");
-		expected.setCity("Bruxelles");
+		expected.setZipCode("67480");
+		expected.setCity("ROESCHWOOG");
 		expected.setCompany(null);
 		
-		Helper.testNumberOnSite(service, "+3222824770", SEARCH_SITE_NAME, expected);
+		Helper.testNumberOnSite(service, "+33388862622", SEARCH_SITE_NAME, expected);
 	}
 
 	@Test
 	public void test3() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Havenbedrijf Antwerpen");
-		expected.setLastName("Gemeentelijk");
-		expected.setStreet("Entrepotkaai 1");
+		expected.setFirstName("Frédéric");
+		expected.setLastName("Heldt");
+		expected.setStreet("2 Rue Eglise");
 		expected.setHouseNumber(null);
-		expected.setZipCode("2000");
-		expected.setCity("Anvers");
+		expected.setZipCode("67480");
+		expected.setCity("Auenheim");
 		expected.setCompany(null);
 		
-		Helper.testNumberOnSite(service, "+3232052011", SEARCH_SITE_NAME, expected);
-	}
-
-	@Test
-	public void test4() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = new Person();
-		expected.setFirstName("s.a.");
-		expected.setLastName("Kapitol");
-		expected.setStreet("506 Chaussée de Saint-Job");
-		expected.setHouseNumber(null);
-		expected.setZipCode("1180");
-		expected.setCity("Uccle");
-		expected.setCompany(null);
-		
-		Helper.testNumberOnSite(service, "+3261275331", SEARCH_SITE_NAME, expected);
+		Helper.testNumberOnSite(service, "+33388863772", SEARCH_SITE_NAME, expected);
 	}
 }

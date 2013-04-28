@@ -40,9 +40,9 @@ public class Helper {
 			System.err.println(caption + " expected " + expected + " but got NULL");
 		} else {
 			if (expected.equals(response)) {
-				System.out.println(caption + " " + response + " == " + expected);
+				System.out.println(caption + response + " == " + expected);
 			} else {
-				System.err.println(caption + " " + response + " != " + expected);
+				System.err.println(caption + response + " != " + expected);
 			}
 		}
 	}

@@ -48,7 +48,7 @@ public class ReverseLookupSiteParsing {
 
 			if (currentLineToMatch != null) {
 				for (int i=0; i<entryList.size(); i++) {
-					entryList.get(i).parseLine(line, currentLineToMatch);
+					entryList.get(i).parseLine(line, currentLineToMatch, numLinesAtOnce);
 				}
 			}
 		}
