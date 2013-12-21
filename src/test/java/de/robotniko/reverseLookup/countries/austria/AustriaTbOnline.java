@@ -65,10 +65,10 @@ public class AustriaTbOnline {
 		Person expected = new Person();
 		expected.setFirstName("Rudolf Edeltraud");
 		expected.setLastName("Prammer");
-		expected.setStreet("Götzelsdorf 17");
+		expected.setStreet("GÃ¶tzelsdorf 17");
 		expected.setHouseNumber(null);
 		expected.setZipCode("4221");
-		expected.setCity("Götzelsdorf");
+		expected.setCity("GÃ¶tzelsdorf");
 		expected.setCompany(null);
 		
 		Helper.testNumberOnSite(service, "+43732641574", SEARCH_SITE_NAME, expected);
@@ -79,7 +79,7 @@ public class AustriaTbOnline {
 		Person expected = new Person();
 		expected.setFirstName("Johann");
 		expected.setLastName("Prammer");
-		expected.setStreet("Stelzhamerstraße 7");
+		expected.setStreet("StelzhamerstraÃŸe 7");
 		expected.setHouseNumber(null);
 		expected.setZipCode("4225");
 		expected.setCity("Luftenberg");

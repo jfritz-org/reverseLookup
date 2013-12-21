@@ -47,22 +47,27 @@ public class Helper {
 		}
 	}
 	
-	public static void assertExpected(ReverseLookupResponse result, Person expected) {
-		assertField(expected.getFirstName(), result.getFirstName());
-		assertField(expected.getLastName(), result.getLastName());
-		assertField(expected.getStreet(), result.getStreet());
-		assertField(expected.getHouseNumber(), result.getHouseNumber());
-		assertField(expected.getZipCode(), result.getZipCode());
-		assertField(expected.getCity(), result.getCity());
-		assertField(expected.getCompany(), result.getCompany());
+	public static boolean assertExpected(ReverseLookupResponse result, Person expected) {
+		boolean res = true;
+		res = assertField(expected.getFirstName(), result.getFirstName()) && res;
+		res = assertField(expected.getLastName(), result.getLastName()) && res;
+		res = assertField(expected.getStreet(), result.getStreet()) && res;
+		res = assertField(expected.getHouseNumber(), result.getHouseNumber()) && res;
+		res = assertField(expected.getZipCode(), result.getZipCode()) && res;
+		res = assertField(expected.getCity(), result.getCity()) && res;
+		res = assertField(expected.getCompany(), result.getCompany()) && res;
+		return res;
 	}
 	
-	private static void assertField(String expected, String actual) {
+	private static boolean assertField(String expected, String actual) {
+		boolean res = true;
+		
 		if (expected == null) {
-			Assert.assertNull(actual);
+			res = actual == null;
 		} else {
-			Assert.assertEquals(expected, actual);
+			res = (expected.equals(actual));
 		}
+		return res;
 	}
 	
 	public static void testNumberOnSite(final ReverseLookupService service, final String number, final String site, Person expected) throws ReverseLookupException {
@@ -79,9 +84,15 @@ public class Helper {
 			Assert.fail();
 		} else {
 			// only get first entry, do not check other entries! Maybe ugly, but sufficient for function tests
-			ReverseLookupResponse result = results.get(0);
-			Helper.outputResponseAndExpectedResults(result, expected);
-			Helper.assertExpected(result, expected);
+			boolean atLeastOneMatches = false;
+			
+			for (int i=0; i<results.size(); i++) {
+				ReverseLookupResponse result = results.get(i);
+				Helper.outputResponseAndExpectedResults(result, expected);
+				atLeastOneMatches = Helper.assertExpected(result, expected) || atLeastOneMatches;
+			}
+			
+			Assert.assertTrue(atLeastOneMatches);
 		}
 	}
 }

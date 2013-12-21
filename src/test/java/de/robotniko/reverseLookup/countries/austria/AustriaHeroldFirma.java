@@ -52,7 +52,7 @@ public class AustriaHeroldFirma {
 		expected.setHouseNumber(null);
 		expected.setZipCode("6236");
 		expected.setCity("Alpbach");
-		expected.setCompany("Romantikhotel Böglerhof GmbH");
+		expected.setCompany("Romantikhotel BÃ¶glerhof GmbH");
 		
 		Helper.testNumberOnSite(service, "+4353365227", SEARCH_SITE_NAME, expected);
 	}

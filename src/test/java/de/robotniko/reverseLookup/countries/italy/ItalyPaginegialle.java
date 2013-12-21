@@ -47,7 +47,7 @@ public class ItalyPaginegialle {
 		expected.setHouseNumber("33");
 		expected.setZipCode("00149");
 		expected.setCity("Roma (RM)");
-		expected.setCompany("rossi dr. mario studio");
+		expected.setCompany("ROSSI DR. MARIO");
 		
 		Helper.testNumberOnSite(service, "+39655262755", SEARCH_SITE_NAME, expected);
 	}
@@ -55,11 +55,11 @@ public class ItalyPaginegialle {
 	@Test
 	public void test3() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setStreet("c. XXV Aprile");
+		expected.setStreet("C. XXV Aprile");
 		expected.setHouseNumber("123");
 		expected.setZipCode("22036");
 		expected.setCity("Erba (CO)");
-		expected.setCompany("fotoottica fantinato");
+		expected.setCompany("FOTOOTTICA FANTINATO");
 		
 		Helper.testNumberOnSite(service, "+3931642176", SEARCH_SITE_NAME, expected);
 	}
@@ -68,10 +68,10 @@ public class ItalyPaginegialle {
 	public void test4() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
 		expected.setStreet("Via Carnia");
-		expected.setHouseNumber("33/A");
+		expected.setHouseNumber("33");
 		expected.setZipCode("46013");
 		expected.setCity("Milano (MI)");
-		expected.setCompany("hotel margot");
+		expected.setCompany("HOTEL MARGOT");
 		
 		Helper.testNumberOnSite(service, "+39226830102", SEARCH_SITE_NAME, expected);
 	}

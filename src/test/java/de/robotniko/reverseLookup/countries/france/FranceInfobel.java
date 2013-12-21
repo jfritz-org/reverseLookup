@@ -38,7 +38,7 @@ public class FranceInfobel {
 		Person expected = new Person();
 		expected.setFirstName("");
 		expected.setLastName("MAIRIE");
-		expected.setStreet(" Rue Etang");
+		expected.setStreet("Rue Etang");
 		expected.setHouseNumber(null);
 		expected.setZipCode("57230");
 		expected.setCity("Philippsbourg");
@@ -50,9 +50,9 @@ public class FranceInfobel {
 	@Test
 	public void test2() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Au Cerf");
-		expected.setLastName("Restaurant");
-		expected.setStreet("2 Rue Fort Louis");
+		expected.setFirstName("MATERNE");
+		expected.setLastName("MEHR");
+		expected.setStreet("2 Rue Fort Louis");
 		expected.setHouseNumber(null);
 		expected.setZipCode("67480");
 		expected.setCity("ROESCHWOOG");
@@ -64,9 +64,9 @@ public class FranceInfobel {
 	@Test
 	public void test3() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Frédéric");
+		expected.setFirstName("FrÃ©dÃ©ric");
 		expected.setLastName("Heldt");
-		expected.setStreet("2 Rue Eglise");
+		expected.setStreet("2 Rue Eglise");
 		expected.setHouseNumber(null);
 		expected.setZipCode("67480");
 		expected.setCity("Auenheim");

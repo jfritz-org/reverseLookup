@@ -38,7 +38,7 @@ public class LuxembourgInfobel {
 		Person expected = new Person();
 		expected.setFirstName("International Luxembourg");
 		expected.setLastName("ArcelorMittal");
-		expected.setStreet("24-26 BOULEVARD D'AVRANCHES");
+		expected.setStreet("24-26 BOULEVARD D'AVRANCHES");
 		expected.setHouseNumber(null);
 		expected.setZipCode("1160");
 		expected.setCity("LUXEMBOURG");
@@ -50,9 +50,9 @@ public class LuxembourgInfobel {
 	@Test
 	public void test2() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Immobilière Luxembourgeoise Immosol Sàrl");
+		expected.setFirstName("ImmobiliÃ¨re Luxembourgeoise Immosol SÃ rl");
 		expected.setLastName("Agence");
-		expected.setStreet("14 AVENUE DE LA LIBERTE");
+		expected.setStreet("14 AVENUE DE LA LIBERTE");
 		expected.setHouseNumber(null);
 		expected.setZipCode("1930");
 		expected.setCity("LUXEMBOURG");
@@ -64,9 +64,9 @@ public class LuxembourgInfobel {
 	@Test
 	public void test3() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Opticiens Sàrl");
-		expected.setLastName("Pearle");
-		expected.setStreet("18 RUE NOTRE-DAME");
+		expected.setFirstName("LUXEMBOURG S.A R.L.");
+		expected.setLastName("PEARLE");
+		expected.setStreet("18 RUE NOTRE-DAME");
 		expected.setHouseNumber(null);
 		expected.setZipCode("2240");
 		expected.setCity("LUXEMBOURG");
@@ -78,9 +78,9 @@ public class LuxembourgInfobel {
 	@Test
 	public void test4() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Luxembourgeoise de Crémation SA");
-		expected.setLastName("Société");
-		expected.setStreet("6 RUE ERMESINDE");
+		expected.setFirstName("Luxembourgeoise de CrÃ©mation SA");
+		expected.setLastName("SociÃ©tÃ©");
+		expected.setStreet("6 RUE ERMESINDE");
 		expected.setHouseNumber(null);
 		expected.setZipCode("6437");
 		expected.setCity("ECHTERNACH");
@@ -92,9 +92,9 @@ public class LuxembourgInfobel {
 	@Test
 	public void test5() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Sàrl");
+		expected.setFirstName("SÃ rl");
 		expected.setLastName("Rischette");
-		expected.setStreet("4 ROUTE DE LUXEMBOURG");
+		expected.setStreet("4 ROUTE DE LUXEMBOURG");
 		expected.setHouseNumber(null);
 		expected.setZipCode("6130");
 		expected.setCity("JUNGLINSTER");

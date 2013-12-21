@@ -25,8 +25,14 @@
 
 <reverselookup version="1.01">
 	<country code="+1">
-		<website name="whitepages.com" url="http://www.whitepages.com/search/ReversePhone?phone=$NUMBER" prefix="1">
-			<entry firstOccurance="firstname">
+		<website name="whitepages.com" url="http://www.whitepages.com/search/ReversePhone?phone=$NUMBER" prefix="1" numLines="6">
+			<entry>
+			    <name swapFirstAndLastName="true">&lt;div class=&quot;address-card&quot;&gt;\s*&lt;p&gt;([^&lt;]*)&lt;br /&gt;[^&lt;]*&lt;br /&gt;[^&lt;]*&lt;br /&gt;[^&lt;]*&lt;/p&gt;\s*&lt;/div&gt;</name>
+			    <street>&lt;div class=&quot;address-card&quot;&gt;\s*&lt;p&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;/p&gt;\s*&lt;/div&gt;</street>
+			    <city>&lt;div class=&quot;address-card&quot;&gt;\s*&lt;p&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;/p&gt;\s*&lt;/div&gt;</city>
+			    <zipcode>&lt;div class=&quot;address-card&quot;&gt;\s*&lt;p&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;/p&gt;\s*&lt;/div&gt;</zipcode>
+			</entry>
+		    <entry firstOccurance="firstname">
 				<firstname>&lt;span\s+class=&quot;given-name&quot;&gt;([^&lt;]*)&lt;/span&gt;\s*(?:&lt;span\s+class=&quot;additional-name&quot;&gt;([^&lt;]*)&lt;/span&gt;)</firstname>
 				<lastname>&lt;span\s+class=&quot;family-name&quot;&gt;([^&lt;]*)&lt;/span&gt;</lastname>
 				<street>&lt;span\s+class=&quot;street-address&quot;&gt;([^&lt;]*)&lt;/span&gt;</street>
@@ -750,7 +756,7 @@
 		<website name="paginebianche.it" url="http://www.paginebianche.it/ricerca-da-numero?qs=$NUMBER" prefix="0">
 			<entry>
 			    <company>&lt;span\s+class=&quot;insegna&quot;&gt;([^&lt;]*)&lt;/span&gt;</company>
-				<name>class=&quot;org fn&quot;&gt;&lt;h2 class=&quot;rgs&quot;&gt;&lt;a href=&quot;[^&quot;]+&quot; title=&quot;[^&quot;]+&quot; rel=&quot;nofollow&quot;&gt;([^&lt;]*)&lt;</name>
+				<name>class=&quot;org fn&quot;&gt;&lt;h2 class=&quot;rgs&quot;&gt;&lt;a href=&quot;[^&quot;]+&quot; title=&quot;[^&quot;]+&quot; rel=&quot;(?:no)?follow&quot;&gt;([^&lt;]*)&lt;</name>
 				<street>class=&quot;street-address&quot;>([^&lt;]*)&lt;</street>
 				<city>class=&quot;locality&quot;>([^&lt;]*)&lt;</city>
 				<zipcode>-\s*([\d]+) &lt;span class=&quot;locality&quot;</zipcode>
@@ -775,9 +781,22 @@
 		</website>
 	</country>
 	<country code="+41">
-		<website name ="tel.local.ch" url="http://tel.local.ch/de/q/?ext=1&amp;phone=$NUMBER" prefix="0">
+		<website name ="tel.local.ch" url="http://tel.local.ch/de/q/?ext=1&amp;phone=$NUMBER" prefix="0" numLines="6">
+		    <entry>
+		        <name>&lt;h[1-9]&gt;\s*&lt;a href=&quot;[^&quot;]*&quot;&gt;\s*([^&lt;]*)&lt;/a&gt;\s*</name>
+		        <city>&lt;span class='address'&gt;[^,]*, [\d]+ ([^&lt;]*)&lt;/span&gt;</city>
+				<street>&lt;span class='address'&gt;([^,]*), [\d]+ [^&lt;]*&lt;/span&gt;</street>
+				<zipcode>&lt;span class='address'&gt;[^,]*, ([\d]+) [^&lt;]*&lt;/span&gt;</zipcode>
+		    </entry>
 			<entry>
-				<name>&lt;h[1-9]&gt;(?:&lt;a[^&gt;]*&gt;)?\s*([^&lt;]*)&lt;</name>
+				<name>&lt;h[1-9]\s+class='name fn'&gt;(?:&lt;a[^&gt;]*&gt;)?\s*([^&lt;]*)&lt;</name>
+			    <city>&lt;p class='address'&gt;\s*[^&lt;]*&lt;br/&gt;[^\s]*\s([^&lt;]*)&lt;/p&gt;</city>
+				<street>&lt;p class='address'&gt;\s*([^&lt;]*)&lt;br/&gt;\s*[^&lt;]*&lt;/p&gt;</street>
+				<zipcode>&lt;p class='address'&gt;\s*[^&lt;]*&lt;br/&gt;([^\s]*)\s[^&lt;]*&lt;/p&gt;</zipcode>
+				<company>&lt;div class='profession'&gt;([^&lt;]*)&lt;/div&gt;</company>
+			</entry>
+ 			<entry>
+				<name>&lt;h[2-9]&gt;(?:&lt;a[^&gt;]*&gt;)?\s*([^&lt;]*)&lt;</name>
 			    <city>&lt;p class='address'&gt;[^,]*, [\d]+ ([^&lt;]*)&lt;/p&gt;</city>
 				<street>&lt;p class='address'&gt;([^,]*), [\d]+ [^&lt;]*&lt;/p&gt;</street>
 				<zipcode>&lt;p class='address'&gt;[^,]*, ([\d]+) [^&lt;]*&lt;/p&gt;</zipcode>
@@ -928,7 +947,22 @@
 		</website>
 	</country>
 	<country code="+49">
-		<website name="www.dasoertliche.de" url="http://www.dasoertliche.de/Controller?form_name=search_inv&amp;ph=$NUMBER" prefix="0" numLines="1">
+		<website name="www.dasoertliche.de" url="http://www.dasoertliche.de/Controller?form_name=search_inv&amp;ph=$NUMBER" prefix="0" numLines="3">
+		    <entry>
+		        <name>class=&quot;preview iname&quot;\s*(?:onmouseover=&quot;&quot;)?\s*(?:onMouseOut=&quot;&quot;)?\s*&gt;&lt;span class=&quot;&quot;&gt;([^&lt;]*)&lt;/span&gt;</name>
+		        <street>&lt;div class=&quot;strasse&quot;&gt;\s*([^,]*),[^\d]*\d*\s*&lt;span class=""&gt;[^&lt;]*&lt;/span&gt;</street>
+		        <city>&lt;div class=&quot;strasse&quot;&gt;\s*[^,]*,[^\d]*\d*\s*&lt;span class=""&gt;([^&lt;]*)&lt;/span&gt;</city>
+		        <zipcode>&lt;div class=&quot;strasse&quot;&gt;\s*[^,]*,[^\d]*(\d*)\s*&lt;span class=""&gt;[^&lt;]*&lt;/span&gt;</zipcode>
+		    </entry>
+		    <entry>
+		        <name>&lt;div class=&quot;name&quot;&gt;\s*&lt;h1&gt;([^&lt;]*)&lt;/h1&gt;\s*&lt;/div&gt;</name>
+		        <street>&lt;div class=&quot;strasse&quot;&gt;\s*([^,]*),[^\d]*\d*\s*&lt;span class=""&gt;[^&lt;]*&lt;/span&gt;</street>
+		        <city>&lt;div class=&quot;strasse&quot;&gt;\s*[^,]*,[^\d]*\d*\s*&lt;span class=""&gt;([^&lt;]*)&lt;/span&gt;</city>
+		        <zipcode>&lt;div class=&quot;strasse&quot;&gt;\s*[^,]*,[^\d]*(\d*)\s*&lt;span class=""&gt;[^&lt;]*&lt;/span&gt;</zipcode>
+		    </entry>
+		</website>
+<!-- 
+		<website name="dasoertliche.de" url="http://www.dasoertliche.de/Controller?form_name=search_inv&amp;ph=$NUMBER" prefix="0" numLines="1">
 	        <entry>
 	        	<name>class=&quot;entry&quot;\s*(?:onmouseover=&quot;&quot;)?\s*&gt;([^&lt;]*)&lt;/a&gt;</name>
 	        	<street>^\s*([^,&gt;]+),&amp;nbsp;\d{5}&amp;nbsp;[^&lt;]*&lt;/div&gt;</street>
@@ -960,6 +994,7 @@
 	        	<zipcode>^[^,]*,&amp;nbsp;(\d{5})&amp;nbsp;[^&lt;]*&lt;/div&gt;</zipcode>
 	        </entry>
 	    </website>
+-->
 		<website name="www.dastelefonbuch.de" url="http://www3.dastelefonbuch.de/?la=de&amp;kw=$NUMBER&amp;cmd=detail&amp;recSelected=0" prefix="0">
 			<entry>	
 				<name>&lt;div id=&quot;detail-hl&quot;&gt;&lt;h2&gt;([^&lt;]*)&lt;/h2&gt;</name>

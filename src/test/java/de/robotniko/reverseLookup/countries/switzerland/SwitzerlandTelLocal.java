@@ -52,7 +52,7 @@ public class SwitzerlandTelLocal {
 		Person expected = new Person();
 		expected.setFirstName("GmbH");
 		expected.setLastName("Cytracon");
-		expected.setStreet("Rütistrasse 20a");
+		expected.setStreet("RÃ¼tistrasse 20a");
 		expected.setHouseNumber(null);
 		expected.setZipCode("8134");
 		expected.setCity("Adliswil");
@@ -84,7 +84,7 @@ public class SwitzerlandTelLocal {
 		expected.setHouseNumber(null);
 		expected.setZipCode("9008");
 		expected.setCity("St. Gallen");
-		expected.setCompany("Telefonmarketing In- und Outbound (SQS- Gütesiegel- Zertifiziert)");
+		expected.setCompany("Telefonmarketing In- und Outbound (SQS- GÃ¼tesiegel- Zertifiziert)");
 		
 		Helper.testNumberOnSite(service, "+41715550800", SEARCH_SITE_NAME, expected);
 	}

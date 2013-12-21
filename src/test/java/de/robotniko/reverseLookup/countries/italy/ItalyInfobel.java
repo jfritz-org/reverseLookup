@@ -38,7 +38,7 @@ public class ItalyInfobel {
 		Person expected = new Person();
 		expected.setFirstName("LUIGI");
 		expected.setLastName("FERRARI");
-		expected.setStreet("V. COSTANTINO BARONI 114");
+		expected.setStreet("DEI DAINI 114");
 		expected.setHouseNumber(null);
 		expected.setZipCode("20142");
 		expected.setCity("MILANO");
@@ -52,7 +52,7 @@ public class ItalyInfobel {
 		Person expected = new Person();
 		expected.setFirstName("MARIO");
 		expected.setLastName("ROSSI");
-		expected.setStreet("LG. GAETANO LA LOGGIA 33");
+		expected.setStreet("V. NOMENTANA 33");
 		expected.setHouseNumber(null);
 		expected.setZipCode("00149");
 		expected.setCity("ROMA");
@@ -66,7 +66,7 @@ public class ItalyInfobel {
 		Person expected = new Person();
 		expected.setFirstName("FOTO OTTICA (S.N.C.)");
 		expected.setLastName("FANTINATO");
-		expected.setStreet("C. VENTICINQUE APRILE 123");
+		expected.setStreet("BATTISTA BARTESAGHI 123");
 		expected.setHouseNumber(null);
 		expected.setZipCode("22036");
 		expected.setCity("ERBA");
@@ -78,11 +78,11 @@ public class ItalyInfobel {
 	@Test
 	public void test4() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("S.R.L. (PRENOTAZIONI HOTEL)");
+		expected.setFirstName("SRL");
 		expected.setLastName("INITALIA");
-		expected.setStreet("VL. MONZA 270");
+		expected.setStreet("DE' GOZZADINI BENO 270");
 		expected.setHouseNumber(null);
-		expected.setZipCode("20128");
+		expected.setZipCode("20122");
 		expected.setCity("MILANO");
 		expected.setCompany(null);
 		

@@ -123,9 +123,13 @@ public class ReverseLookupEntryParsing {
 		boolean found = false;
 		for (int i=0; i<parseItems.size(); i++) {
 		  ParseItem trackedItem = parseItems.get(i);
-		  if (item.getType() == trackedItem.getType()
-				  && item.getLine()-numLinesAtOnce+1 >= trackedItem.getLine()) {
-			  found = true;
+		  if (item.getType() == trackedItem.getType())
+		  {
+			  int line1 = item.getLine()-numLinesAtOnce+1;
+			  int line2 = trackedItem.getLine();
+			  if (line1 <= line2) {
+				  found = true;
+			  }
 		  }
 		}
 		if (!found) {
@@ -187,6 +191,7 @@ public class ReverseLookupEntryParsing {
 		String value = HTMLUtil.stripEntities(str);
 		value = StringHelper.replaceSpecialCharsUTF(value);
 		value = value.replaceAll("%20", " ");
+		value = value.replaceAll(" ", " "); // first char is an encoded space, not an ASCII space
 		value = value.replaceAll("\\s\\s+", " ");
 		value = value.replaceAll(",", "");
 		value = value.trim();

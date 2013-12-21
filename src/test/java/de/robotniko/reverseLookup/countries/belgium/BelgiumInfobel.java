@@ -38,7 +38,7 @@ public class BelgiumInfobel {
 		Person expected = new Person();
 		expected.setFirstName("Com. d' Ixelles");
 		expected.setLastName("Adm.");
-		expected.setStreet("Chaussée d'Ixelles 168");
+		expected.setStreet("ChaussÃ©e d'Ixelles 168");
 		expected.setHouseNumber(null);
 		expected.setZipCode("1050");
 		expected.setCity("Ixelles");
@@ -52,7 +52,7 @@ public class BelgiumInfobel {
 		Person expected = new Person();
 		expected.setFirstName("D'INFORMATIQUE POUR LA REGION BRUXELLOISE - CIRB");
 		expected.setLastName("CENTRE");
-		expected.setStreet("Avenue des Arts 20/10");
+		expected.setStreet("Avenue des Arts 20/10");
 		expected.setHouseNumber(null);
 		expected.setZipCode("1000");
 		expected.setCity("Bruxelles");

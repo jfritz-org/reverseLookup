@@ -64,9 +64,9 @@ public class ItalyPaginebianche {
 	@Test
 	public void test3() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("FOTO OTTICA");
-		expected.setLastName("FANTINATO");
-		expected.setStreet("C. Xxv Aprile 123");
+		expected.setFirstName("FANTINATO");
+		expected.setLastName("FOTOOTTICA");
+		expected.setStreet("Corso XXV Aprile 123");
 		expected.setHouseNumber(null);
 		expected.setZipCode("22036");
 		expected.setCity("Erba (CO)");

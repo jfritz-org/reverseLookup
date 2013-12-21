@@ -66,10 +66,10 @@ public class AustriaHeroldPrivat {
 		Person expected = new Person();
 		expected.setFirstName("Rudolf / Edeltraud");
 		expected.setLastName("Prammer");
-		expected.setStreet("Götzelsdorf 17");
+		expected.setStreet("GÃ¶tzelsdorf 17");
 		expected.setHouseNumber(null);
 		expected.setZipCode("4221");
-		expected.setCity("Steyregg (OÖ)");
+		expected.setCity("Steyregg (OÃ–)");
 		expected.setCompany(null);
 		
 		Helper.testNumberOnSite(service, "+43732641574", SEARCH_SITE_NAME, expected);
@@ -97,7 +97,7 @@ public class AustriaHeroldPrivat {
 		expected.setStreet("Abwinden Opalweg 8");
 		expected.setHouseNumber(null);
 		expected.setZipCode("4225");
-		expected.setCity("Luftenberg an der Donau (OÖ)");
+		expected.setCity("Luftenberg an der Donau (OÃ–)");
 		expected.setCompany(null);
 		
 		Helper.testNumberOnSite(service, "+4372372698", SEARCH_SITE_NAME, expected);
