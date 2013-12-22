@@ -15,9 +15,9 @@ import de.robotniko.reverseLookup.ReverseLookupService;
 import de.robotniko.reverseLookup.exceptions.ReverseLookupException;
 import de.robotniko.reverseLookup.structs.Person;
 
-public class GermanyDasOertliche {
+public class GermanyDasTelefonbuch {
 
-	private static final String SEARCH_SITE_NAME = "www.dasoertliche.de";
+	private static final String SEARCH_SITE_NAME = "www.dastelefonbuch.de";
 	private static ReverseLookupService service = new ReverseLookupService();
 
 	@BeforeClass
@@ -67,18 +67,6 @@ public class GermanyDasOertliche {
 	}
 
 	@Test
-	public void testStaatstheater() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = new Person();
-		expected.setFirstName("Braunschweig");
-		expected.setLastName("Staatstheater");
-		expected.setStreet("Am Theater");
-		expected.setZipCode("38100");
-		expected.setCity("Braunschweig Innenstadt");
-		
-		Helper.testNumberOnSite(service, "+495311234567", SEARCH_SITE_NAME, expected);
-	}
-
-	@Test
 	public void testThen() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
 		expected.setFirstName("O. Dr.med.");
@@ -97,7 +85,7 @@ public class GermanyDasOertliche {
 		expected.setLastName("Apollo-Optik");
 		expected.setStreet("Äußere Bayreuther Str. 80");
 		expected.setZipCode("90491");
-		expected.setCity("Nürnberg Schoppershof");
+		expected.setCity("Nürnberg");
 		
 		Helper.testNumberOnSite(service, "+499115402808", SEARCH_SITE_NAME, expected);
 	}
@@ -109,7 +97,7 @@ public class GermanyDasOertliche {
 		expected.setLastName("Schmidt");
 		expected.setStreet("Treisberger Weg 12");
 		expected.setZipCode("61389");
-		expected.setCity("Schmitten Brombach");
+		expected.setCity("Schmitten");
 		
 		Helper.testNumberOnSite(service, "+496084950130", SEARCH_SITE_NAME, expected);
 	}	
@@ -117,23 +105,18 @@ public class GermanyDasOertliche {
 	@Test
 	public void testKlinikum() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Heidelberg");
+		expected.setFirstName("");
 		expected.setLastName("Universitätsklinikum");
 		expected.setStreet("Im Neuenheimer Feld 672");
 		expected.setZipCode("69120");
-		expected.setCity("Heidelberg Neuenheim");
+		expected.setCity("Heidelberg");
 		
 		Helper.testNumberOnSite(service, "+496221560", SEARCH_SITE_NAME, expected);
 	}
 	
 	@Test
 	public void testKlinikumDurchwahl() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = new Person();
-		expected.setFirstName("Heidelberg");
-		expected.setLastName("Universitätsklinikum");
-		expected.setStreet("Im Neuenheimer Feld 672");
-		expected.setZipCode("69120");
-		expected.setCity("Heidelberg Neuenheim");
+		Person expected = null; // das telefonbuch macht keine intelligente Suche
 		
 		Helper.testNumberOnSite(service, "+496221567200", SEARCH_SITE_NAME, expected);
 	}
@@ -145,7 +128,7 @@ public class GermanyDasOertliche {
 		expected.setLastName("Bowling-Center");
 		expected.setStreet("Gablonzer Str. 13");
 		expected.setZipCode("76185");
-		expected.setCity("Karlsruhe Mühlburg");
+		expected.setCity("Karlsruhe");
 		
 		Helper.testNumberOnSite(service, "+497215704230", SEARCH_SITE_NAME, expected);
 	}

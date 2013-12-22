@@ -31,7 +31,10 @@ public class ReverseLookupCountryProcessing {
 
 		ReverseLookupSite lookupSite = country.getLookupSiteByName(siteName);
 		if (lookupSite != null) {
-			result.addAll(processNumberOnSite(lookupSite, number));
+			List<ReverseLookupResponse> res = processNumberOnSite(lookupSite, number);
+			if (res != null) {
+				result.addAll(res);
+			}
 		}
 		
 		Collections.sort(result);
@@ -46,7 +49,10 @@ public class ReverseLookupCountryProcessing {
 			// TODO use numParallelThread for parsing multiple sites at once
 			ReverseLookupSite lookupSite = country.getLookupSite(i);
 
-			result.addAll(processNumberOnSite(lookupSite, number));
+			List<ReverseLookupResponse> res = processNumberOnSite(lookupSite, number);
+			if (res != null) {
+				result.addAll(res);
+			}
 		}
 		
 		Collections.sort(result);
