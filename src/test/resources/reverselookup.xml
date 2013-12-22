@@ -26,12 +26,13 @@
 <reverselookup version="1.01">
 	<country code="+1">
 		<website name="whitepages.com" url="http://www.whitepages.com/search/ReversePhone?phone=$NUMBER" prefix="1" numLines="6">
-			<entry>
-			    <name swapFirstAndLastName="true">&lt;div class=&quot;address-card&quot;&gt;\s*&lt;p&gt;([^&lt;]*)&lt;br /&gt;[^&lt;]*&lt;br /&gt;[^&lt;]*&lt;br /&gt;[^&lt;]*&lt;/p&gt;\s*&lt;/div&gt;</name>
-			    <street>&lt;div class=&quot;address-card&quot;&gt;\s*&lt;p&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;/p&gt;\s*&lt;/div&gt;</street>
-			    <city>&lt;div class=&quot;address-card&quot;&gt;\s*&lt;p&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;/p&gt;\s*&lt;/div&gt;</city>
-			    <zipcode>&lt;div class=&quot;address-card&quot;&gt;\s*&lt;p&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;br /&gt;([^&lt;]*)&lt;/p&gt;\s*&lt;/div&gt;</zipcode>
+			<entry swapFirstAndLastName="true">
+			    <name>&lt;div class=&quot;address-card&quot;&gt;\s*&lt;p&gt;([^&lt;]*)&lt;br /&gt;[^&lt;]*&lt;br /&gt;[^&lt;]*&lt;br /&gt;[^,]*,\s*[^&lt;]*&lt;/p&gt;\s*&lt;/div&gt;</name>
+			    <street>&lt;div class=&quot;address-card&quot;&gt;\s*&lt;p&gt;[^&lt;]*&lt;br /&gt;[^&lt;]*&lt;br /&gt;([^&lt;]*)&lt;br /&gt;[^,]*,\s*[^&lt;]*&lt;/p&gt;\s*&lt;/div&gt;</street>
+			    <city>&lt;div class=&quot;address-card&quot;&gt;\s*&lt;p&gt;[^&lt;]*&lt;br /&gt;[^&lt;]*&lt;br /&gt;[^&lt;]*&lt;br /&gt;([^,]*),\s*[^&lt;]*&lt;/p&gt;\s*&lt;/div&gt;</city>
+			    <zipcode>&lt;div class=&quot;address-card&quot;&gt;\s*&lt;p&gt;[^&lt;]*&lt;br /&gt;[^&lt;]*&lt;br /&gt;[^&lt;]*&lt;br /&gt;[^,]*,\s*([^&lt;]*)&lt;/p&gt;\s*&lt;/div&gt;</zipcode>
 			</entry>
+<!-- 
 		    <entry firstOccurance="firstname">
 				<firstname>&lt;span\s+class=&quot;given-name&quot;&gt;([^&lt;]*)&lt;/span&gt;\s*(?:&lt;span\s+class=&quot;additional-name&quot;&gt;([^&lt;]*)&lt;/span&gt;)</firstname>
 				<lastname>&lt;span\s+class=&quot;family-name&quot;&gt;([^&lt;]*)&lt;/span&gt;</lastname>
@@ -40,6 +41,7 @@
 				<city>&lt;span\s+class=&quot;locality&quot;&gt;([^&lt;]*)&lt;/span&gt;</city>
 				<zipcode>rzp=([^;]*);</zipcode>
 			</entry>
+-->
 		</website>
 	</country>
 	<country code="+1x">
@@ -745,8 +747,8 @@
 	<country code="+39">
 	    <!-- 
 		<website name="pronto.it" url="http://www.pronto.it/?q=$NUMBER" prefix="0">
-			<entry>
-				<name swapFirstAndLastName="true">&lt;span class="cognome "&gt;([^&gt;]*)&lt;/span&gt;</name>
+			<entry swapFirstAndLastName="true">
+				<name>&lt;span class="cognome "&gt;([^&gt;]*)&lt;/span&gt;</name>
 				<street>&lt;span class="via" title="([^"]*)"&gt;</street>
 				<city>&lt;span class="via" title="[^"]*">[^-]*- \d* ([^-&lt;]*)(?:- [^&lt;]*)?&lt;/span&gt;</city>
 				<zipcode>&lt;span class="via" title="[^"]*">[^-]*- (\d*) [^-&lt;]*&lt;/span&gt;</zipcode>
@@ -891,8 +893,8 @@
 	</country>
 	<country code="+47">
 		<website name="gulesider.no" url="http://www.gulesider.no/gs/categoryList.c?q=$NUMBER" prefix="" numLines="7">
-			<entry>
-				<name swapFirstAndLastName="true">&lt;h2 class=&quot;name&quot;&gt;\s*&lt;a href=&quot;[^&quot;]*&quot;\s*title=&quot;[^&quot;]*&quot;&gt;\s*([^&lt;]*)\s*&lt;span&gt;\s*[^&lt;]*&lt;/span&gt;\s*&lt;/a&gt;\s*&lt;/h2&gt;</name>
+			<entry swapFirstAndLastName="true">
+				<name>&lt;h2 class=&quot;name&quot;&gt;\s*&lt;a href=&quot;[^&quot;]*&quot;\s*title=&quot;[^&quot;]*&quot;&gt;\s*([^&lt;]*)\s*&lt;span&gt;\s*[^&lt;]*&lt;/span&gt;\s*&lt;/a&gt;\s*&lt;/h2&gt;</name>
 				<street>&lt;div class=&quot;address&quot;&gt;\s*&lt;p&gt;([^,]*),\s*[^\s]*\s[^&lt;]*&lt;/p&gt;\s*&lt;/div&gt;</street>
 				<city>\s*&lt;div class=&quot;address&quot;&gt;\s*&lt;p&gt;[^,]*,\s*[^\s]*\s([^&lt;]*)&lt;/p&gt;\s*&lt;/div&gt;|\s*&lt;div class=&quot;address&quot;&gt;\s*&lt;p&gt;[\d]+\s*([^&lt;]*)&lt;/p&gt;</city>
 				<zipcode>&lt;div class=&quot;address&quot;&gt;\s*&lt;p&gt;[^,]*,\s*([\d]*)\s[^&lt;]*&lt;/p&gt;\s*&lt;/div&gt;|&lt;div class=&quot;address&quot;&gt;\s*&lt;p&gt;([\d]*)\s[^&lt;]*&lt;/p&gt;\s*&lt;/div&gt;</zipcode>
@@ -900,8 +902,8 @@
 		</website>
 
 		<website name="nettkatalogen.no" url="http://www.nettkatalogen.no/default.asp?search=$NUMBER&amp;x=36&amp;y=15&amp;cmd=psok" prefix="">
-			<entry>
-				<name swapFirstAndLastName="true">class='privatsok_oppforing_navn'[\s]valign=top&gt;&lt;b&gt;([^&lt;]*)&lt;/b&gt;</name>
+			<entry swapFirstAndLastName="true">
+				<name>class='privatsok_oppforing_navn'[\s]valign=top&gt;&lt;b&gt;([^&lt;]*)&lt;/b&gt;</name>
 				<street>class='privat_adresse_link'&gt;([^&lt;]*)&lt;/a&gt;</street>
 				<city>&lt;/a&gt;, \d* ([^&lt;]*)&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;</city>
 				<zipcode>&lt;/a&gt;, (\d*) [^&lt;]*&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;</zipcode>
@@ -918,8 +920,8 @@
 		</website>
 
 		<website name="gul.no" url="http://gul.no/?q=$NUMBER&amp;PageView=YellowResult" prefix="">
-			<entry>
-				<name swapFirstAndLastName="true">&lt;a id=&quot;ancCompanyName&quot;[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</name>
+			<entry swapFirstAndLastName="true">
+				<name>&lt;a id=&quot;ancCompanyName&quot;[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</name>
 				<street>class=&quot;sr_showaddress&quot;&gt;([^&lt;]*)&lt;</street>
 				<city>class=&quot;sr_showaddress&quot;&gt;[^&gt;]*&gt;[\d]*([^&lt;]*)&lt;</city>
 				<zipcode>class=&quot;sr_showaddress&quot;&gt;[^&gt;]*&gt;([\d]*)[\s]</zipcode>

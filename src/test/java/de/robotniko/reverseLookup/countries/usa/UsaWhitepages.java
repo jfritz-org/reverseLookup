@@ -35,11 +35,11 @@ public class UsaWhitepages {
 	@Test
 	public void test1() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Adam S");
-		expected.setLastName("Levison");
-		expected.setStreet("Sun Valley Way");
-		expected.setHouseNumber("602");
-		expected.setZipCode("07932");
+		expected.setFirstName("Howard");
+		expected.setLastName("W Levison");
+		expected.setStreet("602 Sun Valley Way");
+		expected.setHouseNumber(null);
+		expected.setZipCode("NJ 07932-3005");
 		expected.setCity("Florham Park");
 		expected.setCompany(null);
 		
@@ -49,11 +49,11 @@ public class UsaWhitepages {
 	@Test
 	public void test2() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Mark D");
-		expected.setLastName("Smith");
-		expected.setStreet("Streett Cir");
-		expected.setHouseNumber("316");
-		expected.setZipCode("21050");
+		expected.setFirstName("Jennifer");
+		expected.setLastName("L Smith");
+		expected.setStreet("316 Streett Cir");
+		expected.setHouseNumber(null);
+		expected.setZipCode("MD 21050-3061");
 		expected.setCity("Forest Hill");
 		expected.setCompany(null);
 		
