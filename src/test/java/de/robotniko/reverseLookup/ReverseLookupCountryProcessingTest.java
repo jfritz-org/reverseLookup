@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import de.robotniko.reverseLookup.api.ReverseLookupResponse;
@@ -20,16 +21,18 @@ public class ReverseLookupCountryProcessingTest {
 	public void init() {
 		ReverseLookupSite lookupSite = new ReverseLookupSite();
 		lookupSite.setName("www.dasoertliche.de");
-		lookupSite.setUrl("http://dasoertliche.de/Controller?form_name=search_inv&ph=$NUMBER");
+		lookupSite.setUrl("http://www.dasoertliche.de/Controller?form_name=search_inv&amp;ph=$NUMBER");
 		lookupSite.setPrefix("0");
-		lookupSite.setNumLines(1);
+		lookupSite.setNumLines(3);
+//        <street>&lt;div class=&quot;strasse&quot;&gt;\s*([^,]*),[^\d]*\d*\s*&lt;span class=""&gt;[^&lt;]*&lt;/span&gt;</street>
+//        <city>&lt;div class=&quot;strasse&quot;&gt;\s*[^,]*,[^\d]*\d*\s*&lt;span class=""&gt;([^&lt;]*)&lt;/span&gt;</city>
+//        <zipcode>&lt;div class=&quot;strasse&quot;&gt;\s*[^,]*,[^\d]*(\d*)\s*&lt;span class=""&gt;[^&lt;]*&lt;/span&gt;</zipcode>
 
 		ReverseLookupEntry entry = new ReverseLookupEntry();
-    	entry.setNamePattern("var\\s+data\\s+=\\s+getItemData\\('.*', '.*', '.*', '.*', '(.*)', '.*', '.*', '.*'\\);");
-    	entry.setStreetPattern("var\\s+data\\s+=\\s+getItemData\\('.*', '.*', '.*', '.*', '.*', '(.*)', '.*', '.*'\\);");
-    	entry.setHouseNumberPattern("var\\s+data\\s+=\\s+getItemData\\('.*', '.*', '.*', '.*', '.*', '.*', '(.*)', '.*'\\);");
-    	entry.setCityPattern("var\\s+data\\s+=\\s+getItemData\\('.*', '.*', '.*', '(.*)', '.*', '.*', '.*', '.*'\\);");
-    	entry.setZipPattern("var\\s+data\\s+=\\s+getItemData\\('.*', '.*', '(.*)', '.*', '.*', '.*', '.*', '.*'\\);");
+    	entry.setNamePattern("class=\"preview iname\"[^>]*><span class=\"\">([^<]*)</span>");
+    	entry.setStreetPattern("<div class=\"strasse\">\\s*([^,]*),[^\\d]*\\d*\\s*<span class=\"\">[^<]*</span>");
+    	entry.setCityPattern("<div class=\"strasse\">\\s*[^,]*,[^\\d]*\\d*\\s*<span class=\"\">([^<]*)</span>");
+    	entry.setZipPattern("<div class=\"strasse\">\\s*[^,]*,[^\\d]*(\\d*)\\s*<span class=\"\">[^<]*</span>");
 
 		lookupSite.addEntry(entry);
 
@@ -47,7 +50,7 @@ public class ReverseLookupCountryProcessingTest {
 		Assert.assertEquals(0, cProcessing.process("").size());
 	}
 
-	@Test
+	@Ignore
 	public void testReal() throws IOException {
 		List<ReverseLookupResponse> result = cProcessing.process("07211330");
 		Assert.assertEquals(4, result.size());
