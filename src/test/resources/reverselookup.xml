@@ -880,10 +880,16 @@
 	<country code="+47">
 		<website name="gulesider.no" url="http://www.gulesider.no/gs/categoryList.c?q=$NUMBER" prefix="" numLines="7">
 			<entry swapFirstAndLastName="true">
-				<name>&lt;h2 class=&quot;name&quot;&gt;\s*&lt;a href=&quot;[^&quot;]*&quot;\s*title=&quot;[^&quot;]*&quot;&gt;\s*([^&lt;]*)\s*&lt;span&gt;\s*[^&lt;]*&lt;/span&gt;\s*&lt;/a&gt;\s*&lt;/h2&gt;</name>
-				<street>&lt;div class=&quot;address&quot;&gt;\s*&lt;p&gt;([^,]*),\s*[^\s]*\s[^&lt;]*&lt;/p&gt;\s*&lt;/div&gt;</street>
-				<city>\s*&lt;div class=&quot;address&quot;&gt;\s*&lt;p&gt;[^,]*,\s*[^\s]*\s([^&lt;]*)&lt;/p&gt;\s*&lt;/div&gt;|\s*&lt;div class=&quot;address&quot;&gt;\s*&lt;p&gt;[\d]+\s*([^&lt;]*)&lt;/p&gt;</city>
-				<zipcode>&lt;div class=&quot;address&quot;&gt;\s*&lt;p&gt;[^,]*,\s*([\d]*)\s[^&lt;]*&lt;/p&gt;\s*&lt;/div&gt;|&lt;div class=&quot;address&quot;&gt;\s*&lt;p&gt;([\d]*)\s[^&lt;]*&lt;/p&gt;\s*&lt;/div&gt;</zipcode>
+		        <company>&lt;span class=&quot;num&quot;&gt;\d+.&lt;/span&gt;\s*&lt;h[1-9]&gt;&lt;a[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;&lt;/h[1-9]&gt;</company>
+				<street>&lt;span class=&quot;street-address&quot;&gt;([^&lt;]*)&lt;/span&gt;</street>
+				<city>&lt;span class=&quot;locality&quot;&gt;([^&lt;]*)&lt;/span&gt;</city>
+				<zipcode>&lt;span class=&quot;postal-code&quot;&gt;([^&lt;]*)&lt;/span&gt;</zipcode>
+			</entry>
+			<entry swapFirstAndLastName="true">
+			    <name>&lt;div class=&quot;person-info&quot;&gt;\s*&lt;!-- Name --&gt;\s*&lt;h[1-9]&gt;\s*&lt;a [^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</name>
+			    <street>&lt;div class=&quot;person-data&quot;&gt;\s*&lt;!-- Address --&gt;\s*&lt;span&gt;([^,]*),\s*[\d]*\s+[^&lt;]*&lt;/span&gt;</street>
+			    <city>&lt;div class=&quot;person-data&quot;&gt;\s*&lt;!-- Address --&gt;\s*&lt;span&gt;[^,]*,\s*[\d]*\s+([^&lt;]*)&lt;/span&gt;</city>
+   			    <zipcode>&lt;div class=&quot;person-data&quot;&gt;\s*&lt;!-- Address --&gt;\s*&lt;span&gt;[^,]*,\s*([\d]*)\s+[^&lt;]*&lt;/span&gt;</zipcode>
 			</entry>
 		</website>
 
