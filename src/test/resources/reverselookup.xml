@@ -904,19 +904,25 @@
 
 		<website name="nettkatalogen.no/bransjelist" url="http://www.nettkatalogen.no/bransjelist/$NUMBER/1.htm" prefix="">
 			<entry>
-				<name>class='firmasok_oppforing_link'&gt;&lt;b&gt;([^&lt;]*)&lt;/b&gt;</name>
+				<company>class='firmasok_oppforing_link'&gt;&lt;b&gt;([^&lt;]*)&lt;/b&gt;</company>
 				<street>&lt;div class='firmasok_oppforing_adresse'&gt;([^,^&lt;]*).*&lt;/div&gt;</street>
 				<city>&lt;div class='firmasok_oppforing_adresse'&gt;[^,]*,[\s][\d]*[\s]([^&lt;]*)&lt;/div&gt;</city>
 				<zipcode>'firmasok_oppforing_adresse'&gt;[^,]*,[\s](\d*)[\s]</zipcode>
 			</entry>
+			<entry swapFirstAndLastName="true">
+				<name>class='privatsok_oppforing_navn'[\s]valign=top&gt;&lt;b&gt;([^&lt;]*)&lt;/b&gt;</name>
+				<street>class='privat_adresse_link'&gt;([^&lt;]*)&lt;/a&gt;</street>
+				<city>&lt;/a&gt;, \d* ([^&lt;]*)&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;</city>
+				<zipcode>&lt;/a&gt;, (\d*) [^&lt;]*&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;</zipcode>
+			</entry>
 		</website>
 
-		<website name="gul.no" url="http://gul.no/?q=$NUMBER&amp;PageView=YellowResult" prefix="">
+		<website name="gul.no" url="http://gul.no/Lucy?q=$NUMBER" prefix="" numLines="3">
 			<entry swapFirstAndLastName="true">
-				<name>&lt;a id=&quot;ancCompanyName&quot;[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</name>
-				<street>class=&quot;sr_showaddress&quot;&gt;([^&lt;]*)&lt;</street>
-				<city>class=&quot;sr_showaddress&quot;&gt;[^&gt;]*&gt;[\d]*([^&lt;]*)&lt;</city>
-				<zipcode>class=&quot;sr_showaddress&quot;&gt;[^&gt;]*&gt;([\d]*)[\s]</zipcode>
+				<name>&quot;legalname&quot;:&quot;([^&quot;]*)&quot;,</name>
+				<street>&quot;vaddress&quot;:&quot;([^&quot;]*)&quot;,</street>
+				<city>&quot;vcity&quot;:&quot;([^&quot;]*)&quot;</city>
+				<zipcode>&quot;vzip&quot;:&quot;([^&quot;]*)&quot;</zipcode>
 			</entry>
 		</website>
 	</country>
