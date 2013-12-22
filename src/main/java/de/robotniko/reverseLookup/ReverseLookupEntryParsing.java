@@ -52,6 +52,9 @@ public class ReverseLookupEntryParsing {
 		Matcher zipMatcher;
 		Matcher companyMatcher;
 
+//		if (currentLine.contains("Johannes")) {
+//			System.out.println(currentLine);
+//		}
 		if (namePattern != null) {
 			nameMatcher = namePattern.matcher(currentLine);
 			if (nameMatcher.find() && nameMatcher.groupCount() > 0) {
@@ -195,6 +198,9 @@ public class ReverseLookupEntryParsing {
 		value = value.replaceAll("\\s\\s+", " ");
 		value = value.replaceAll(",", "");
 		value = value.trim();
+		if (value.startsWith("\\d\\.")) {
+			value = value.substring(2).trim();
+		}
 		return value;
 	}
 
@@ -210,11 +216,19 @@ public class ReverseLookupEntryParsing {
 		split = str.split(" ", 2);
 
 		String foundFirst = cleanupString(split[0]);
-		String foundSecond = "";
-		if (split[1].length() > 0) {
-			foundSecond = cleanupString(split[1]);
+		if (foundFirst.matches("^\\d\\.")) {
+			str = str.substring(3).trim();
+			split = str.split(" ", 2);
+			foundFirst = cleanupString(split[0]);
 		}
-
+		
+		String foundSecond = "";
+		if (split.length > 1) {
+			if (split[1].length() > 0) {
+				foundSecond = cleanupString(split[1]);
+			}
+		}
+		
 		ParseItem firstnameItem = new ParseItem(ParseItemType.FIRSTNAME);
 		ParseItem lastnameItem = new ParseItem(ParseItemType.LASTNAME);
 

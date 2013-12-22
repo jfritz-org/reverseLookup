@@ -1029,12 +1029,12 @@
 	        	<zipcode>&lt;meta itemprop=&quot;postalCode&quot; content=&quot;([^&quot;]*)&quot; /&gt;</zipcode>
 	        </entry>
 		</website>
-		<website name="www.11880.com" url="http://www.11880.com/Suche/index.cfm?&amp;fuseaction=Suche.rueckwaertssucheresult&amp;init=true&amp;tel=$NUMBER" prefix="0">
+		<website name="www.11880.com" url="http://www.11880.com/rueckwaertssuche/$NUMBER" prefix="0" numLines="7">
 	        <entry>
-	        	<name>&lt;a style=&quot;text-decoration: underline;&quot; href=&quot;[^&quot;]*?&quot;\s+onclick=&quot;[^&quot;]*?&quot;\s+class=&quot;popup&quot;[^&gt;]*?&gt;([^&lt;]*?)&lt;/a&gt;</name>
-	        	<street>^\t*?([^,\t]*?), [\d]{5} [^&lt;]*?&lt;br /&gt;</street>
-	        	<city>^\t*?[^,\t]*?, [\d]{5} ([^&lt;]*?)&lt;br /&gt;</city>
-	        	<zipcode>^\t*?[^,\t]*?, ([\d]{5}) [^&lt;]*?&lt;br /&gt;</zipcode>
+	            <name>&lt;h4&gt;&lt;a href=[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;&lt;/h4&gt;</name>
+	        	<street>&lt;div class=&quot;entryData&quot;&gt;\s*(?:&lt;p&gt;)?([^&lt;]*)&lt;br&gt;\s*[\d]*\s[^&lt;]*&lt;</street>
+	        	<city>&lt;div class=&quot;entryData&quot;&gt;\s*(?:&lt;p&gt;)?[^&lt;]*&lt;br&gt;\s*[\d]*\s([^&lt;]*)&lt;</city>
+	        	<zipcode>&lt;div class=&quot;entryData&quot;&gt;\s*(?:&lt;p&gt;)?[^&lt;]*&lt;br&gt;\s*([\d]*)\s[^&lt;]*&lt;</zipcode>
 	        </entry>
 		</website>
 	</country>
