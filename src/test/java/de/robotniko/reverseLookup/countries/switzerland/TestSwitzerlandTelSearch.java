@@ -15,9 +15,9 @@ import de.robotniko.reverseLookup.ReverseLookupService;
 import de.robotniko.reverseLookup.exceptions.ReverseLookupException;
 import de.robotniko.reverseLookup.structs.Person;
 
-public class SwitzerlandTelLocal {
+public class TestSwitzerlandTelSearch {
 
-	private static final String SEARCH_SITE_NAME = "tel.local.ch";
+	private static final String SEARCH_SITE_NAME = "tel.search.ch";
 	private static ReverseLookupService service = new ReverseLookupService();
 
 	@BeforeClass
@@ -36,13 +36,13 @@ public class SwitzerlandTelLocal {
 	@Test
 	public void test1() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Kurt und Nadja (-Siegenthaler)");
+		expected.setFirstName("Kurt und Nadja");
 		expected.setLastName("Krebs");
 		expected.setStreet("Wichelackerstrasse 31");
 		expected.setHouseNumber(null);
 		expected.setZipCode("3144");
 		expected.setCity("Gasel");
-		expected.setCompany(null);
+		expected.setCompany("Beamter");
 		
 		Helper.testNumberOnSite(service, "+41318493427", SEARCH_SITE_NAME, expected);
 	}
@@ -70,7 +70,7 @@ public class SwitzerlandTelLocal {
 		expected.setHouseNumber(null);
 		expected.setZipCode("5703");
 		expected.setCity("Seon");
-		expected.setCompany("");
+		expected.setCompany(null);
 		
 		Helper.testNumberOnSite(service, "+41627750431", SEARCH_SITE_NAME, expected);
 	}

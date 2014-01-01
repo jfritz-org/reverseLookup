@@ -15,7 +15,7 @@ import de.robotniko.reverseLookup.ReverseLookupService;
 import de.robotniko.reverseLookup.exceptions.ReverseLookupException;
 import de.robotniko.reverseLookup.structs.Person;
 
-public class NetherlandsNummerzoeker {
+public class TestNetherlandsNummerzoeker {
 
 	private static final String SEARCH_SITE_NAME = "nummerzoeker.com";
 	private static ReverseLookupService service = new ReverseLookupService();

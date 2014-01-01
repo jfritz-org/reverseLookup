@@ -15,7 +15,7 @@ import de.robotniko.reverseLookup.ReverseLookupService;
 import de.robotniko.reverseLookup.exceptions.ReverseLookupException;
 import de.robotniko.reverseLookup.structs.Person;
 
-public class AustriaHeroldPrivat {
+public class TestAustriaHeroldPrivat {
 
 	private static final String SEARCH_SITE_NAME = "herold.at (Privat)";
 	private static ReverseLookupService service = new ReverseLookupService();

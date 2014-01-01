@@ -15,9 +15,9 @@ import de.robotniko.reverseLookup.ReverseLookupService;
 import de.robotniko.reverseLookup.exceptions.ReverseLookupException;
 import de.robotniko.reverseLookup.structs.Person;
 
-public class AustriaHeroldFirma {
+public class TestAustriaTbOnline {
 
-	private static final String SEARCH_SITE_NAME = "herold.at (Firma)";
+	private static final String SEARCH_SITE_NAME = "tb-online.at";
 	private static ReverseLookupService service = new ReverseLookupService();
 
 	@BeforeClass
@@ -32,15 +32,16 @@ public class AustriaHeroldFirma {
 		System.out.println("\nSleeping for " + sleeptime + " seconds");
 		Thread.sleep(sleeptime * 1000);
 	}
-
 	@Test
 	public void testTrivadis() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setStreet("Handelskai 94-96/Millennium Tower");
+		expected.setFirstName("Delphi GmbH");
+		expected.setLastName("Trivadis");
+		expected.setStreet("Handelskai 94 -96");
 		expected.setHouseNumber(null);
 		expected.setZipCode("1200");
 		expected.setCity("Wien");
-		expected.setCompany("Trivadis Delphi GmbH");
+		expected.setCompany(null);
 		
 		Helper.testNumberOnSite(service, "+4313323531", SEARCH_SITE_NAME, expected);
 	}
@@ -48,32 +49,55 @@ public class AustriaHeroldFirma {
 	@Test
 	public void testKarin() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setStreet("Nr. 166");
+		expected.setFirstName("Karin");
+		expected.setLastName("Duftner");
+		expected.setStreet("Alpbach 166");
 		expected.setHouseNumber(null);
 		expected.setZipCode("6236");
 		expected.setCity("Alpbach");
-		expected.setCompany("Romantikhotel Böglerhof GmbH");
+		expected.setCompany(null);
 		
 		Helper.testNumberOnSite(service, "+4353365227", SEARCH_SITE_NAME, expected);
 	}
 
 	@Test
 	public void testPrammerRudolf() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = null; // not a company
+		Person expected = new Person();
+		expected.setFirstName("Rudolf Edeltraud");
+		expected.setLastName("Prammer");
+		expected.setStreet("Götzelsdorf 17");
+		expected.setHouseNumber(null);
+		expected.setZipCode("4221");
+		expected.setCity("Götzelsdorf");
+		expected.setCompany(null);
 		
 		Helper.testNumberOnSite(service, "+43732641574", SEARCH_SITE_NAME, expected);
 	}
 
 	@Test
 	public void testPrammerJohann() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = null; // not a company
+		Person expected = new Person();
+		expected.setFirstName("Johann");
+		expected.setLastName("Prammer");
+		expected.setStreet("Stelzhamerstraße 7");
+		expected.setHouseNumber(null);
+		expected.setZipCode("4225");
+		expected.setCity("Luftenberg");
+		expected.setCompany(null);
 		
 		Helper.testNumberOnSite(service, "+4372374145", SEARCH_SITE_NAME, expected);
 	}
 
 	@Test
 	public void testPrammerWalter() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = null; // not a company
+		Person expected = new Person();
+		expected.setFirstName("Walter");
+		expected.setLastName("Prammer");
+		expected.setStreet("Opalweg 8");
+		expected.setHouseNumber(null);
+		expected.setZipCode("4225");
+		expected.setCity("Abwinden");
+		expected.setCompany(null);
 		
 		Helper.testNumberOnSite(service, "+4372372698", SEARCH_SITE_NAME, expected);
 	}

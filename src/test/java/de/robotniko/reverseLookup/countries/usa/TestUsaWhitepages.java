@@ -15,7 +15,7 @@ import de.robotniko.reverseLookup.ReverseLookupService;
 import de.robotniko.reverseLookup.exceptions.ReverseLookupException;
 import de.robotniko.reverseLookup.structs.Person;
 
-public class UsaWhitepages {
+public class TestUsaWhitepages {
 	private static final String SEARCH_SITE_NAME = "whitepages.com";
 	private static ReverseLookupService service = new ReverseLookupService();
 

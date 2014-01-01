@@ -1,4 +1,4 @@
-package de.robotniko.reverseLookup.countries.switzerland;
+package de.robotniko.reverseLookup.countries.italy;
 
 import java.io.IOException;
 
@@ -15,9 +15,9 @@ import de.robotniko.reverseLookup.ReverseLookupService;
 import de.robotniko.reverseLookup.exceptions.ReverseLookupException;
 import de.robotniko.reverseLookup.structs.Person;
 
-public class SwitzerlandTelSearch {
+public class TestItalyInfobel {
 
-	private static final String SEARCH_SITE_NAME = "tel.search.ch";
+	private static final String SEARCH_SITE_NAME = "infobel.com";
 	private static ReverseLookupService service = new ReverseLookupService();
 
 	@BeforeClass
@@ -36,57 +36,56 @@ public class SwitzerlandTelSearch {
 	@Test
 	public void test1() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Kurt und Nadja");
-		expected.setLastName("Krebs");
-		expected.setStreet("Wichelackerstrasse 31");
+		expected.setFirstName("LUIGI");
+		expected.setLastName("FERRARI");
+		expected.setStreet("DEI DAINI 114");
 		expected.setHouseNumber(null);
-		expected.setZipCode("3144");
-		expected.setCity("Gasel");
-		expected.setCompany("Beamter");
+		expected.setZipCode("20142");
+		expected.setCity("MILANO");
+		expected.setCompany(null);
 		
-		Helper.testNumberOnSite(service, "+41318493427", SEARCH_SITE_NAME, expected);
+		Helper.testNumberOnSite(service, "+3928260860", SEARCH_SITE_NAME, expected);
 	}
 
 	@Test
 	public void test2() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("GmbH");
-		expected.setLastName("Cytracon");
-		expected.setStreet("Rütistrasse 20a");
+		expected.setFirstName("MARIO");
+		expected.setLastName("ROSSI");
+		expected.setStreet("V. NOMENTANA 33");
 		expected.setHouseNumber(null);
-		expected.setZipCode("8134");
-		expected.setCity("Adliswil");
-		expected.setCompany("Internet- / IT-Services");
+		expected.setZipCode("00149");
+		expected.setCity("ROMA");
+		expected.setCompany(null);
 		
-		Helper.testNumberOnSite(service, "+41447712727", SEARCH_SITE_NAME, expected);
+		Helper.testNumberOnSite(service, "+39655262755", SEARCH_SITE_NAME, expected);
 	}
-	
+
 	@Test
 	public void test3() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Achim und Cornelia");
-		expected.setLastName("Geiser");
-		expected.setStreet("Webereistrasse 39");
+		expected.setFirstName("FOTO OTTICA (S.N.C.)");
+		expected.setLastName("FANTINATO");
+		expected.setStreet("BATTISTA BARTESAGHI 123");
 		expected.setHouseNumber(null);
-		expected.setZipCode("5703");
-		expected.setCity("Seon");
+		expected.setZipCode("22036");
+		expected.setCity("ERBA");
 		expected.setCompany(null);
 		
-		Helper.testNumberOnSite(service, "+41627750431", SEARCH_SITE_NAME, expected);
+		Helper.testNumberOnSite(service, "+3931642176", SEARCH_SITE_NAME, expected);
 	}
-	
+
 	@Test
 	public void test4() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Telemarketing AG");
-		expected.setLastName("CallWorld");
-		expected.setStreet("Heiligkreuzstrasse 2");
+		expected.setFirstName("SRL");
+		expected.setLastName("INITALIA");
+		expected.setStreet("DE' GOZZADINI BENO 270");
 		expected.setHouseNumber(null);
-		expected.setZipCode("9008");
-		expected.setCity("St. Gallen");
-		expected.setCompany("Telefonmarketing In- und Outbound (SQS- Gütesiegel- Zertifiziert)");
+		expected.setZipCode("20122");
+		expected.setCity("MILANO");
+		expected.setCompany(null);
 		
-		Helper.testNumberOnSite(service, "+41715550800", SEARCH_SITE_NAME, expected);
+		Helper.testNumberOnSite(service, "+39226830102", SEARCH_SITE_NAME, expected);
 	}
-	
 }
