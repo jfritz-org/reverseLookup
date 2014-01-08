@@ -6,6 +6,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.After;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.xml.sax.SAXException;
 
@@ -111,7 +112,7 @@ public class TestNorwayGulesider {
 		Helper.testNumberOnSite(service, "+4756551733", SEARCH_SITE_NAME, expected);
 	}
 
-	@Test
+	@Ignore
 	public void testPPT() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
 		expected.setCompany("PPT Fana Bydel");

@@ -99,16 +99,16 @@ public class TestNorwayNettKatalogenBransjeList {
 	@Test
 	public void testFargehandel() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-//		expected.setCompany("AS Tingbakken");
-//		expected.setStreet("Sandvenvegen 39 A");
-//		expected.setZipCode("5600");
-//		expected.setCity("Norheimsund (Kvam)");
-
-		// THIS IS STILL BUGGY
-		expected.setCompany("Scopus AS");
-		expected.setStreet("5600 Norheimsund (Kvam)");
+		expected.setCompany("AS Tingbakken");
+		expected.setStreet("Sandvenvegen 39 A");
 		expected.setZipCode("5600");
 		expected.setCity("Norheimsund (Kvam)");
+
+		// THIS IS STILL BUGGY
+//		expected.setCompany("Scopus AS");
+//		expected.setStreet("5600 Norheimsund (Kvam)");
+//		expected.setZipCode("5600");
+//		expected.setCity("Norheimsund (Kvam)");
 		
 		Helper.testNumberOnSite(service, "+4756551733", SEARCH_SITE_NAME, expected);
 	}
@@ -145,7 +145,7 @@ public class TestNorwayNettKatalogenBransjeList {
 	@Test
 	public void testSamferdselsdepartementet() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setCompany("Landbruks- og Matdepartementet");
+		expected.setCompany("Kommunal- Og Regional- Departemente...");
 		expected.setStreet("Akersgata 59");
 		expected.setZipCode("0180");
 		expected.setCity("Oslo");
