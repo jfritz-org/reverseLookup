@@ -69,11 +69,13 @@ public class ReverseLookupSiteParsing {
 				response = createResponseFromResult(responseList, parseItem, response);
 			}
 
-			if (!isResponseEmpty(response)) {
+			if (isResponseEmpty(response)) {
+				LOG.debug("Response is empty, not adding to response list");
+			} else if (!isNameOrCompanySet(response)) {
+				LOG.debug("Name and company is not set, not adding to response list");
+			} else {
 				LOG.debug("Response not empty, adding to response list");
 				responseList.add(response);
-			} else {
-				LOG.debug("Response is empty, not adding to response list");
 			}
 
 			for (ReverseLookupResponse r: responseList) {
@@ -156,5 +158,9 @@ public class ReverseLookupSiteParsing {
 				&& response.getFirstName() == null && response.getLastName() == null
 				&& response.getStreet() == null && response.getHouseNumber() == null
 				&& response.getZipCode() == null);
+	}
+	
+	private boolean isNameOrCompanySet(final ReverseLookupResponse response) {
+		return (response.getFirstName() != null || response.getLastName() != null || response.getCompany() != null);
 	}
 }

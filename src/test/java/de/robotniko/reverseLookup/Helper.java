@@ -82,8 +82,10 @@ public class Helper {
 		} else if (expected != null && results.size() == 0) {
 			System.err.println("Expected one but got no results!");
 			Assert.fail();
+		} else if (expected == null && results.size() != 0) {
+			System.err.println("Expected no result but got at least one result!");
+			Assert.fail();
 		} else {
-			// only get first entry, do not check other entries! Maybe ugly, but sufficient for function tests
 			boolean atLeastOneMatches = false;
 			
 			for (int i=0; i<results.size(); i++) {

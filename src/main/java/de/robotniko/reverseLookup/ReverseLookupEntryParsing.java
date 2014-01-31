@@ -169,6 +169,8 @@ public class ReverseLookupEntryParsing {
 
 	private ParseItem parseLine(final ParseItemType type, final Matcher matcher, final int lineNumber) {
 		//read in and concatenate all groupings
+		int count = matcher.groupCount();
+
 		String str = "";
 		for(int k=1; k <= matcher.groupCount(); k++){
 			if(matcher.group(k) != null)
@@ -177,7 +179,6 @@ public class ReverseLookupEntryParsing {
 
 		String value = cleanupString(str);
 
-		int count = matcher.groupCount();
 		ParseItem parseItem = new ParseItem(type);
 		parseItem.setLine(lineNumber);
 		parseItem.setStartIndex(matcher.start(1));
