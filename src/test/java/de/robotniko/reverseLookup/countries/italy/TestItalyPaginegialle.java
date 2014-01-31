@@ -75,4 +75,11 @@ public class TestItalyPaginegialle {
 		
 		Helper.testNumberOnSite(service, "+39226830102", SEARCH_SITE_NAME, expected);
 	}
+	
+	@Test
+	public void test5() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
+		Person expected = null;
+		
+		Helper.testNumberOnSite(service, "+39817429549", SEARCH_SITE_NAME, expected);
+	}
 }

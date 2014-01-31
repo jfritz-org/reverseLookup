@@ -59,10 +59,10 @@ public class TestNorwayNettKatalogenBransjeList {
 	@Test
 	public void testHelsebanken() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setCompany("Ragnar Hansen");
-		expected.setStreet("Hardangerfjordvegen 650");
+		expected.setCompany("Lena Laupsa");
+		expected.setStreet("Hardangerfjordvegen 650 Helsebanken");
 		expected.setZipCode("5610");
-		expected.setCity("Øystese (Kvam)");
+		expected.setCity("ØYSTESE (Kvam)");
 		
 		Helper.testNumberOnSite(service, "+4756553850", SEARCH_SITE_NAME, expected);
 	}
@@ -117,9 +117,9 @@ public class TestNorwayNettKatalogenBransjeList {
 	public void testPPT() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
 		expected.setCompany("Bergen kommune");
-		expected.setStreet("Rådhusgaten 10");
-		expected.setZipCode("5014");
-		expected.setCity("BERGEN");
+		expected.setStreet("Bergen Rådhus");
+		expected.setZipCode("5016");
+		expected.setCity("Bergen");
 		
 		Helper.testNumberOnSite(service, "+4755562250", SEARCH_SITE_NAME, expected);
 	}
@@ -145,7 +145,7 @@ public class TestNorwayNettKatalogenBransjeList {
 	@Test
 	public void testSamferdselsdepartementet() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setCompany("Kommunal- Og Regional- Departemente...");
+		expected.setCompany("Kulturdepartementet");
 		expected.setStreet("Akersgata 59");
 		expected.setZipCode("0180");
 		expected.setCity("Oslo");

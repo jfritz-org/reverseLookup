@@ -35,8 +35,8 @@ public class TestUsaWhitepages {
 	@Test
 	public void test1() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Howard");
-		expected.setLastName("W Levison");
+		expected.setFirstName("Jamie");
+		expected.setLastName("Levison");
 		expected.setStreet("602 Sun Valley Way");
 		expected.setHouseNumber(null);
 		expected.setZipCode("NJ 07932-3005");
