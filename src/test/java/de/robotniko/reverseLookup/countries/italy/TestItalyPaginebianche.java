@@ -12,6 +12,7 @@ import org.xml.sax.SAXException;
 import de.robotniko.MyTestHelper;
 import de.robotniko.reverseLookup.Helper;
 import de.robotniko.reverseLookup.ReverseLookupService;
+import de.robotniko.reverseLookup.countries.TestConstants;
 import de.robotniko.reverseLookup.exceptions.ReverseLookupException;
 import de.robotniko.reverseLookup.structs.Person;
 
@@ -28,9 +29,9 @@ public class TestItalyPaginebianche {
 
 	@After
 	public void after() throws InterruptedException {
-		int sleeptime = 3;
-		System.out.println("\nSleeping for " + sleeptime + " seconds");
-		Thread.sleep(sleeptime * 1000);
+		int sleeptime = TestConstants.SLEEP_TIME;
+		System.out.println("\nSleeping for " + sleeptime + " ms");
+		Thread.sleep(sleeptime);
 	}
 
 	@Test
