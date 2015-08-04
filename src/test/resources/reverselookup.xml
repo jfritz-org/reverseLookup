@@ -1036,7 +1036,19 @@
 	        </entry>
 		</website>
 		<website name="www.11880.com" url="http://www.11880.com/rueckwaertssuche/$NUMBER" prefix="0" numLines="7">
+   	        <entry>
+	            <name>(?i)&lt;h\d (?:class=&quot;headbox&quot;)?itemprop=&quot;name&quot;\s*>\s*([^&lt;]*)\s*&lt;/h\d&gt;</name>
+	        	<street>(?i)&lt;div class=&quot;address&quot;&gt;\s*&lt;p&gt;\s*([^&lt;]*)&lt;/p&gt;\s*&lt;p&gt;[^&lt;]*&lt;/p&gt;\s*&lt;/div&gt;</street>
+	        	<city>(?i)&lt;div class=&quot;address&quot;&gt;\s*&lt;p&gt;\s*[^&lt;]*&lt;/p&gt;\s*&lt;p&gt;[^\s]*\s([^&lt;]*)&lt;/p&gt;\s*&lt;/div&gt;</city>
+	        	<zipcode>(?i)&lt;div class=&quot;address&quot;&gt;\s*&lt;p&gt;\s*[^&lt;]*&lt;/p&gt;\s*&lt;p&gt;([^\s]*)\s[^&lt;]*&lt;/p&gt;\s*&lt;/div&gt;</zipcode>
+	        </entry>
 	        <entry>
+	            <name>(?i)&lt;h\d (?:class=&quot;headbox&quot;\s)?itemprop=&quot;name&quot;\s*>\s*([^&lt;]*)\s*&lt;/h\d&gt;</name>
+	        	<street>(?i)&lt;div itemprop=&quot;streetAddress&quot;&gt;\s*([^&lt;]*)\s*&lt;/div&gt;</street>
+	        	<city>(?i)&lt;div itemprop=&quot;addressLocality&quot;&gt;\s*[^\s]*\s([^&lt;]*)\s*&lt;/div&gt;</city>
+	        	<zipcode>(?i)&lt;div itemprop=&quot;addressLocality&quot;&gt;\s*([^\s]*)\s[^&lt;]*&lt;/div&gt;</zipcode>
+	        </entry>
+   	        <entry>
 	            <name>&lt;h4&gt;&lt;a href=[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;&lt;/h4&gt;</name>
 	        	<street>&lt;div class=&quot;entryData&quot;&gt;\s*(?:&lt;p&gt;)?([^&lt;]*)&lt;br&gt;\s*[\d]*\s[^&lt;]*&lt;</street>
 	        	<city>&lt;div class=&quot;entryData&quot;&gt;\s*(?:&lt;p&gt;)?[^&lt;]*&lt;br&gt;\s*[\d]*\s([^&lt;]*)&lt;</city>

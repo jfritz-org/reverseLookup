@@ -50,7 +50,7 @@ public class TestGermany11880 {
 		expected.setLastName("Kramm");
 		expected.setStreet("Johannes-Gropper-Weg 10 A");
 		expected.setZipCode("59494");
-		expected.setCity("Soest Westf");
+		expected.setCity("Soest");
 		
 		Helper.testNumberOnSite(service, "+49292113115", SEARCH_SITE_NAME, expected);
 	}
@@ -93,7 +93,7 @@ public class TestGermany11880 {
 		expected.setLastName("Apollo-Optik");
 		expected.setStreet("Äußere Bayreuther Str. 80");
 		expected.setZipCode("90491");
-		expected.setCity("Nürnberg Mittelfr");
+		expected.setCity("Nürnberg (Schoppershof)");
 		
 		Helper.testNumberOnSite(service, "+499115402808", SEARCH_SITE_NAME, expected);
 	}
@@ -105,7 +105,7 @@ public class TestGermany11880 {
 		expected.setLastName("Schmidt");
 		expected.setStreet("Treisberger Weg 12");
 		expected.setZipCode("61389");
-		expected.setCity("Schmitten Taunus");
+		expected.setCity("Schmitten (Brombach)");
 		
 		Helper.testNumberOnSite(service, "+496084950130", SEARCH_SITE_NAME, expected);
 	}	
@@ -131,7 +131,7 @@ public class TestGermany11880 {
 		expected.setLastName("LAGO");
 		expected.setStreet("Gablonzer Str. 13");
 		expected.setZipCode("76185");
-		expected.setCity("Karlsruhe Baden");
+		expected.setCity("Karlsruhe (Mühlburg)");
 		
 		Helper.testNumberOnSite(service, "+497215704230", SEARCH_SITE_NAME, expected);
 	}
@@ -143,7 +143,7 @@ public class TestGermany11880 {
 		expected.setLastName("Pritzl");
 		expected.setStreet("Südliche Münchner Str. 55");
 		expected.setZipCode("82031");
-		expected.setCity("Grünwald Kr München");
+		expected.setCity("Grünwald");
 		
 		Helper.testNumberOnSite(service, "+49896202180", SEARCH_SITE_NAME, expected);
 	}
