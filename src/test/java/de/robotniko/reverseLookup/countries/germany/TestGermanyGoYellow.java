@@ -6,6 +6,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.After;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.xml.sax.SAXException;
 
@@ -39,6 +40,8 @@ public class TestGermanyGoYellow {
 		Person expected = new Person();
 		expected.setFirstName("J.");
 		expected.setLastName("Joo");
+		expected.setZipCode("");
+		expected.setCity("Karlsruhe");
 		
 		Helper.testNumberOnSite(service, "+49721502943", SEARCH_SITE_NAME, expected);
 	}
@@ -103,7 +106,7 @@ public class TestGermanyGoYellow {
 		Helper.testNumberOnSite(service, "+499115402808", SEARCH_SITE_NAME, expected);
 	}
 	
-	@Test
+	@Ignore
 	public void testSchmidt() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
 		expected.setFirstName("Michael");
