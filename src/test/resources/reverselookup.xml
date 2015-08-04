@@ -950,9 +950,9 @@
 		<website name="www.dasoertliche.de" url="http://www.dasoertliche.de/Controller?form_name=search_inv&amp;ph=$NUMBER" prefix="0" numLines="3">
 		    <entry>
 				<name>(?i)class=&quot;name\s*&quot;(?:\s+onmouseover=&quot;&quot;)?(?:\s+onmouseout=&quot;&quot;)?&gt;&lt;span class=&quot;&quot;&gt;([^&lt;]*)&lt;/span&gt;</name>
-		        <street>&lt;address&gt;\s*([^,]*),.*&lt;span class=&quot;&quot;&gt;[^&lt;]*&lt;/span&gt;(?:&lt;span.*&lt;/span&gt;)?\s*&lt;/address&gt;</street>
-		        <city>&lt;address&gt;\s*[^&lt;]*&lt;span class=&quot;&quot;>([^&lt;]*)&lt;/span&gt;(?:&lt;span.*&lt;/span&gt;)?\s*&lt;/address&gt;</city>
-		        <zipcode>&lt;address&gt;\s*[^,]*,([^&lt;]*)&lt;span class=&quot;&quot;>[^&lt;]*&lt;/span&gt;(?:&lt;span.*&lt;/span&gt;)?\s*&lt;/address&gt;</zipcode>
+		        <street>(?i)&lt;address&gt;\s*([^,]*),.*&lt;span class=&quot;&quot;&gt;[^&lt;]*&lt;/span&gt;(?:&lt;span.*&lt;/span&gt;)?\s*&lt;/address&gt;</street>
+		        <city>(?i)&lt;address&gt;\s*[^&lt;]*&lt;span class=&quot;&quot;>([^&lt;]*)&lt;/span&gt;(?:&lt;span.*&lt;/span&gt;)?\s*&lt;/address&gt;</city>
+		        <zipcode>(?i)&lt;address&gt;\s*[^,]*,([^&lt;]*)&lt;span class=&quot;&quot;>[^&lt;]*&lt;/span&gt;(?:&lt;span.*&lt;/span&gt;)?\s*&lt;/address&gt;</zipcode>
 			</entry>		    
 		    <entry>
 		        <name>class=&quot;preview iname&quot;[^&gt;]*&gt;&lt;span class=&quot;&quot;&gt;([^&lt;]*)&lt;/span&gt;</name>
