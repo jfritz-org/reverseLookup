@@ -116,7 +116,11 @@ public class ReverseLookupAsyncThread extends Thread {
 	public synchronized void resumeLookup(){
 		threadSuspended = false;
 		notify();
-		LOG.info("resuming lookup thread again");
+		if (terminate) {
+			LOG.info("resuming lookup thread to terminate it");
+		} else {
+			LOG.info("resuming lookup thread again");
+		}
 	}
 
 	public synchronized boolean isSuspended(){
