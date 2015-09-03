@@ -71,7 +71,6 @@ public class TestSwitzerlandTelLocal {
 		expected.setHouseNumber(null);
 		expected.setZipCode("5703");
 		expected.setCity("Seon");
-		expected.setCompany("");
 		
 		Helper.testNumberOnSite(service, "+41627750431", SEARCH_SITE_NAME, expected);
 	}
@@ -79,13 +78,12 @@ public class TestSwitzerlandTelLocal {
 	@Test
 	public void test4() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Telemarketing AG");
-		expected.setLastName("CallWorld");
+		expected.setFirstName("Dialog AG");
+		expected.setLastName("Trendcommerce");
 		expected.setStreet("Heiligkreuzstrasse 2");
 		expected.setHouseNumber(null);
 		expected.setZipCode("9008");
 		expected.setCity("St. Gallen");
-		expected.setCompany("Telefonmarketing In- und Outbound (SQS- Gütesiegel- Zertifiziert)");
 		
 		Helper.testNumberOnSite(service, "+41715550800", SEARCH_SITE_NAME, expected);
 	}

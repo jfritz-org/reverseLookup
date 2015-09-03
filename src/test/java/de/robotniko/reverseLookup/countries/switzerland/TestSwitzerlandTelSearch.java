@@ -37,7 +37,7 @@ public class TestSwitzerlandTelSearch {
 	@Test
 	public void test1() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Kurt und Nadja");
+		expected.setFirstName("Kurt und Nadja (-Siegenthaler)");
 		expected.setLastName("Krebs");
 		expected.setStreet("Wichelackerstrasse 31");
 		expected.setHouseNumber(null);
@@ -79,13 +79,12 @@ public class TestSwitzerlandTelSearch {
 	@Test
 	public void test4() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Telemarketing AG");
-		expected.setLastName("CallWorld");
+		expected.setFirstName("Dialog AG");
+		expected.setLastName("Trendcommerce");
 		expected.setStreet("Heiligkreuzstrasse 2");
 		expected.setHouseNumber(null);
 		expected.setZipCode("9008");
 		expected.setCity("St. Gallen");
-		expected.setCompany("Telefonmarketing In- und Outbound (SQS- Gütesiegel- Zertifiziert)");
 		
 		Helper.testNumberOnSite(service, "+41715550800", SEARCH_SITE_NAME, expected);
 	}
