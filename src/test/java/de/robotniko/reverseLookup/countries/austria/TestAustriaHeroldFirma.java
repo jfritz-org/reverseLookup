@@ -49,7 +49,7 @@ public class TestAustriaHeroldFirma {
 	@Test
 	public void testKarin() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setStreet("Nr. 166");
+		expected.setStreet("Nummer 166");
 		expected.setHouseNumber(null);
 		expected.setZipCode("6236");
 		expected.setCity("Alpbach");
