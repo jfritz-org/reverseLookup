@@ -37,10 +37,10 @@ public class TestSwedenEniro {
 	@Test
 	public void testLystad() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Rolf Inge");
-		expected.setLastName("Lystad");
-		expected.setStreet("V. Klevg. 7");
-		expected.setZipCode("452 30");
+		expected.setFirstName("George");
+		expected.setLastName("Niklas");
+		expected.setStreet("Karlsgatan 22A");
+		expected.setZipCode("45231");
 		expected.setCity("STRÖMSTAD");
 		
 		Helper.testNumberOnSite(service, "+4652610580", SEARCH_SITE_NAME, expected);
@@ -49,11 +49,8 @@ public class TestSwedenEniro {
 	@Test
 	public void testEdberg() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Nilsson Data HB");
-		expected.setLastName("Edberg");
-		expected.setStreet("Utsädesgatan 3B");
-		expected.setZipCode("431 46");
-		expected.setCity("MÖLNDAL");
+		expected.setFirstName("Nilsson");
+		expected.setLastName("Johan");
 		
 		Helper.testNumberOnSite(service, "+46702619401", SEARCH_SITE_NAME, expected);
 	}

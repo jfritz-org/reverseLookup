@@ -885,12 +885,12 @@
 		</website>
 	</country>
 	<country code="+46">
-		<website name="privatpersoner.eniro.se" url="http://gulasidorna.eniro.se/hitta:$NUMBER" prefix="0">
+		<website name="privatpersoner.eniro.se" url="http://personer.eniro.se/query?what=wp&amp;search_word=$NUMBER" prefix="0" numLines="5">
 		    <entry>
-		        <name>&lt;span class=&quot;num&quot;&gt;\d+.&lt;/span&gt;\s*&lt;h[1-9]&gt;&lt;a[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;&lt;/h[1-9]&gt;</name>
-				<street>&lt;span class=&quot;street-address&quot;&gt;([^&lt;]*)&lt;/span&gt;</street>
-				<city>&lt;span class=&quot;locality&quot;&gt;([^&lt;]*)&lt;/span&gt;</city>
-				<zipcode>&lt;span class=&quot;postal-code&quot;&gt;([^&lt;]*)&lt;/span&gt;</zipcode>
+				<name>&lt;span\s+class=&quot;hit-name-ellipsis&quot;&gt;\s*&lt;a[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</name>
+				<street>&lt;span\s+class=&quot;hit-street-address&quot;&gt;\s*([^&lt;]*)&lt;/span&gt;</street>
+				<city>&lt;span\s+class=&quot;hit-address-locality&quot;&gt;\s*([^&lt;]*)&lt;/span&gt;</city>
+				<zipcode>&lt;span\s+class=&quot;hit-postal-code&quot;&gt;\s*([^&lt;]*)&lt;/span&gt;</zipcode>
 		    </entry>
 		</website>
 	</country>
@@ -913,6 +913,12 @@
 				<city>&lt;div\s+class=&quot;person-data&quot;&gt;\s*&lt;span&gt;[\d]+\s+([^&lt;]*)&lt;/span&gt;</city>
 				<zipcode>&lt;div\s+class=&quot;person-data&quot;&gt;\s*&lt;span&gt;([\d]+)\s+[^&lt;]*&lt;/span&gt;</zipcode>
 			</entry>
+		    <entry>
+				<name>&lt;span\s+class=&quot;hit-name-ellipsis&quot;&gt;\s*&lt;a[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</name>
+				<street>&lt;span\s+class=&quot;hit-street-address&quot;&gt;\s*([^&lt;]*)&lt;/span&gt;</street>
+				<city>&lt;span\s+class=&quot;hit-address-locality&quot;&gt;\s*([^&lt;]*)&lt;/span&gt;</city>
+				<zipcode>&lt;span\s+class=&quot;hit-postal-code&quot;&gt;\s*([^&lt;]*)&lt;/span&gt;</zipcode>
+		    </entry>
 		</website>
 
 		<website name="nettkatalogen.no" url="http://www.nettkatalogen.no/default.asp?search=$NUMBER&amp;x=36&amp;y=15&amp;cmd=psok" prefix="">
