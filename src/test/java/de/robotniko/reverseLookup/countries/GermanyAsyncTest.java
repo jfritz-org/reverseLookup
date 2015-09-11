@@ -41,7 +41,7 @@ public class GermanyAsyncTest {
 		numTestsFailed = 0;
 		final List<ReverseLookupRequest> requestList = new ArrayList<ReverseLookupRequest>();
 
-		ResponseAssertListener l1 = new ResponseAssertListener(1, null, "P. u. Mand A.", "Kramm", "Johannes-Gropper-Weg 10 A", null, "59494", "Soest");
+		ResponseAssertListener l1 = new ResponseAssertListener(1, null, "P. u. Mand A.", "Kramm", "Johannes-Gropper-Weg", "10A", "59494", "Soest");
 		ReverseLookupRequest request1 = new ReverseLookupRequest("+49292113115", l1);
 		requestList.add(request1);
 
@@ -61,7 +61,7 @@ public class GermanyAsyncTest {
 			wait(10000);
 		}
 
-		ResponseAssertListener l4 = new ResponseAssertListener(2, null, "O. Dr.med.", "Then", "Bahnhofplatz 7", null, "82054", "Sauerlach");
+		ResponseAssertListener l4 = new ResponseAssertListener(2, null, "Olaf Dr.med. Facharzt für Orthopädie und Sportmedizin", "Then", "Bahnhofplatz", "7", "82054", "Sauerlach");
 		ReverseLookupRequest request4 = new ReverseLookupRequest("+498104889820", l4);
 		requestList.add(request4);
 
