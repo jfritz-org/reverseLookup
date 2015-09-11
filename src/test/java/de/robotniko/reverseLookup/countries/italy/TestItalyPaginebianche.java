@@ -49,24 +49,10 @@ public class TestItalyPaginebianche {
 	}
 
 	@Test
-	public void test2() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = new Person();
-		expected.setFirstName("MARIO DR.");
-		expected.setLastName("ROSSI");
-		expected.setStreet("Largo La Loggia Gaetano 33");
-		expected.setHouseNumber(null);
-		expected.setZipCode("00149");
-		expected.setCity("Roma (RM)");
-		expected.setCompany(null);
-		
-		Helper.testNumberOnSite(service, "+39655262755", SEARCH_SITE_NAME, expected);
-	}
-
-	@Test
 	public void test3() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("FANTINATO");
-		expected.setLastName("FOTOOTTICA");
+		expected.setFirstName("FOTOTTICA");
+		expected.setLastName("FANTINATO");
 		expected.setStreet("Corso XXV Aprile 123");
 		expected.setHouseNumber(null);
 		expected.setZipCode("22036");
@@ -79,11 +65,11 @@ public class TestItalyPaginebianche {
 	@Test
 	public void test4() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Margot");
-		expected.setLastName("Hotel");
-		expected.setStreet("Via Carnia 33");
+		expected.setFirstName("SRL");
+		expected.setLastName("INITALIA");
+		expected.setStreet("Viale Monza 270");
 		expected.setHouseNumber(null);
-		expected.setZipCode("46013");
+		expected.setZipCode("20128");
 		expected.setCity("Milano (MI)");
 		expected.setCompany(null);
 		
@@ -92,8 +78,16 @@ public class TestItalyPaginebianche {
 	
 	@Test
 	public void test5() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = null;
+		Person expected = new Person();
 		
+		expected.setFirstName("PARITARIO GARDEN HOUSE");
+		expected.setLastName("ISTITUTO");
+		expected.setStreet("Via Caracciolo");
+		expected.setHouseNumber(null);
+		expected.setZipCode("80016");
+		expected.setCity("Marano Di Napoli (NA)");
+		expected.setCompany(null);
+
 		Helper.testNumberOnSite(service, "+39817429549", SEARCH_SITE_NAME, expected);
 	}
 }
