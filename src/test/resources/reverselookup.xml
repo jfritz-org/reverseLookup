@@ -535,12 +535,12 @@
 				<city>&lt;td\s+class=&quot;nowrap&quot;&gt;[\d]*-[\d]*&lt;/td&gt;\s*&lt;td&gt;[^&lt;]*&lt;/td&gt;\s*&lt;td\s+class=&quot;nowrap&quot;&gt;[^&lt;]*&lt;/td&gt;\s*&lt;td\s+class=&quot;nowrap&quot;&gt;[^&lt;]*&lt;/td&gt;\s*&lt;td\s+class=&quot;nowrap&quot;&gt;([^&lt;]*)&lt;/td&gt;</city>
 			</entry>
 		</website>
-		<website name="gebeld.nl" url="http://www.gebeld.nl/content.asp?zapp=zapp&amp;land=&amp;zoek=Nummer&amp;searchfield1=fullnumber&amp;searchfield2=&amp;queryfield1=$NUMBER&amp;queryfield2=&amp;fuzzy=&amp;volll=&amp;database=open&amp;tld=" prefix="0" numLines="4">
-			<entry>
-			    <name>&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;([^&lt;]*)&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;[^&lt;]*&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;[^&lt;]*&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;[^&lt;]*&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*</name>
-			    <street>&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;[^&lt;]*&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;([^&lt;]*)&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;[^&lt;]*&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;[^&lt;]*&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*</street>
-   			    <zipcode>&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;[^&lt;]*&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;[^&lt;]*&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;&amp;nbsp;([^&amp;]*)&amp;nbsp;[^&lt;]*&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;[^&lt;]*&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*</zipcode>
-   			    <city>&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;[^&lt;]*&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;[^&lt;]*&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;&amp;nbsp;[^&amp;]*&amp;nbsp;([^&lt;]*)&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*&lt;tr bgcolor=[^&gt;]*&gt;\s*&lt;TD&gt;&lt;/TD&gt;\s*&lt;td width=[^&gt;]*&gt;[^&lt;]*&lt;/td&gt;\s*&lt;TD&gt;&lt;/TD&gt;&lt;/tr&gt;\s*</city>
+		<website name="gebeld.nl" url="http://www.gebeld.nl/zoeken.asp?Page=4&amp;searchfield1=fullnumber&amp;action=Zoeken&amp;queryfield1=$NUMBER" prefix="0" numLines="4">
+		    <entry>
+		        <name>&lt;div\s+class=&quot;[\w-\s]+\s*information&quot;&gt;([^&lt;]*)&lt;BR /&gt;[^&lt;]*&lt;br /&gt;\s*[\d\w]+[^&lt;]*&lt;br /&gt;</name>
+		        <street>&lt;div\s+class=&quot;[\w-\s]+\s*information&quot;&gt;[^&lt;]*&lt;BR /&gt;([^&lt;]*)&lt;br /&gt;\s*[\d\w]+[^&lt;]*&lt;br /&gt;</street>
+				<city>&lt;div\s+class=&quot;[\w-\s]+\s*information&quot;&gt;[^&lt;]*&lt;BR /&gt;[^&lt;]*&lt;br /&gt;\s*[\d\w]+([^&lt;]*)&lt;br /&gt;</city>
+				<zipcode>&lt;div\s+class=&quot;[\w-\s]+\s*information&quot;&gt;[^&lt;]*&lt;BR /&gt;[^&lt;]*&lt;br /&gt;\s*([\d\w]+)[^&lt;]*&lt;br /&gt;</zipcode>
 			</entry>
 		</website>
 	</country>
