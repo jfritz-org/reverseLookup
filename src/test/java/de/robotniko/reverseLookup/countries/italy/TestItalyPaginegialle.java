@@ -60,7 +60,7 @@ public class TestItalyPaginegialle {
 		expected.setHouseNumber("123");
 		expected.setZipCode("22036");
 		expected.setCity("Erba (CO)");
-		expected.setCompany("FOTOOTTICA FANTINATO");
+		expected.setCompany("FANTINATO FOTOTTICA");
 		
 		Helper.testNumberOnSite(service, "+3931642176", SEARCH_SITE_NAME, expected);
 	}
@@ -68,18 +68,24 @@ public class TestItalyPaginegialle {
 	@Test
 	public void test4() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setStreet("Via Carnia");
-		expected.setHouseNumber("33");
-		expected.setZipCode("46013");
+		expected.setStreet("Viale Monza");
+		expected.setHouseNumber("270");
+		expected.setZipCode("20128");
 		expected.setCity("Milano (MI)");
-		expected.setCompany("HOTEL MARGOT");
+		expected.setCompany("INITALIA SRL");
 		
 		Helper.testNumberOnSite(service, "+39226830102", SEARCH_SITE_NAME, expected);
 	}
 	
 	@Test
 	public void test5() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = null;
+		Person expected = new Person();
+		
+		expected.setStreet("Via Caracciolo");
+		expected.setHouseNumber(null);
+		expected.setZipCode("80016");
+		expected.setCity("Marano Di Napoli (NA)");
+		expected.setCompany("ISTITUTO PARITARIO GARDEN HOUSE");
 		
 		Helper.testNumberOnSite(service, "+39817429549", SEARCH_SITE_NAME, expected);
 	}
