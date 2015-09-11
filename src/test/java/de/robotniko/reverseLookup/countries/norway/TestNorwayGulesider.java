@@ -48,7 +48,12 @@ public class TestNorwayGulesider {
 
 	@Test
 	public void testGriep() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = null;
+		Person expected = new Person();
+		expected.setFirstName("Griep");
+		expected.setLastName("Ulrike");
+		expected.setStreet("Loholtbakken 7");
+		expected.setZipCode("7049");
+		expected.setCity("Trondheim");
 		
 		Helper.testNumberOnSite(service, "+4773945687", SEARCH_SITE_NAME, expected);
 	}
@@ -67,7 +72,8 @@ public class TestNorwayGulesider {
 	@Test
 	public void testSkage() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setCompany("Jostein Skage");
+		expected.setFirstName("Skage");
+		expected.setLastName("Jostein");
 		expected.setStreet("Skagevegen 148");
 		expected.setZipCode("5258");
 		expected.setCity("Blomsterdalen");
@@ -87,7 +93,11 @@ public class TestNorwayGulesider {
 
 	@Test
 	public void testWangensteen() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = null;
+		Person expected = new Person();
+		expected.setFirstName("Ove Wangensteen");
+		expected.setLastName("Lars");
+		expected.setZipCode("2612");
+		expected.setCity("Sjusjøen");
 		
 		Helper.testNumberOnSite(service, "+4798043923", SEARCH_SITE_NAME, expected);
 	}
@@ -96,7 +106,7 @@ public class TestNorwayGulesider {
 	public void testFargehandel() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
 		expected.setCompany("Norheimsund Fargehandel");
-		expected.setStreet("Sandvenvegen 39 A");
+		expected.setStreet("Sandvenvegen 39A");
 		expected.setZipCode("5600");
 		expected.setCity("Norheimsund");
 		

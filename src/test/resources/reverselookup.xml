@@ -895,18 +895,23 @@
 		</website>
 	</country>
 	<country code="+47">
-		<website name="gulesider.no" url="http://www.gulesider.no/gs/categoryList.c?q=$NUMBER" prefix="" numLines="7">
-			<entry swapFirstAndLastName="true">
-		        <company>&lt;span class=&quot;num&quot;&gt;\d+.&lt;/span&gt;\s*&lt;h[1-9]&gt;&lt;a[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;&lt;/h[1-9]&gt;</company>
+		<website name="gulesider.no" url="http://www.gulesider.no/gs/categoryList.c?q=$NUMBER" prefix="" numLines="5">
+		    <entry swapFirstAndLastName="true">
+				<company>&lt;span\s+class=&quot;hit-company-name-ellipsis&quot;&gt;\s*&lt;a[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</company>
 				<street>&lt;span class=&quot;street-address&quot;&gt;([^&lt;]*)&lt;/span&gt;</street>
 				<city>&lt;span class=&quot;locality&quot;&gt;([^&lt;]*)&lt;/span&gt;</city>
 				<zipcode>&lt;span class=&quot;postal-code&quot;&gt;([^&lt;]*)&lt;/span&gt;</zipcode>
 			</entry>
-			<entry swapFirstAndLastName="true">
-			    <name>&lt;div class=&quot;person-info&quot;&gt;\s*&lt;!-- Name --&gt;\s*&lt;h[1-9]&gt;\s*&lt;a [^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</name>
-			    <street>&lt;div class=&quot;person-data&quot;&gt;\s*&lt;!-- Address --&gt;\s*&lt;span&gt;([^,]*),\s*[\d]*\s+[^&lt;]*&lt;/span&gt;</street>
-			    <city>&lt;div class=&quot;person-data&quot;&gt;\s*&lt;!-- Address --&gt;\s*&lt;span&gt;[^,]*,\s*[\d]*\s+([^&lt;]*)&lt;/span&gt;</city>
-   			    <zipcode>&lt;div class=&quot;person-data&quot;&gt;\s*&lt;!-- Address --&gt;\s*&lt;span&gt;[^,]*,\s*([\d]*)\s+[^&lt;]*&lt;/span&gt;</zipcode>
+			<entry>
+				<name>&lt;h3&gt;\s*&lt;a[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</name>
+				<street>&lt;div\s+class=&quot;person-data&quot;&gt;\s*(?:&lt;!-- Address --&gt;)?\s*&lt;span&gt;([^,]*),\s+[\d]+\s+[^&lt;]*&lt;/span&gt;</street>
+				<city>&lt;div\s+class=&quot;person-data&quot;&gt;\s*(?:&lt;!-- Address --&gt;)?\s*&lt;span&gt;[^,]*,\s+[\d]+\s+([^&lt;]*)&lt;/span&gt;</city>
+				<zipcode>&lt;div\s+class=&quot;person-data&quot;&gt;\s*(?:&lt;!-- Address --&gt;)?\s*&lt;span&gt;[^,]*,\s+([\d]+)\s+[^&lt;]*&lt;/span&gt;</zipcode>
+			</entry>
+			<entry>
+				<name>&lt;h3&gt;\s*&lt;a[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</name>
+				<city>&lt;div\s+class=&quot;person-data&quot;&gt;\s*&lt;span&gt;[\d]+\s+([^&lt;]*)&lt;/span&gt;</city>
+				<zipcode>&lt;div\s+class=&quot;person-data&quot;&gt;\s*&lt;span&gt;([\d]+)\s+[^&lt;]*&lt;/span&gt;</zipcode>
 			</entry>
 		</website>
 
