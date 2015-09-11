@@ -36,9 +36,7 @@ public class TestNorwayNettKatalogen {
 
 	@Test
 	public void testAksnes() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = new Person();
-		expected.setFirstName("Sentralbord");
-		expected.setLastName("");
+		Person expected = null;
 		
 		Helper.testNumberOnSite(service, "+4756553530", SEARCH_SITE_NAME, expected);
 	}
@@ -57,7 +55,12 @@ public class TestNorwayNettKatalogen {
 
 	@Test
 	public void testHelsebanken() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = null;
+		Person expected = new Person();
+		expected.setFirstName("Lena");
+		expected.setLastName("Laupsa");
+		expected.setStreet("Hellestveitvegen 33");
+		expected.setZipCode("5610");
+		expected.setCity("ØYSTESE");
 		
 		Helper.testNumberOnSite(service, "+4756553850", SEARCH_SITE_NAME, expected);
 	}
