@@ -19,6 +19,8 @@ import de.robotniko.reverseLookup.exceptions.ReverseLookupException;
 
 public class GermanyAsyncTest {
 
+	private int numTestsFailed = 0;
+	
 	private static IReverseLookupService service = ReverseLookupFacade.getReverseLookupService();
 
 	@BeforeClass
@@ -36,9 +38,10 @@ public class GermanyAsyncTest {
 
 	@Test
 	public void testAsync() throws InterruptedException, ReverseLookupException {
+		numTestsFailed = 0;
 		final List<ReverseLookupRequest> requestList = new ArrayList<ReverseLookupRequest>();
 
-		ResponseAssertListener l1 = new ResponseAssertListener(1, null, "P. u. Mand A.", "Kramm", "Johannes-Gropper-Weg 10A", null, "59494", "Soest");
+		ResponseAssertListener l1 = new ResponseAssertListener(1, null, "P. u. Mand A.", "Kramm", "Johannes-Gropper-Weg 10 A", null, "59494", "Soest");
 		ReverseLookupRequest request1 = new ReverseLookupRequest("+49292113115", l1);
 		requestList.add(request1);
 
@@ -54,7 +57,9 @@ public class GermanyAsyncTest {
 
 		service.asynchronousLookup(requestList, finishedListener);
 
-		Thread.sleep(3000);
+		synchronized(this) {
+			wait(10000);
+		}
 
 		ResponseAssertListener l4 = new ResponseAssertListener(2, null, "O. Dr.med.", "Then", "Bahnhofplatz 7", null, "82054", "Sauerlach");
 		ReverseLookupRequest request4 = new ReverseLookupRequest("+498104889820", l4);
@@ -63,8 +68,9 @@ public class GermanyAsyncTest {
 		service.asynchronousLookup(request4, finishedListener);
 
 		synchronized(this) {
-			wait();
+			wait(100000);
 		}
+		Assert.assertEquals(0, numTestsFailed);
 	}
 
 	private void outputResponse(final ReverseLookupResponse response) {
@@ -107,15 +113,20 @@ public class GermanyAsyncTest {
 				int percent) {
 			if (response.size() > 0) {
 				outputResponse(response.get(0));
-	
-//				Assert.assertEquals(numResponses, response.size());
-				Assert.assertEquals(this.company, response.get(0).getCompany());
-				Assert.assertEquals(this.firstName, response.get(0).getFirstName());
-				Assert.assertEquals(this.lastName, response.get(0).getLastName());
-				Assert.assertEquals(this.street, response.get(0).getStreet());
-				Assert.assertEquals(this.houseNumber, response.get(0).getHouseNumber());
-				Assert.assertEquals(this.zipCode, response.get(0).getZipCode());
-				Assert.assertEquals(this.city, response.get(0).getCity());
+
+				try {
+	//				Assert.assertEquals(numResponses, response.size());
+					Assert.assertEquals(this.company, response.get(0).getCompany());
+					Assert.assertEquals(this.firstName, response.get(0).getFirstName());
+					Assert.assertEquals(this.lastName, response.get(0).getLastName());
+					Assert.assertEquals(this.street, response.get(0).getStreet());
+					Assert.assertEquals(this.houseNumber, response.get(0).getHouseNumber());
+					Assert.assertEquals(this.zipCode, response.get(0).getZipCode());
+					Assert.assertEquals(this.city, response.get(0).getCity());
+				} catch (org.junit.ComparisonFailure f) {
+					System.err.println(f.getMessage());
+					numTestsFailed++;
+				}
 				System.out.println(percent + "% finished");
 			}
 			else
