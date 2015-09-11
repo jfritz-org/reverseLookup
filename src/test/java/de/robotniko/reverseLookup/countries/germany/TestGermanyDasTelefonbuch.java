@@ -39,6 +39,8 @@ public class TestGermanyDasTelefonbuch {
 		Person expected = new Person();
 		expected.setFirstName("J.");
 		expected.setLastName("Joo");
+		expected.setStreet("");
+		expected.setZipCode("");
 		
 		Helper.testNumberOnSite(service, "+49721502943", SEARCH_SITE_NAME, expected);
 	}
@@ -48,7 +50,8 @@ public class TestGermanyDasTelefonbuch {
 		Person expected = new Person();
 		expected.setFirstName("P. u. Mand A.");
 		expected.setLastName("Kramm");
-		expected.setStreet("Johannes-Gropper-Weg 10A");
+		expected.setStreet("Johannes-Gropper-Weg");
+		expected.setHouseNumber("10A");
 		expected.setZipCode("59494");
 		expected.setCity("Soest");
 		
@@ -70,9 +73,10 @@ public class TestGermanyDasTelefonbuch {
 	@Test
 	public void testThen() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("O. Dr.med.");
+		expected.setFirstName("Olaf Dr.med. Facharzt für Orthopädie und Sportmedizin");
 		expected.setLastName("Then");
-		expected.setStreet("Bahnhofplatz 7");
+		expected.setStreet("Bahnhofplatz");
+		expected.setHouseNumber("7");
 		expected.setZipCode("82054");
 		expected.setCity("Sauerlach");
 		
@@ -86,7 +90,7 @@ public class TestGermanyDasTelefonbuch {
 		expected.setLastName("Apollo-Optik");
 		expected.setStreet("Äußere Bayreuther Str. 80");
 		expected.setZipCode("90491");
-		expected.setCity("Nürnberg");
+		expected.setCity("Nürnberg Schoppershof");
 		
 		Helper.testNumberOnSite(service, "+499115402808", SEARCH_SITE_NAME, expected);
 	}
@@ -96,7 +100,8 @@ public class TestGermanyDasTelefonbuch {
 		Person expected = new Person();
 		expected.setFirstName("Michael u. Martina");
 		expected.setLastName("Schmidt");
-		expected.setStreet("Treisberger Weg 12");
+		expected.setStreet("Treisberger Weg");
+		expected.setHouseNumber("12");
 		expected.setZipCode("61389");
 		expected.setCity("Schmitten");
 		
@@ -108,7 +113,8 @@ public class TestGermanyDasTelefonbuch {
 		Person expected = new Person();
 		expected.setFirstName("");
 		expected.setLastName("Universitätsklinikum");
-		expected.setStreet("Im Neuenheimer Feld 672");
+		expected.setStreet("Im Neuenheimer Feld");
+		expected.setHouseNumber("672");
 		expected.setZipCode("69120");
 		expected.setCity("Heidelberg");
 		
@@ -129,7 +135,7 @@ public class TestGermanyDasTelefonbuch {
 		expected.setLastName("Bowling-Center");
 		expected.setStreet("Gablonzer Str. 13");
 		expected.setZipCode("76185");
-		expected.setCity("Karlsruhe");
+		expected.setCity("Karlsruhe Mühlburg");
 		
 		Helper.testNumberOnSite(service, "+497215704230", SEARCH_SITE_NAME, expected);
 	}
@@ -139,7 +145,8 @@ public class TestGermanyDasTelefonbuch {
 		Person expected = new Person();
 		expected.setFirstName("Alfred Steuerberater");
 		expected.setLastName("Pritzl");
-		expected.setStreet("Südliche Münchner Str. 55");
+		expected.setStreet("Südliche Münchner Str.");
+		expected.setHouseNumber("55");
 		expected.setZipCode("82031");
 		expected.setCity("Grünwald");
 		
