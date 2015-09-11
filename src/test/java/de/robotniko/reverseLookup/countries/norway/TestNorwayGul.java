@@ -37,8 +37,8 @@ public class TestNorwayGul {
 	@Test
 	public void testAksnes() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Nils");
-		expected.setLastName("Aksnes & Co AS");
+		expected.setFirstName("Trudvang");
+		expected.setLastName("Eiendom AS");
 		expected.setStreet("Sandvenvegen 28");
 		expected.setZipCode("5600");
 		expected.setCity("Norheimsund");
@@ -56,9 +56,9 @@ public class TestNorwayGul {
 	@Test
 	public void testHelsebanken() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Einar");
-		expected.setLastName("Svarstad");
-		expected.setStreet("Hardangerfjordvegen 650 Helsebanken Legekontor");
+		expected.setFirstName("Ragnar");
+		expected.setLastName("Hansen");
+		expected.setStreet("Hardangerfjordvegen 650");
 		expected.setZipCode("5610");
 		expected.setCity("Øystese");
 		
@@ -99,9 +99,9 @@ public class TestNorwayGul {
 	@Test
 	public void testFargehandel() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Scopus");
-		expected.setLastName("AS");
-		expected.setStreet("");
+		expected.setFirstName("AS");
+		expected.setLastName("Tingbakken");
+		expected.setStreet("Sandvenvegen 39A");
 		expected.setZipCode("5600");
 		expected.setCity("Norheimsund");
 		
@@ -147,10 +147,10 @@ public class TestNorwayGul {
 	@Test
 	public void testSamferdselsdepartementet() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Kulturdepartementet");
-		expected.setLastName("Idretts-Og Kulturformål");
-		expected.setStreet("Akersgata 59");
-		expected.setZipCode("0180");
+		expected.setFirstName("Klima-Og");
+		expected.setLastName("Miljødepartementet");
+		expected.setStreet("Kongens gate 20");
+		expected.setZipCode("0153");
 		expected.setCity("Oslo");
 		
 		Helper.testNumberOnSite(service, "+4722249090", SEARCH_SITE_NAME, expected);

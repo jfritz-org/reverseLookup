@@ -935,7 +935,7 @@
 		</website>
 
 		<website name="gul.no" url="http://gul.no/Lucy?q=$NUMBER" prefix="" numLines="3">
-			<entry swapFirstAndLastName="true">
+			<entry firstOccurance="name" swapFirstAndLastName="true">
 				<name>&quot;legalname&quot;:&quot;([^&quot;]*)&quot;,</name>
 				<street>&quot;vaddress&quot;:&quot;([^&quot;]*)&quot;,</street>
 				<city>&quot;vcity&quot;:&quot;([^&quot;]*)&quot;</city>
