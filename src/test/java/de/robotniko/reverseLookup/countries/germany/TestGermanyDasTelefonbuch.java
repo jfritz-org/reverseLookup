@@ -39,8 +39,6 @@ public class TestGermanyDasTelefonbuch {
 		Person expected = new Person();
 		expected.setFirstName("J.");
 		expected.setLastName("Joo");
-		expected.setStreet("");
-		expected.setZipCode("");
 		
 		Helper.testNumberOnSite(service, "+49721502943", SEARCH_SITE_NAME, expected);
 	}
@@ -50,8 +48,7 @@ public class TestGermanyDasTelefonbuch {
 		Person expected = new Person();
 		expected.setFirstName("P. u. Mand A.");
 		expected.setLastName("Kramm");
-		expected.setStreet("Johannes-Gropper-Weg");
-		expected.setHouseNumber("10A");
+		expected.setStreet("Johannes-Gropper-Weg 10A");
 		expected.setZipCode("59494");
 		expected.setCity("Soest");
 		
@@ -73,10 +70,9 @@ public class TestGermanyDasTelefonbuch {
 	@Test
 	public void testThen() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Olaf Dr.med. Facharzt für Orthopädie und Sportmedizin");
+		expected.setFirstName("O. Dr.med.");
 		expected.setLastName("Then");
-		expected.setStreet("Bahnhofplatz");
-		expected.setHouseNumber("7");
+		expected.setStreet("Bahnhofplatz 7");
 		expected.setZipCode("82054");
 		expected.setCity("Sauerlach");
 		
@@ -97,13 +93,7 @@ public class TestGermanyDasTelefonbuch {
 	
 	@Test
 	public void testSchmidt() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = new Person();
-		expected.setFirstName("Michael u. Martina");
-		expected.setLastName("Schmidt");
-		expected.setStreet("Treisberger Weg");
-		expected.setHouseNumber("12");
-		expected.setZipCode("61389");
-		expected.setCity("Schmitten");
+		Person expected = null;
 		
 		Helper.testNumberOnSite(service, "+496084950130", SEARCH_SITE_NAME, expected);
 	}	
@@ -145,8 +135,7 @@ public class TestGermanyDasTelefonbuch {
 		Person expected = new Person();
 		expected.setFirstName("Alfred Steuerberater");
 		expected.setLastName("Pritzl");
-		expected.setStreet("Südliche Münchner Str.");
-		expected.setHouseNumber("55");
+		expected.setStreet("Südliche Münchner Str. 55");
 		expected.setZipCode("82031");
 		expected.setCity("Grünwald");
 		

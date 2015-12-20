@@ -107,12 +107,7 @@ public class TestGermanyDasOertliche {
 	
 	@Test
 	public void testSchmidt() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = new Person();
-		expected.setFirstName("Michael u. Martina");
-		expected.setLastName("Schmidt");
-		expected.setStreet("Treisberger Weg 12");
-		expected.setZipCode("61389");
-		expected.setCity("Schmitten Brombach");
+		Person expected = null; // nicht gefunden
 		
 		Helper.testNumberOnSite(service, "+496084950130", SEARCH_SITE_NAME, expected);
 	}	

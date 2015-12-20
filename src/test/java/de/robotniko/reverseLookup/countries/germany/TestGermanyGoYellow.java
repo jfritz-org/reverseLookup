@@ -72,12 +72,7 @@ public class TestGermanyGoYellow {
 
 	@Test
 	public void testStaatstheater() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = new Person();
-		expected.setFirstName("Braunschweig/ Kleines Haus");
-		expected.setLastName("Staatstheater");
-		expected.setStreet("Am Theater/Steinweg");
-		expected.setZipCode("38100");
-		expected.setCity("Braunschweig");
+		Person expected = null;
 		
 		Helper.testNumberOnSite(service, "+495311234567", SEARCH_SITE_NAME, expected);
 	}

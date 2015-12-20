@@ -100,12 +100,7 @@ public class TestGermany11880 {
 	
 	@Test
 	public void testSchmidt() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = new Person();
-		expected.setFirstName("Michael Martina");
-		expected.setLastName("Schmidt");
-		expected.setStreet("Treisberger Weg 12");
-		expected.setZipCode("61389");
-		expected.setCity("Schmitten (Brombach)");
+		Person expected = null; // nicht bekannt
 		
 		Helper.testNumberOnSite(service, "+496084950130", SEARCH_SITE_NAME, expected);
 	}	
@@ -127,8 +122,8 @@ public class TestGermany11880 {
 	@Test
 	public void testLago() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Bowling-Center Karlsruhe Müller und Veith OHG");
-		expected.setLastName("LAGO");
+		expected.setFirstName("Karlsruhe");
+		expected.setLastName("Bowling-Center");
 		expected.setStreet("Gablonzer Str. 13");
 		expected.setZipCode("76185");
 		expected.setCity("Karlsruhe (Mühlburg)");
