@@ -1,6 +1,5 @@
 package de.robotniko.reverseLookup;
 
-import java.io.IOException;
 import java.net.Proxy;
 import java.net.URLConnection;
 import java.util.ArrayList;

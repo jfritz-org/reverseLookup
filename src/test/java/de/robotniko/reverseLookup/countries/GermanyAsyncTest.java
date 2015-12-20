@@ -115,6 +115,7 @@ public class GermanyAsyncTest {
 				outputResponse(response.get(0));
 
 				try {
+					System.out.println("Expected " + numResponses + " and got " + response.size() + " responses!");
 	//				Assert.assertEquals(numResponses, response.size());
 					Assert.assertEquals(this.company, response.get(0).getCompany());
 					Assert.assertEquals(this.firstName, response.get(0).getFirstName());
