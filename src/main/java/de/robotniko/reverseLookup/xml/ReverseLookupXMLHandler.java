@@ -29,6 +29,8 @@ public class ReverseLookupXMLHandler extends DefaultHandler {
 	private String readCharacters = "";
 	private ReverseLookupManagement mgmt;
 
+	private String globalUserAgent = null;
+	
 	public ReverseLookupXMLHandler(final ReverseLookupManagement mgmt) {
 		this.mgmt = mgmt;
 	}
@@ -64,6 +66,11 @@ public class ReverseLookupXMLHandler extends DefaultHandler {
 					LOG.warn("Could not parse numLines. Not a number: " + attributes.getValue("numLines"));
 				}
 			}
+			if (attributes.getValue("userAgent") != null) {
+				website.setUserAgent(attributes.getValue("userAgent"));
+			} else if (globalUserAgent != null) {
+				website.setUserAgent(globalUserAgent);
+			}
 		} else if ("entry".equalsIgnoreCase(tagName)) {
 			entry = new ReverseLookupEntry();
 			if (attributes.getValue("firstOccurance") != null) {
@@ -95,7 +102,9 @@ public class ReverseLookupXMLHandler extends DefaultHandler {
 	}
 
 	public void endElement(String uri, String localName, String tagName) throws SAXException {
-		if ("country".equalsIgnoreCase(tagName) && mgmt != null) {
+		if ("useragent".equalsIgnoreCase(tagName) && mgmt != null) {
+			globalUserAgent = readCharacters;
+		} else if ("country".equalsIgnoreCase(tagName) && mgmt != null) {
 			mgmt.addReverseLookupCountry(country);
 			country = null;
 		} else if ("website".equalsIgnoreCase(tagName) && country != null) {

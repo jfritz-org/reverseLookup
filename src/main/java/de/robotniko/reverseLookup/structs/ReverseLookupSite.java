@@ -12,6 +12,8 @@ public class ReverseLookupSite {
 	private int areaCodeLength;
 	private int numLines;
 
+	private String userAgent = "ReverseLookupClient";
+
 	private List<ReverseLookupEntry> entries = new ArrayList<ReverseLookupEntry>();
 
 	public String getName() {
@@ -77,5 +79,13 @@ public class ReverseLookupSite {
 			return this.entries.get(index);
 		}
 		return null;
+	}
+	
+	public void setUserAgent(String userAgent) {
+		this.userAgent = userAgent;
+	}
+	
+	public String getUserAgent() {
+		return userAgent;
 	}
 }

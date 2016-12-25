@@ -75,4 +75,60 @@ public class ReverseLookupXMLHandlerTest {
 		Assert.assertEquals("^[^,]*,&nbsp;\\d{5}&nbsp;([^<]*)</div>", entry2.getCityPattern());
 		Assert.assertEquals("^[^,]*,&nbsp;(\\d{5})&nbsp;[^<]*</div>", entry2.getZipPattern());
 	}
+	
+	@Test
+	public void testGlobalUserAgentMissing() throws CountryNotSupportedException {
+		SAXParserFactory factory = SAXParserFactory.newInstance();
+		try {
+			SAXParser parser = factory.newSAXParser();
+			InputStream is = ReverseLookupXMLHandler.class.getResourceAsStream("/testXMLHandlerWithoutUseragent");
+			parser.parse(is, new ReverseLookupXMLHandler(mgmt));
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		ReverseLookupCountry country = mgmt.getCountry("+49");
+		Assert.assertEquals("+49", country.getCode());
+		Assert.assertEquals(5, country.getNumWebsites());
+
+		ReverseLookupSite site0 = country.getLookupSite(0);
+		Assert.assertEquals("ReverseLookupClient", site0.getUserAgent());
+	}
+	
+	@Test
+	public void testSiteUserAgent() throws CountryNotSupportedException {
+		SAXParserFactory factory = SAXParserFactory.newInstance();
+		try {
+			SAXParser parser = factory.newSAXParser();
+			InputStream is = ReverseLookupXMLHandler.class.getResourceAsStream("/testXMLHandler");
+			parser.parse(is, new ReverseLookupXMLHandler(mgmt));
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		ReverseLookupCountry country = mgmt.getCountry("+49");
+		Assert.assertEquals("+49", country.getCode());
+		Assert.assertEquals(5, country.getNumWebsites());
+
+		ReverseLookupSite site0 = country.getLookupSite(0);
+		Assert.assertEquals("TestUserAgent/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0", site0.getUserAgent());
+
+		ReverseLookupSite site1 = country.getLookupSite(1);
+		Assert.assertEquals("MyUserAgent/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0", site1.getUserAgent());
+	}
+
 }

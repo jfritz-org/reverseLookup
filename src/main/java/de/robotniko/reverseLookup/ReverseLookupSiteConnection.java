@@ -17,7 +17,6 @@ public class ReverseLookupSiteConnection {
 
 	private static final int CONNECTION_TIMEOUT = 5000;
 	private static final int READ_TIMEOUT = 10000;
-	private static final String USER_AGENT = "Mozilla/5.0 (Windows; U; Windows NT 6.0; de; rv:1.9.1) Gecko/20090624 Firefox/3.5 (.NET CLR 3.5.30729)";
 
 	private Proxy proxy = Proxy.NO_PROXY;
 	private String charset = "ISO-8859-1";
@@ -82,7 +81,7 @@ public class ReverseLookupSiteConnection {
 		urlConnection = url.openConnection(proxy);
 		urlConnection.setConnectTimeout(CONNECTION_TIMEOUT);
 		urlConnection.setReadTimeout(READ_TIMEOUT);
-		urlConnection.addRequestProperty("User-Agent", USER_AGENT);
+		urlConnection.addRequestProperty("User-Agent", lookupSite.getUserAgent());
 
 		parseHeaders();
 	}
