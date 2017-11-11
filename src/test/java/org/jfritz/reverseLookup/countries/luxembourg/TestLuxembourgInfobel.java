@@ -1,0 +1,106 @@
+package org.jfritz.reverseLookup.countries.luxembourg;
+
+import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.jfritz.reverseLookup.ReverseLookupService;
+import org.jfritz.reverseLookup.countries.TestConstants;
+import org.jfritz.reverseLookup.exceptions.ReverseLookupException;
+import org.junit.After;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.xml.sax.SAXException;
+
+import org.jfritz.MyTestHelper;
+import org.jfritz.reverseLookup.Helper;
+import org.jfritz.reverseLookup.structs.Person;
+
+public class TestLuxembourgInfobel {
+
+	private static final String SEARCH_SITE_NAME = "infobel.com";
+	private static ReverseLookupService service = new ReverseLookupService();
+
+	@BeforeClass
+	public static void setup() throws ReverseLookupException {
+		MyTestHelper.initLogging();
+		service.loadConfig(MyTestHelper.class.getResourceAsStream("/reverselookup.xml"));
+	}
+
+	@After
+	public void after() throws InterruptedException {
+		int sleeptime = TestConstants.SLEEP_TIME;
+		System.out.println("\nSleeping for " + sleeptime + " ms");
+		Thread.sleep(sleeptime);
+	}
+
+	@Test
+	public void test1() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
+		Person expected = new Person();
+		expected.setFirstName("International Luxembourg");
+		expected.setLastName("ArcelorMittal");
+		expected.setStreet("24-26 BOULEVARD D'AVRANCHES");
+		expected.setHouseNumber(null);
+		expected.setZipCode("1160");
+		expected.setCity("LUXEMBOURG");
+		expected.setCompany(null);
+		
+		Helper.testNumberOnSite(service, "+35247921", SEARCH_SITE_NAME, expected);
+	}
+
+	@Test
+	public void test2() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
+		Person expected = new Person();
+		expected.setFirstName("Immobilière Luxembourgeoise Immosol Sàrl");
+		expected.setLastName("Agence");
+		expected.setStreet("14 AVENUE DE LA LIBERTE");
+		expected.setHouseNumber(null);
+		expected.setZipCode("1930");
+		expected.setCity("LUXEMBOURG");
+		expected.setCompany(null);
+		
+		Helper.testNumberOnSite(service, "+352225533", SEARCH_SITE_NAME, expected);
+	}
+
+	@Test
+	public void test3() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
+		Person expected = new Person();
+		expected.setFirstName("LUXEMBOURG S.A R.L.");
+		expected.setLastName("PEARLE");
+		expected.setStreet("18 RUE NOTRE-DAME");
+		expected.setHouseNumber(null);
+		expected.setZipCode("2240");
+		expected.setCity("LUXEMBOURG");
+		expected.setCompany(null);
+		
+		Helper.testNumberOnSite(service, "+35226203026", SEARCH_SITE_NAME, expected);
+	}
+
+	@Test
+	public void test4() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
+		Person expected = new Person();
+		expected.setFirstName("Luxembourgeoise de Crémation SA");
+		expected.setLastName("Société");
+		expected.setStreet("6 RUE ERMESINDE");
+		expected.setHouseNumber(null);
+		expected.setZipCode("6437");
+		expected.setCity("ECHTERNACH");
+		expected.setCompany(null);
+		
+		Helper.testNumberOnSite(service, "+352220335", SEARCH_SITE_NAME, expected);
+	}
+
+	@Test
+	public void test5() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
+		Person expected = new Person();
+		expected.setFirstName("Sàrl");
+		expected.setLastName("Rischette");
+		expected.setStreet("4 ROUTE DE LUXEMBOURG");
+		expected.setHouseNumber(null);
+		expected.setZipCode("6130");
+		expected.setCity("JUNGLINSTER");
+		expected.setCompany(null);
+		
+		Helper.testNumberOnSite(service, "+352788331", SEARCH_SITE_NAME, expected);
+	}
+}

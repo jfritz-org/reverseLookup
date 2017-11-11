@@ -26,7 +26,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>de.robotniko.reverseLookup.ReverseLookupService</mainClass>
+                            <mainClass>org.jfritz.reverseLookup.ReverseLookupService</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
