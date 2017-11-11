@@ -2,13 +2,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>de.robotniko</groupId>
+  <groupId>org.jfritz</groupId>
   <artifactId>reverseLookup</artifactId>
   <version>1.0.9</version>
   <packaging>jar</packaging>
 
   <name>reverseLookup</name>
-  <url>http://www.robotniko.de</url>
+  <url>https://jfritz.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -48,8 +48,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>2.3.2</version>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.6</source>
+          <target>1.6</target>
         </configuration>
       </plugin>
     </plugins>
@@ -63,9 +63,9 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>de.robotniko</groupId>
+      <groupId>org.jfritz</groupId>
       <artifactId>proxy</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.2</version>
       <scope>test</scope>
     </dependency>
         <dependency>
