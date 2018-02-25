@@ -66,7 +66,7 @@ public class ReverseLookupCountryProcessing {
 		}
 		try {
 			URLConnection urlConnection = siteConnection.connect(lookupSite, number);
-			System.out.println("Requesting: " + siteConnection.getRequestUrl() + ", connection to: " + urlConnection.getURL().toString());
+			LOG.debug("Requesting: " + siteConnection.getRequestUrl() + ", connection to: " + urlConnection.getURL().toString());
 			this.charSet = siteConnection.getCharSet();
 
 			ReverseLookupSiteReader reader = new ReverseLookupSiteReader(urlConnection, charSet);
@@ -77,7 +77,7 @@ public class ReverseLookupCountryProcessing {
 			return parser.getResponseList();
 		} catch (Exception e) {
 			// do nothing here, maybe logging
-				LOG.error("Error", e);
+				LOG.debug("Error", e);
 		}
 		return null;
 	}
