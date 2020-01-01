@@ -55,8 +55,8 @@ public class TestSwitzerlandTelSearch {
 		expected.setLastName("Cytracon");
 		expected.setStreet("Rütistrasse 20a");
 		expected.setHouseNumber(null);
-		expected.setZipCode("8134");
-		expected.setCity("Adliswil");
+		expected.setZipCode("8032");
+		expected.setCity("Zürich");
 		expected.setCompany("Internet- / IT-Services");
 		
 		Helper.testNumberOnSite(service, "+41447712727", SEARCH_SITE_NAME, expected);

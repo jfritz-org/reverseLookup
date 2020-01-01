@@ -36,10 +36,10 @@ public class TestAustriaTbOnline {
 	@Test
 	public void testTrivadis() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Delphi GmbH");
+		expected.setFirstName("Austria GmbH");
 		expected.setLastName("Trivadis");
-		expected.setStreet("Handelskai 94 -96");
-		expected.setHouseNumber(null);
+		expected.setStreet("Handelskai");
+		expected.setHouseNumber("94 -96");
 		expected.setZipCode("1200");
 		expected.setCity("Wien");
 		expected.setCompany(null);
@@ -50,10 +50,10 @@ public class TestAustriaTbOnline {
 	@Test
 	public void testKarin() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Karin");
-		expected.setLastName("Duftner");
-		expected.setStreet("Alpbach 166");
-		expected.setHouseNumber(null);
+		expected.setFirstName("GmbH (Hotels)");
+		expected.setLastName("Böglerhof");
+		expected.setStreet("Alpbach");
+		expected.setHouseNumber("166");
 		expected.setZipCode("6236");
 		expected.setCity("Alpbach");
 		expected.setCompany(null);
@@ -64,10 +64,10 @@ public class TestAustriaTbOnline {
 	@Test
 	public void testPrammerRudolf() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Rudolf Edeltraud");
+		expected.setFirstName("Enrico");
 		expected.setLastName("Prammer");
-		expected.setStreet("Götzelsdorf 17");
-		expected.setHouseNumber(null);
+		expected.setStreet("Götzelsdorf");
+		expected.setHouseNumber("17");
 		expected.setZipCode("4221");
 		expected.setCity("Götzelsdorf");
 		expected.setCompany(null);
@@ -80,10 +80,10 @@ public class TestAustriaTbOnline {
 		Person expected = new Person();
 		expected.setFirstName("Johann");
 		expected.setLastName("Prammer");
-		expected.setStreet("Stelzhamerstraße 7");
-		expected.setHouseNumber(null);
+		expected.setStreet("Stelzhamerstraße");
+		expected.setHouseNumber("7");
 		expected.setZipCode("4225");
-		expected.setCity("Luftenberg");
+		expected.setCity("Luftenberg an der Donau");
 		expected.setCompany(null);
 		
 		Helper.testNumberOnSite(service, "+4372374145", SEARCH_SITE_NAME, expected);
@@ -94,8 +94,8 @@ public class TestAustriaTbOnline {
 		Person expected = new Person();
 		expected.setFirstName("Walter");
 		expected.setLastName("Prammer");
-		expected.setStreet("Opalweg 8");
-		expected.setHouseNumber(null);
+		expected.setStreet("Opalweg");
+		expected.setHouseNumber("8");
 		expected.setZipCode("4225");
 		expected.setCity("Abwinden");
 		expected.setCompany(null);

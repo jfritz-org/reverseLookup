@@ -48,10 +48,8 @@ public class TestSwedenEniro {
 
 	@Test
 	public void testEdberg() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = new Person();
-		expected.setFirstName("Nilsson");
-		expected.setLastName("Johan");
-		
+		Person expected = null;
+
 		Helper.testNumberOnSite(service, "+46702619401", SEARCH_SITE_NAME, expected);
 	}
 }
