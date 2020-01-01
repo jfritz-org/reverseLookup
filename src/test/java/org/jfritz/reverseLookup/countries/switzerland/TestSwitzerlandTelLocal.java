@@ -51,13 +51,11 @@ public class TestSwitzerlandTelLocal {
 	@Test
 	public void test2() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("GmbH");
-		expected.setLastName("Cytracon");
 		expected.setStreet("Rütistrasse 20a");
 		expected.setHouseNumber(null);
-		expected.setZipCode("8134");
-		expected.setCity("Adliswil");
-		expected.setCompany("Internet- / IT-Services");
+		expected.setZipCode("8032");
+		expected.setCity("Zürich");
+		expected.setCompany("Cytracon GmbH");
 		
 		Helper.testNumberOnSite(service, "+41447712727", SEARCH_SITE_NAME, expected);
 	}
@@ -78,12 +76,11 @@ public class TestSwitzerlandTelLocal {
 	@Test
 	public void test4() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Dialog AG");
-		expected.setLastName("Trendcommerce");
 		expected.setStreet("Heiligkreuzstrasse 2");
 		expected.setHouseNumber(null);
 		expected.setZipCode("9008");
 		expected.setCity("St. Gallen");
+		expected.setCompany("Trendcommerce Dialog AG");
 		
 		Helper.testNumberOnSite(service, "+41715550800", SEARCH_SITE_NAME, expected);
 	}

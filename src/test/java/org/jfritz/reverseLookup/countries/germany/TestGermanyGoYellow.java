@@ -37,23 +37,14 @@ public class TestGermanyGoYellow {
 
 	@Test
 	public void testJoo() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = new Person();
-		expected.setFirstName("J.");
-		expected.setLastName("Joo");
-		expected.setZipCode("");
-		expected.setCity("Karlsruhe");
+		Person expected = null;
 		
 		Helper.testNumberOnSite(service, "+49721502943", SEARCH_SITE_NAME, expected);
 	}
 
 	@Test
 	public void testKramm() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = new Person();
-		expected.setFirstName("P.");
-		expected.setLastName("Kramm");
-		expected.setStreet("Johannes-Gropper-Weg 10A");
-		expected.setZipCode("59494");
-		expected.setCity("Soest");
+		Person expected = null;
 		
 		Helper.testNumberOnSite(service, "+49292113115", SEARCH_SITE_NAME, expected);
 	}
@@ -91,12 +82,7 @@ public class TestGermanyGoYellow {
 	
 	@Test
 	public void testApollo() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
-		Person expected = new Person();
-		expected.setFirstName("");
-		expected.setLastName("Apollo-Optik");
-		expected.setStreet("Äußere Bayreuther Str. 80");
-		expected.setZipCode("90491");
-		expected.setCity("Nürnberg");
+		Person expected = null;
 		
 		Helper.testNumberOnSite(service, "+499115402808", SEARCH_SITE_NAME, expected);
 	}

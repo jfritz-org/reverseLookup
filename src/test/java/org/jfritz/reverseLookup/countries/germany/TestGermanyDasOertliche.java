@@ -84,7 +84,7 @@ public class TestGermanyDasOertliche {
 	@Test
 	public void testThen() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("O. Dr.med.");
+		expected.setFirstName("Olaf Dr.med. Facharzt für Orthopädie und Sportmedizin");
 		expected.setLastName("Then");
 		expected.setStreet("Bahnhofplatz 7");
 		expected.setZipCode("82054");
@@ -119,7 +119,7 @@ public class TestGermanyDasOertliche {
 		expected.setLastName("Universitätsklinikum");
 		expected.setStreet("Im Neuenheimer Feld 672");
 		expected.setZipCode("69120");
-		expected.setCity("Heidelberg Südstadt");
+		expected.setCity("Heidelberg Neuenheim");
 		
 		Helper.testNumberOnSite(service, "+496221560", SEARCH_SITE_NAME, expected);
 	}
@@ -131,7 +131,7 @@ public class TestGermanyDasOertliche {
 		expected.setLastName("Universitätsklinikum");
 		expected.setStreet("Im Neuenheimer Feld 672");
 		expected.setZipCode("69120");
-		expected.setCity("Heidelberg Südstadt");
+		expected.setCity("Heidelberg Neuenheim");
 		
 		Helper.testNumberOnSite(service, "+496221567200", SEARCH_SITE_NAME, expected);
 	}
@@ -153,9 +153,9 @@ public class TestGermanyDasOertliche {
 		Person expected = new Person();
 		expected.setFirstName("Alfred Steuerberater");
 		expected.setLastName("Pritzl");
-		expected.setStreet("Südliche Münchner Str. 55");
-		expected.setZipCode("82031");
-		expected.setCity("Grünwald");
+		expected.setStreet("Kolpingring 2");
+		expected.setZipCode("82041");
+		expected.setCity("Oberhaching");
 		
 		Helper.testNumberOnSite(service, "+49896202180", SEARCH_SITE_NAME, expected);
 	}

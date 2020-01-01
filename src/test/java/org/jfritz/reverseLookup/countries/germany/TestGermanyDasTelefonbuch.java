@@ -70,9 +70,10 @@ public class TestGermanyDasTelefonbuch {
 	@Test
 	public void testThen() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("O. Dr.med.");
+		expected.setFirstName("Olaf Dr.med. Facharzt für Orthopädie und Sportmedizin");
 		expected.setLastName("Then");
-		expected.setStreet("Bahnhofplatz 7");
+		expected.setStreet("Bahnhofplatz");
+		expected.setHouseNumber("7");
 		expected.setZipCode("82054");
 		expected.setCity("Sauerlach");
 		
@@ -101,7 +102,7 @@ public class TestGermanyDasTelefonbuch {
 	@Test
 	public void testKlinikum() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("");
+		expected.setFirstName("Heidelberg");
 		expected.setLastName("Universitätsklinikum");
 		expected.setStreet("Im Neuenheimer Feld");
 		expected.setHouseNumber("672");
@@ -135,9 +136,10 @@ public class TestGermanyDasTelefonbuch {
 		Person expected = new Person();
 		expected.setFirstName("Alfred Steuerberater");
 		expected.setLastName("Pritzl");
-		expected.setStreet("Südliche Münchner Str. 55");
-		expected.setZipCode("82031");
-		expected.setCity("Grünwald");
+		expected.setStreet("Kolpingring");
+		expected.setHouseNumber("2");
+		expected.setZipCode("82041");
+		expected.setCity("Oberhaching");
 		
 		Helper.testNumberOnSite(service, "+49896202180", SEARCH_SITE_NAME, expected);
 	}

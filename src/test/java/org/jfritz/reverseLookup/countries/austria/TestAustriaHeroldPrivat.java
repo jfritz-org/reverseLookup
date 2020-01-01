@@ -37,7 +37,7 @@ public class TestAustriaHeroldPrivat {
 	@Test
 	public void testTrivadis() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Delphi GmbH");
+		expected.setFirstName("Austria GmbH");
 		expected.setLastName("Trivadis");
 		expected.setStreet("Handelskai 94-96");
 		expected.setHouseNumber(null);
@@ -51,12 +51,12 @@ public class TestAustriaHeroldPrivat {
 	@Test
 	public void testKarin() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Karin");
-		expected.setLastName("Duftner");
+		expected.setFirstName("GmbH");
+		expected.setLastName("Böglerhof");
 		expected.setStreet("Alpbach 166");
 		expected.setHouseNumber(null);
 		expected.setZipCode("6236");
-		expected.setCity("Alpbach (T)");
+		expected.setCity("Alpbach");
 		expected.setCompany(null);
 		
 		Helper.testNumberOnSite(service, "+4353365227", SEARCH_SITE_NAME, expected);
@@ -65,12 +65,12 @@ public class TestAustriaHeroldPrivat {
 	@Test
 	public void testPrammerRudolf() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setFirstName("Rudolf / Edeltraud");
+		expected.setFirstName("Enrico");
 		expected.setLastName("Prammer");
 		expected.setStreet("Götzelsdorf 17");
 		expected.setHouseNumber(null);
 		expected.setZipCode("4221");
-		expected.setCity("Steyregg (OÖ)");
+		expected.setCity("Steyregg");
 		expected.setCompany(null);
 		
 		Helper.testNumberOnSite(service, "+43732641574", SEARCH_SITE_NAME, expected);

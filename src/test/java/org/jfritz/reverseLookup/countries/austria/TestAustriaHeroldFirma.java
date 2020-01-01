@@ -41,7 +41,7 @@ public class TestAustriaHeroldFirma {
 		expected.setHouseNumber(null);
 		expected.setZipCode("1200");
 		expected.setCity("Wien");
-		expected.setCompany("Trivadis Delphi GmbH");
+		expected.setCompany("Trivadis Austria GmbH");
 		
 		Helper.testNumberOnSite(service, "+4313323531", SEARCH_SITE_NAME, expected);
 	}
@@ -49,11 +49,11 @@ public class TestAustriaHeroldFirma {
 	@Test
 	public void testKarin() throws ReverseLookupException, ParserConfigurationException, SAXException, IOException {
 		Person expected = new Person();
-		expected.setStreet("Nummer 166");
+		expected.setStreet("Alpbach 166");
 		expected.setHouseNumber(null);
 		expected.setZipCode("6236");
 		expected.setCity("Alpbach");
-		expected.setCompany("Romantikhotel Böglerhof GmbH");
+		expected.setCompany("Hotel Böglerhof");
 		
 		Helper.testNumberOnSite(service, "+4353365227", SEARCH_SITE_NAME, expected);
 	}
