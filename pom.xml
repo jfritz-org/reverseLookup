@@ -3,7 +3,7 @@
 
     <groupId>org.jfritz</groupId>
     <artifactId>reverseLookup</artifactId>
-    <version>1.0.13-SNAPSHOT</version>
+    <version>1.0.12</version>
     <packaging>jar</packaging>
 
     <name>reverseLookup</name>
